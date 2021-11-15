@@ -1,83 +1,150 @@
 @charset "utf-8";
+
 /* CSS Document */
+@font-face {
+    font-family: Oxanium-Regular;
+    src: url(../fonts/Oxanium-Regular.ttf);
+    font-display: swap;
+}
 
-/* font css to include in your project */
-@font-face {
-    font-family: montserrat-b;
-    src: url(../fonts/Montserrat-Bold.ttf);
-    font-display: swap;
+/******** navbar ********/
+
+.header {
+    padding-top: 20px;
+    /* background-color: #1A1323; */
+    background-image: url(../images/h3_header_bg.jpg);
+    color: #ffffff;
 }
-.font-montserrat-b {
-    font-family: montserrat-b;
-}
-@font-face {
-    font-family: montserrat-m;
-    src: url(../fonts/Montserrat-Medium.otf);
-    font-display: swap;
-}
-.font-montserrat-m {
-    font-family: montserrat-m;
-}
-@font-face {
-    font-family: montserrat-r;
-    src: url(../fonts/Montserrat-Regular.ttf);
-    font-display: swap;
-}
-.font-montserrat-r {
-    font-family: montserrat-r;
-}
-@font-face {
-    font-family: roboto-b;
-    src: url(../fonts/Roboto-Bold.ttf);
-    font-display: swap;
-}
-.font-roboto-b {
-    font-family: roboto-b;
-}
-@font-face {
-    font-family: roboto-m;
-    src: url(../fonts/Roboto-Medium.ttf);
-    font-display: swap;
-}
-.font-roboto-m {
-    font-family: roboto-m;
-}
-@font-face {
-    font-family: roboto-r;
-    src: url(../fonts/Roboto-Regular.ttf);
-    font-display: swap;
-}
-.font-roboto-r {
-    font-family:roboto-r;
-}
-@font-face{
-    font-family: roboto-l;
-    src: url(../fonts/Roboto-Light.ttf);
-    font-display:swap;
-}
-.font-roboto-l{
-    font-family: roboto-l;
-}
-.color-white{
-    color: #FFF;
+
+.header-top {
+    max-width: 1330px;
 }
 
 
-/* CSS used in all the other pages can be added here so that repetition of classes can be avoided */
-/* Example formating of css */
-/*#drawer{
-    -webkit-animation-duration: 0.8s;
-    animation-duration: 0.8s;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
-    -webkit-animation-name: slideright;
-    animation-name: slideright;
+
+.top-social ul {
+    list-style-type: none;
+
 }
-@-webkit-keyframes slideright {
-    0% {transform: translate(-100%,0px);}
-    100% {transform: translate(0px,0px);}
+
+.top-social ul li {
+    display: inline;
+    font-family: 'Oxanium-Regular', cursive;
 }
-@keyframes slideright {
-    0% {transform: translate(100%,0px);}
-    100% {transform: translate(0%,0px);}
-}*/
+
+
+.top-social ul li a {
+
+    background-color: #0a0a0a;
+    box-shadow: rgb(0 0 0 / 35%) 0px 3px 7px 0px;
+    color: #ff4800;
+    font-size: 12px;
+    margin-left: 20px;
+
+    background-image: url(../images/header_social_bg.jpg);
+    padding: 10px;
+    padding-top: 12px;
+
+}
+
+.top-social i {
+    font-size: 20px;
+
+
+
+}
+
+.header-buttons p {
+    display: inline-block;
+    text-transform: uppercase;
+    color: #cfcdcd;
+    font-weight: 700;
+    font-size: 11px;
+    font-family: 'Oxanium-Regular', cursive;
+
+}
+
+.header-buttons button {
+    display: inline-block;
+    background: #23262d;
+    text-transform: uppercase;
+    color: #cfcdcd;
+    font-weight: 700;
+    font-size: 11px;
+    font-family: 'Oxanium-Regular', cursive;
+    padding: 2 px 23 px 2 px 7 px;
+    border-top: 2 px solid #2a2b37;
+    border-bottom: 2 px solid #2a2b37;
+    border-radius: 3 px;
+    box-shadow: rgb(0 0 0 / 35%) 0px 3px 7px 0px;
+}
+
+.header-buttons button i {
+    color: #ff4800;
+}
+
+.logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0px;
+    z-index: 9;
+}
+
+.header-two ul {
+    padding-bottom: 5px;
+    padding-top: 15px;
+}
+
+.header-two ul li {
+    display: inline;
+    list-style-type: none;
+
+}
+
+.header-two ul li a {
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #edeaea;
+    line-height: 1;
+    /* position: relative;
+    z-index: 1; */
+    font-family: 'Oxanium-Regular', cursive;
+    margin-right: 20px;
+
+}
+
+.header-two a:active {
+    color: #ff4800;
+}
+
+.header-two a:hover {
+    color: #ff4800;
+    text-decoration: none;
+}
+
+.header-bottom {
+    background-image: url(../images/header_bottom_bg.png);
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 1499px;
+    height: 28px;
+    margin: 0 auto;
+    z-index: -1;
+
+}
+
+/******** navbar ********/
+
+.hero {
+
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/hero.jpg");
+    background-position: center center;
+    background-size: cover;
+    position: relative;
+    padding: 26% 0 31%;
+
+
+}
