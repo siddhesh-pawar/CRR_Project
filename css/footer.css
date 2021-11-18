@@ -1,0 +1,128 @@
+footer{
+    margin: -8px;
+}
+.footer-bg {
+    background-color: #f9f9f9;
+    background-position: top center;
+    background-size: cover;
+    padding-bottom: 65px;
+    position: relative;
+    z-index: 1;
+}
+.third-footer-bg {
+    background-image: url(../image/t_footer_bg.jpg);
+    padding-top: 50px;
+    padding-bottom: 40px;
+}
+
+.container{
+	padding-left: 30px
+}
+/*Tablet view*/
+@media only screen and (min-width: 700px){
+    .copyright{
+        color: #b5b5b5;
+        font-family: 'Poppins', sans-serif;
+        padding-left: 30px;
+    }
+    .fw-quick-link li, .fw-social li{
+        list-style: none;
+    }
+    .fw-quick-link li a, .fw-social li a{
+        text-decoration: none;
+    }
+    .fw-social li{
+        display: inline-block;
+        padding: 5px;
+    }
+    .fw-quick-link li a{
+        color: #b5b5b5;
+        font-size: 16px;
+    }
+    .fw-quick-link ul{
+        padding-left: 0px;
+    }
+
+}
+
+/*Desktop view*/
+@media only screen and (min-width: 1165px){
+.row{
+    columns: 100px 2;
+    column-gap: 350px;
+}    
+.col-1{
+    padding-left: 70px;
+}
+.col-2{
+    text-align: right; 
+    padding-right: 120px;
+}
+.fw-title h3 {
+    font-size: 32px;
+    font-family: 'grinddemolished';
+    font-weight: normal;
+    line-height: 1;
+    margin-bottom: 0;
+}
+.fw-social ul li a:hover, .fw-quick-link ul li a:hover, .fw-title h3 > span, .third-copyright-wrap .copyright-text p a {
+    color: #ff5917;
+}
+.fw-quick-link li, .fw-social li{
+	list-style: none;
+}
+.fw-quick-link li a, .fw-social li a{
+	text-decoration: none;
+}
+
+.fw-text p{
+	font-size: 15px;
+}
+.fw-quick-link li a{
+	color: #b5b5b5;
+	font-size: 16px;
+}
+.fw-social li{
+	display: inline-block;
+	padding: 5px;
+}
+.copyright{
+    color: #b5b5b5;
+    font-size: 12px;
+    padding-top: 20px;
+    padding-bottom: -10px;
+}
+.copyright p{
+    padding-left: 70px;
+}
+}
+/*Moblie view*/
+@media only screen and (max-width: 700px){
+    .copyright{
+        color: #b5b5b5;
+        font-family: 'Poppins', sans-serif;
+        padding-left: 30px;
+    }
+    .fw-quick-link li, .fw-social li{
+        list-style: none;
+    }
+    .fw-quick-link li a, .fw-social li a{
+        text-decoration: none;
+    }
+    .fw-social li{
+        display: inline-block;
+        padding: 5px;
+    }
+    .fw-quick-link li a{
+        color: #b5b5b5;
+        font-size: 16px;
+    }
+    .fw-quick-link ul{
+        padding-left: 0px;
+    }
+    .fw-text p{
+        font-size: 14.5px;
+        padding-right:10px;
+    }
+
+}
