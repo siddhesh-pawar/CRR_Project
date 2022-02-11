@@ -48,19 +48,18 @@
         }
 
         body {
-            background: #000;
+            background: rgb(6, 6, 6);
             height: 500vh;
         }
 
         canvas {
             position: fixed;
-            left: 50%;
+            width: 150%;
+            top: -10%;
+            /* left: 50%;
             top: 50%;
             max-height: 100vh;
-
-
-
-            transform: translate(-50%, -50%);
+            /* transform: translate(-50%, -50%); */
         }
     </style>
 </head>
@@ -96,9 +95,9 @@
         const canvas = document.getElementById("hero-lightpass");
         const context = canvas.getContext("2d");
 
-        const frameCount = 610;
+        const frameCount = 303;
         const currentFrame = index => (
-            `images/${index.toString().padStart(4, '0')}.jpg`
+            `images/scroll/${index.toString().padStart(4, '0')}.jpg`
         )
 
         const preloadImages = () => {

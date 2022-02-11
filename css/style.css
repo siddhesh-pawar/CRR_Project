@@ -330,7 +330,7 @@
 }
 
 .hero-text {
-    font-family: 'Oxanium-Regular';
+    font-family: grind;
     color: #ffffff;
     margin-top: 40px;
     font-size: 60px;
@@ -339,7 +339,7 @@
 
 .hero-text h2 {
     font-size: 45px;
-    font-weight: bold;
+    /* font-weight: bold; */
 }
 
 .hero-text button {
@@ -627,8 +627,196 @@
     display: inline;
 }
 
+.match-box-mob {
+    margin-top: 30px;
+    max-width: 60%;
+    background-color: rgba(42, 40, 49, 0.49);
+    box-shadow: 0px 3px 43px 0px rgb(15 14 13 / 68%);
+    padding: 50px 30px;
+
+}
+
+.match-box-mob p {
+    font-size: 22px;
+}
+
 
 /* ******************live-pages **************/
+
+/* ******************sign-up **************/
+
+.sign-up_bg {
+    background-image: url('../images/live_bg.jpg');
+    background-position: center;
+    background-size: cover;
+    padding-top: 300px;
+
+
+}
+
+.sign-up_bg h2 {
+    color: #ff4800;
+    font-size: 40px;
+    font-family: grind;
+}
+
+.sign-up_bg input {
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #ff4800;
+    font-family: Oxanium-Regular;
+    ;
+    color: #ffffff;
+
+    /* color: #ffffff; */
+}
+
+.sign-up_bg input:focus {
+    background: transparent;
+    color: #ffffff;
+    border: 1px solid #ff4800;
+    box-shadow: 0 0 0 0.2rem rgba(177, 71, 9, 0.712);
+
+}
+
+.sign-up_bg button {
+    background: #23262d;
+    text-transform: uppercase;
+    color: #cfcdcd;
+    font-weight: 700;
+    font-size: 16px;
+    font-family: 'Oxanium-Regular';
+    padding: 10px;
+
+    box-shadow: rgb(0 0 0 / 35%) 0px 3px 7px 0px;
+    width: 30%;
+}
+
+.sign-up_bg button:hover {
+    color: #ff4800;
+}
+
+.create {
+    background-image: url('../images/live_bg.jpg');
+    background-position: center;
+    background-size: cover;
+    padding-top: 200px;
+
+
+}
+
+.create h2 {
+    color: #ff4800;
+    font-size: 40px;
+    font-family: grind;
+}
+
+.create input {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #ff4800;
+    font-family: Oxanium-Regular;
+    ;
+    color: #ffffff;
+    padding: 22px;
+    font-size: 18px;
+
+    /* color: #ffffff; */
+}
+
+
+.create input:focus {
+    background: transparent;
+    color: #ffffff;
+    border: none;
+    box-shadow: 0 0 0 0.1rem #ff4800;
+    /* box-shadow: 0 0 0 0.2rem rgba(177, 71, 9, 0.712); */
+    /* box-shadow: none; */
+
+}
+
+.create label {
+    font-family: Oxanium-Regular;
+    color: #ffffff;
+    font-size: 20px;
+
+    /* color: #ffffff; */
+}
+
+.create textarea {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #ff4800;
+    font-family: Oxanium-Regular;
+    color: #ffffff;
+    padding: 22px;
+    font-size: 15px;
+}
+
+.create textarea:focus {
+    background: transparent;
+    color: #ffffff;
+    border: 1px solid #ff4800;
+    /* box-shadow: 0 0 0 0.2rem rgba(177, 71, 9, 0.712); */
+    box-shadow: 0 0 0 0.1rem #ff4800;
+
+}
+
+.create button {
+    background: #ff4800;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 16px;
+    font-family: 'Oxanium-Regular';
+    padding: 15px;
+    margin-top: 30px;
+
+    box-shadow: rgb(0 0 0 / 35%) 0px 3px 7px 0px;
+    width: 30%;
+}
+
+.dtp>.dtp-content>.dtp-date-view>header.dtp-header {
+    background: #ff4800;
+}
+
+.dtp div.dtp-date,
+.dtp div.dtp-time {
+    background: #ff4800;
+
+}
+
+.material-icons {
+    color: #ffffff;
+}
+
+.dtp table.dtp-picker-days tr>td>a.selected {
+    background: #ff4800;
+
+}
+
+.year-picker-item.active {
+    color: #ff4800;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ******************sign-up **************/
+
 
 /*****************mobile-view*****************/
 
