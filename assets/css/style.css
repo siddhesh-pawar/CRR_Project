@@ -567,6 +567,7 @@
     padding-top: 300px;
 
 
+
 }
 
 .live-section1 h2 {
@@ -576,7 +577,7 @@
     font-family: grind;
 }
 
-.live-section1 p {
+.live-section1 a {
     font-family: grind;
     color: #ffffff;
 
@@ -605,10 +606,7 @@
     position: relative;
     z-index: 1;
     max-width: 100%;
-    /* width: 50%;
-    height: 50% */
-    /* width: 100%;
-    height: 100%; */
+
 
 
 }
@@ -642,61 +640,38 @@
 
 
 /* ******************live-pages **************/
-
-/* ******************sign-up **************/
-
-.sign-up_bg {
-    background-image: url('../images/live_bg.jpg');
+/* ********    live-info ************ */
+.live-info {
+    margin-top: 10%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/balls.jpg');
     background-position: center;
     background-size: cover;
-    padding-top: 300px;
-
-
+    padding-top: 150px;
+    padding-bottom: 300px;
 }
 
-.sign-up_bg h2 {
-    color: #ff4800;
-    font-size: 40px;
+.live-info h1 {
     font-family: grind;
+    color: #ffffff;
+    font-size: 50px;
+    /* font-size: 30px; */
 }
 
-.sign-up_bg input {
-    background: transparent;
-    border: none;
-    border-bottom: 2px solid #ff4800;
+
+
+.live-info p {
     font-family: Oxanium-Regular;
-    ;
     color: #ffffff;
-
-    /* color: #ffffff; */
+    font-size: 20px;
+    font-family: grind;
+    /* font-size: 30px; */
 }
 
-.sign-up_bg input:focus {
-    background: transparent;
-    color: #ffffff;
-    border: 1px solid #ff4800;
-    box-shadow: 0 0 0 0.2rem rgba(177, 71, 9, 0.712);
+/* ********    live-info ************ */
 
-}
 
-.sign-up_bg button {
-    background: #23262d;
-    text-transform: uppercase;
-    color: #cfcdcd;
-    font-weight: 700;
-    font-size: 16px;
-    font-family: 'Oxanium-Regular';
-    padding: 10px;
-
-    box-shadow: rgb(0 0 0 / 35%) 0px 3px 7px 0px;
-    width: 30%;
-}
-
-.sign-up_bg button:hover {
-    color: #ff4800;
-}
-
-.create {
+.create,
+.sign-up_bg {
     background-image: url('../images/live_bg.jpg');
     background-position: center;
     background-size: cover;
@@ -705,13 +680,15 @@
 
 }
 
-.create h2 {
+.create,
+.sign-up_bg h2 {
     color: #ff4800;
     font-size: 40px;
     font-family: grind;
 }
 
-.create input {
+.create,
+.sign-up_bg input {
     background: transparent;
     border: none;
     border-bottom: 1px solid #ff4800;
@@ -725,7 +702,8 @@
 }
 
 
-.create input:focus {
+.create,
+.sign-up_bg input:focus {
     background: transparent;
     color: #ffffff;
     border: none;
@@ -735,7 +713,8 @@
 
 }
 
-.create label {
+.create,
+.sign-up_bg label {
     font-family: Oxanium-Regular;
     color: #ffffff;
     font-size: 20px;
@@ -743,7 +722,8 @@
     /* color: #ffffff; */
 }
 
-.create textarea {
+.create,
+.sign-up_bg textarea {
     background: transparent;
     border: none;
     border-bottom: 1px solid #ff4800;
@@ -753,7 +733,8 @@
     font-size: 15px;
 }
 
-.create textarea:focus {
+.create,
+.sign-up_bg textarea:focus {
     background: transparent;
     color: #ffffff;
     border: 1px solid #ff4800;
@@ -762,7 +743,8 @@
 
 }
 
-.create button {
+.create,
+.sign-up_bg button {
     background: #ff4800;
     text-transform: uppercase;
     color: #ffffff;
@@ -799,6 +781,8 @@
     color: #ff4800;
 
 }
+
+
 
 
 
@@ -1071,5 +1055,14 @@
     }
 
     /* *********************section-4************* */
+    .create,
+    .sign-up_bg {
+        background-image: url('../images/live_bg.jpg');
+        background-position: center;
+        background-size: cover;
+        padding-top: 80px;
+
+
+    }
 
 }
