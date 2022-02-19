@@ -643,7 +643,7 @@
 /* ********    live-info ************ */
 .live-info {
     margin-top: 10%;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/balls.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/balls_01.jpg');
     background-position: center;
     background-size: cover;
     padding-top: 150px;
