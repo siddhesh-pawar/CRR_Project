@@ -98,6 +98,15 @@
 
 }
 
+.header-buttons a {
+    color: #ffffff;
+}
+
+.header-buttons a:hover {
+    text-decoration: none;
+    color: #ff4800;
+}
+
 .header-buttons button {
     display: inline-block;
     background: #23262d;
