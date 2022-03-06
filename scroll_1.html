@@ -4,7 +4,7 @@
 <head>
 
     <!-- Enter a proper page title here -->
-    <title>Template | Example with all standards</title>
+    <title>KRIYATA</title>
 
     <!-- CSS to include bootstrap -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -458,7 +458,7 @@
         const img = new Image()
         img.src = currentFrame(1);
         canvas.width = 1920;
-        canvas.height = 1200;
+        canvas.height = 1080;
         img.onload = function () {
             context.drawImage(img, 0, 0);
         }
@@ -479,7 +479,7 @@
 
             requestAnimationFrame(() => updateImage(frameIndex + 1))
         });
-
+ 
         preloadImages()
     </script>
 
