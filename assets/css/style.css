@@ -100,6 +100,8 @@
 
 .header-buttons a {
     color: #ffffff;
+    font-family: 'Oxanium-Regular', cursive;
+    font-weight: 700;
 }
 
 .header-buttons a:hover {
@@ -174,6 +176,11 @@
     height: 28px;
     margin: 0 auto;
     z-index: -1;
+
+}
+
+.dropdown-menu {
+    background-color: #0a0a0a;
 
 }
 
@@ -689,14 +696,14 @@
 
 }
 
-.create,
+.create h2,
 .sign-up_bg h2 {
     color: #ff4800;
     font-size: 40px;
     font-family: grind;
 }
 
-.create,
+.create input,
 .sign-up_bg input {
     background: transparent;
     border: none;
@@ -711,7 +718,7 @@
 }
 
 
-.create,
+.create input:focus,
 .sign-up_bg input:focus {
     background: transparent;
     color: #ffffff;
@@ -722,7 +729,7 @@
 
 }
 
-.create,
+.create label,
 .sign-up_bg label {
     font-family: Oxanium-Regular;
     color: #ffffff;
@@ -731,7 +738,7 @@
     /* color: #ffffff; */
 }
 
-.create,
+.create textarea,
 .sign-up_bg textarea {
     background: transparent;
     border: none;
@@ -742,7 +749,7 @@
     font-size: 15px;
 }
 
-.create,
+.create textarea:focus,
 .sign-up_bg textarea:focus {
     background: transparent;
     color: #ffffff;
@@ -752,8 +759,9 @@
 
 }
 
-.create,
-.sign-up_bg button {
+
+.sign-up_bg button,
+.create button {
     background: #ff4800;
     text-transform: uppercase;
     color: #ffffff;
@@ -764,7 +772,7 @@
     margin-top: 30px;
 
     box-shadow: rgb(0 0 0 / 35%) 0px 3px 7px 0px;
-    width: 30%;
+    width: 50%;
 }
 
 .dtp>.dtp-content>.dtp-date-view>header.dtp-header {

@@ -205,7 +205,7 @@ require_once('php/link.php');
 
         // init();
         $(document).ready(function() {
-            $(".header").load('template/header.html');
+            $(".header").load('template/header.php');
             $(".footer-top").load('template/footer.html');
 
             $(window).on('scroll', function() {

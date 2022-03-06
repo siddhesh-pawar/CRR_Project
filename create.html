@@ -78,70 +78,14 @@
         <div class="d-none d-lg-block">
             <div class="container-fluid pl-0 pr-0 header fixed-top">
             </div>
-            <div class="container-fluid create">
-                <h2 class="text-center">CREATE <span style="color: #ffffff;">EVENT</span></h2>
-                <div class="container ">
-                    <div class="card" style="background: transparent;border: none;">
-                        <div class="row mt-5">
-                            <div class="col-6 ">
-                                <img src="assets/images/sign_in.png"
-                                    style="width:100%;filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));">
-                            </div>
-                            <div class="col-6">
-                                <form>
 
-                                    <label class="pr-2 pt-3">Name of the Event</label>
-                                    <input type="text" class="form-control mt-3 mb-4" placeholder="Event name"
-                                        style="padding: 22px;">
-
-
-                                    <div class="form-group pt-2">
-                                        <label class="pr-4 mt-2 mb-4">Event Description</label>
-                                        <textarea class="form-control" id="exampleFormControlTextarea1"
-                                            rows="3"></textarea>
-
-                                        <label class="pr-4 pt-3 mt-3">Start date</label>
-                                        <input type="text" class="form-control" placeholder="2017-06-04"
-                                            id="date-start">
-
-                                        <label class="pr-4 pt-4 mt-3 ">End date</label>
-                                        <input type="text" class="form-control " placeholder="2017-06-04" id="date-end">
-
-                                        <div class=" d-flex justify-content-center pt-4 pb-5">
-
-                                            <button type="submit " class="btn w-40">Create Event</button>
-                                        </div>
-
-
-
-                                    </div>
-
-
-
-
-                                    <div class="form-group pt-4">
-
-
-                                    </div>
-
-
-                                </form>
-
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
 
         </div>
 
         <!-- mobile view -->
         <div class="d-lg-none position-relative">
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <a class="navbar-brand p-3 pt-4" href="#"> <img src="images/f_logo.png"></a>
+                <a class="navbar-brand p-3 pt-4" href="#"> <img src="assets/images/f_logo.png"></a>
                 <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse"
                     data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
                     aria-label="Toggle navigation">
@@ -187,7 +131,65 @@
 
 
         </div>
+        <div class="container-fluid create">
+            <h2 class="text-center">CREATE<span style="color: #ffffff;"> EVENT</span></h2>
+            <div class="container ">
+                <div class="card" style="background: transparent;border: none;">
+                    <div class="row mt-lg-5">
+                        <div class="col-lg-6 ">
+                            <img src="assets/images/sign_in.png"
+                                style="width:100%;filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));">
+                        </div>
+                        <div class="col-lg-6">
+                            <form>
 
+                                <label class="pr-2 pt-3">Name of the Event</label>
+                                <input type="text" class="form-control mt-3 mb-4" placeholder="Event name"
+                                    style="padding: 22px;" id="event_name">
+
+
+                                <div class="form-group pt-2">
+                                    <label class="pr-4 mt-2 mb-4">Event Description</label>
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                                        id="event_descrip"></textarea>
+
+                                    <label class="pr-4 pt-3 mt-3">Start date</label>
+                                    <input type="text" class="form-control" placeholder="2017-06-04" id="date-start"
+                                        id="start_date">
+
+                                    <label class="pr-4 pt-4 mt-3 ">End date</label>
+                                    <input type="text" class="form-control " placeholder="2017-06-04" id="date-end"
+                                        id="end_date">
+
+                                    <div class=" d-flex justify-content-center pt-4 pb-5">
+
+                                        <button type="submit" class="btn w-40" id="create">Create
+                                            Event</button>
+                                    </div>
+
+
+
+                                </div>
+
+
+
+
+                                <div class="form-group pt-4">
+
+
+                                </div>
+
+
+                            </form>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
 
     </div>
 
@@ -244,7 +246,7 @@
         });
 
         $(document).ready(function () {
-            $(".header").load('template/header.html');
+            $(".header").load('template/header.php');
             $(".footer-top").load('template/footer.html');
 
             $(window).on('scroll', function () {

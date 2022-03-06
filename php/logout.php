@@ -1,5 +1,7 @@
 <?php
+include('PHP/link.php');
 session_start();
-session_destroy();
-unset($_SESSION['MOBILE']);
-unset($_SESSION['NAME']);
+unset($_SESSION['user_email']);
+unset($_SESSION['user_name']);
+
+header("Location:../index_1");

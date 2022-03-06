@@ -25,8 +25,8 @@ if (isset($_POST['email'])) {
 
         $data['status'] = 201;
 
-        $_SESSION['session_user_read'] = $email;
-        $_SESSION['session_user_name'] = $name;
+        $_SESSION['user_email'] = $email;
+        $_SESSION['user_name'] = $name;
         // $_SESSION['access_id']=$row['access_id'];
         echo json_encode($data);
     } else {

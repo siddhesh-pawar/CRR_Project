@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,9 +15,7 @@
     <!-- css to include style.css -->
     <link rel="stylesheet" href="assets/css/style.css">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css"
-        integrity="sha512-Mo79lrQ4UecW8OCcRUZzf0ntfMNgpOFR46Acj2ZtWO8vKhBvD79VCp3VOKSzk6TovLg5evL3Xi3u475Q/jMu4g=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css" integrity="sha512-Mo79lrQ4UecW8OCcRUZzf0ntfMNgpOFR46Acj2ZtWO8vKhBvD79VCp3VOKSzk6TovLg5evL3Xi3u475Q/jMu4g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -77,7 +79,8 @@
                     <h2 class="pt-5"><span>KRIYATA</span></h2>
                     <p style="font-size: 30px;font-family: 'Oxanium-Regular';font-weight: bold;">One stop solution
                         <br>for tournament
-                        management</p>
+                        management
+                    </p>
                     <!-- <h2 class="pt-2 text-center">AND</h2>
                     <h2 class="pt-2 text-center"><span style="color:#ff4800;"> MANAGE</span></h2>
 
@@ -112,8 +115,7 @@
                     <div class="row pt-5">
                         <div class="col-3 justify-content-center">
                             <div class="parent">
-                                <i class="fa fa-bolt d-flex justify-content-center section_2_icons" aria-hidden="true"
-                                    style="color:#ff4800;font-size:60px;"></i>
+                                <i class="fa fa-bolt d-flex justify-content-center section_2_icons" aria-hidden="true" style="color:#ff4800;font-size:60px;"></i>
                                 <br>
 
                                 <h4 class="text-center pt-3">LIVE SCORE</h4>
@@ -128,8 +130,7 @@
                         </div>
                         <div class="col-3 justify-content-center">
                             <div class="parent">
-                                <i class="fa fa-credit-card d-flex justify-content-center section_2_icons"
-                                    aria-hidden="true" style="color:#ff4800;font-size:60px;"></i>
+                                <i class="fa fa-credit-card d-flex justify-content-center section_2_icons" aria-hidden="true" style="color:#ff4800;font-size:60px;"></i>
 
                                 <br>
 
@@ -143,8 +144,7 @@
                         </div>
                         <div class="col-3 justify-content-center">
                             <div class="parent">
-                                <i class="fa fa-bar-chart d-flex justify-content-center section_2_icons"
-                                    aria-hidden="true" style="color:#ff4800;font-size:60px;"></i>
+                                <i class="fa fa-bar-chart d-flex justify-content-center section_2_icons" aria-hidden="true" style="color:#ff4800;font-size:60px;"></i>
 
                                 <br>
 
@@ -158,8 +158,7 @@
                         </div>
                         <div class="col-3 justify-content-center">
                             <div class="parent">
-                                <i class="fa fa-calendar d-flex justify-content-center section_2_icons"
-                                    aria-hidden="true" style="color:#ff4800;font-size:60px;"></i>
+                                <i class="fa fa-calendar d-flex justify-content-center section_2_icons" aria-hidden="true" style="color:#ff4800;font-size:60px;"></i>
                                 <br>
 
                                 <h4 class="text-center pt-2">AUTOMATIC FIXTURES</h4>
@@ -179,8 +178,7 @@
 
                         </div>
                         <div class="col-6">
-                            <h2>JOIN YOUR <span style="color: #ff4800;;">TOURNAMENTS</span>, CREATE <span
-                                    style="color: #ff4800;;"> TEAMS </span>AND PLAY YOUR
+                            <h2>JOIN YOUR <span style="color: #ff4800;;">TOURNAMENTS</span>, CREATE <span style="color: #ff4800;;"> TEAMS </span>AND PLAY YOUR
                                 FAVOURITE GAME</h2>
                             <p>Kriyata offers creating tournaments with the most easy steps and allows the access to
                                 player
@@ -243,9 +241,7 @@
             <!-- Enter Code for Mobile UI here -->
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <a class="navbar-brand p-3 pt-4" href="#"> <img src="images/f_logo.png"></a>
-                <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse"
-                    data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
-                    aria-label="Toggle navigation">
+                <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -323,8 +319,7 @@
                     <div class="row pt-5">
                         <div class="col-12 justify-content-center">
                             <div class="parent">
-                                <i class="fa fa-bolt d-flex justify-content-center section_2_icons" aria-hidden="true"
-                                    style="color:#ff4800;font-size:90px;"></i>
+                                <i class="fa fa-bolt d-flex justify-content-center section_2_icons" aria-hidden="true" style="color:#ff4800;font-size:90px;"></i>
                                 <br>
 
                                 <h4 class="text-center pt-3">LIVE SCORE</h4>
@@ -339,8 +334,7 @@
                         </div>
                         <div class="col-12 justify-content-center">
                             <div class="parent">
-                                <i class="fa fa-credit-card d-flex justify-content-center section_2_icons"
-                                    aria-hidden="true" style="color:#ff4800;font-size:90px;"></i>
+                                <i class="fa fa-credit-card d-flex justify-content-center section_2_icons" aria-hidden="true" style="color:#ff4800;font-size:90px;"></i>
 
                                 <br>
 
@@ -354,8 +348,7 @@
                         </div>
                         <div class="col-12 justify-content-center">
                             <div class="parent">
-                                <i class="fa fa-bar-chart d-flex justify-content-center section_2_icons"
-                                    aria-hidden="true" style="color:#ff4800;font-size:90px;"></i>
+                                <i class="fa fa-bar-chart d-flex justify-content-center section_2_icons" aria-hidden="true" style="color:#ff4800;font-size:90px;"></i>
 
                                 <br>
 
@@ -369,8 +362,7 @@
                         </div>
                         <div class="col-12 justify-content-center">
                             <div class="parent">
-                                <i class="fa fa-calendar d-flex justify-content-center section_2_icons"
-                                    aria-hidden="true" style="color:#ff4800;font-size:90px;"></i>
+                                <i class="fa fa-calendar d-flex justify-content-center section_2_icons" aria-hidden="true" style="color:#ff4800;font-size:90px;"></i>
                                 <br>
 
                                 <h4 class="text-center pt-2">AUTOMATIC FIXTURES</h4>
@@ -388,8 +380,7 @@
                     <div class="row">
 
                         <div class="col-12">
-                            <h2>JOIN YOUR <span style="color: #ff4800;;">TOURNAMENTS</span>, CREATE <span
-                                    style="color: #ff4800;;"> TEAMS </span>AND PLAY YOUR
+                            <h2>JOIN YOUR <span style="color: #ff4800;;">TOURNAMENTS</span>, CREATE <span style="color: #ff4800;;"> TEAMS </span>AND PLAY YOUR
                                 FAVOURITE GAME</h2>
                             <p>Kriyata offers creating tournaments with the most easy steps and allows the access to
                                 player
@@ -415,6 +406,7 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="assets/js/popper.min.js"></script>
     <script src="assets/js/jquery-3.4.1.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
 
@@ -435,11 +427,11 @@
         // }
 
         // init();
-        $(document).ready(function () {
-            $(".header").load('template/header.html');
+        $(document).ready(function() {
+            $(".header").load('template/header.php');
             $(".footer-top").load('template/footer.html');
 
-            $(window).on('scroll', function () {
+            $(window).on('scroll', function() {
                 var scroll = $(window).scrollTop();
                 if (scroll < 245) {
 
