@@ -332,7 +332,7 @@
 
 .hero {
 
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../images/hero_1.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../images/how.jpg");
     background-position: center center;
     background-size: cover;
     /* position: relative; */
@@ -873,7 +873,7 @@
 
     .hero {
 
-        background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../images/hero_1.jpg");
+        background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../images/how.jpg");
         background-position: none;
         background-size: cover;
         padding: 0px;
