@@ -240,7 +240,7 @@ session_start();
         <div class="d-lg-none position-relative">
             <!-- Enter Code for Mobile UI here -->
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <a class="navbar-brand p-3 pt-4" href="#"> <img src="images/f_logo.png"></a>
+                <a class="navbar-brand p-3 pt-4" href="#"> <img src="assets/images/f_logo.png"></a>
                 <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -310,7 +310,7 @@ session_start();
                     </div>
                 </div>
                 <div class="d-flex justify-content-center mt-5">
-                    <img src="images/dontaion_img.png" alt="" style="width:300px;">
+                    <img src="assets/images/dontaion_img.png" alt="" style="width:300px;">
                 </div>
 
             </div>
@@ -390,7 +390,7 @@ session_start();
                     </div>
                 </div>
                 <div class="d-flex justify-content-center mt-5">
-                    <img src="images/img_mob.png" alt="" style="width:300px;transform: scalex(-1);padding-top: 30px;">
+                    <img src="assets/images/img_mob.png" alt="" style="width:300px;transform: scalex(-1);padding-top: 30px;">
                 </div>
 
 

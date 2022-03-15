@@ -20,6 +20,7 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/dropify/dist/css/dropify.min.css">
 
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -150,16 +151,17 @@
 
                                 <div class="form-group pt-2">
                                     <label class="pr-4 mt-2 mb-4">Event Description</label>
-                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
-                                        id="event_descrip"></textarea>
+                                    <textarea class="form-control" id="event_descrip" rows="3"></textarea>
+
+                                    <label class="pr-4 pt-4 mt-3 pb-4">Event logo</label>
+                                    <input type="file" id="logo" class="dropify" />
+
 
                                     <label class="pr-4 pt-3 mt-3">Start date</label>
-                                    <input type="text" class="form-control" placeholder="2017-06-04" id="date-start"
-                                        id="start_date">
+                                    <input type="text" class="form-control" placeholder="2017-06-04" id="start-date">
 
                                     <label class="pr-4 pt-4 mt-3 ">End date</label>
-                                    <input type="text" class="form-control " placeholder="2017-06-04" id="date-end"
-                                        id="end_date">
+                                    <input type="text" class="form-control " placeholder="2017-06-04" id="end-date">
 
                                     <div class=" d-flex justify-content-center pt-4 pb-5">
 
@@ -207,6 +209,7 @@
 
     <!-- <script src="js/bootstrap-datepicker.min.js"></script> -->
     <script src="assets/moment/moment.js"></script>
+    <script src="assets/dropify/dist/js/dropify.min.js"></script>
     <script src="assets/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
     <!-- <script src="Date-Time-Picker-Bootstrap-4/build/js/bootstrap-datetimepicker.min.js"></script> -->
 
@@ -228,21 +231,139 @@
 
         // }
 
-        // init();
-        // $('#mdate').bootstrapMaterialDatePicker({
-        //     weekStart: 0,
 
-        // });
-        $('#date-end').bootstrapMaterialDatePicker({
+
+        //  date 
+
+
+        $('#start-date').bootstrapMaterialDatePicker({
             time: false,
             weekStart: 0
         });
-        $('#date-start').bootstrapMaterialDatePicker({
+        $('#end-date').bootstrapMaterialDatePicker({
             time: false,
             minDate: new Date(),
             weekStart: 0
         }).on('change', function (e, date) {
-            $('#date-end').bootstrapMaterialDatePicker('setMinDate', date);
+            $('#end-date').bootstrapMaterialDatePicker('setMinDate', date);
+        });
+
+
+        $(document).ready(function () {
+
+            // Basic
+            $('.dropify').dropify();
+
+            // Translated
+            $('.dropify-fr').dropify({
+                messages: {
+                    default: 'Glissez-déposez un fichier ici ou cliquez',
+                    replace: 'Glissez-déposez un fichier ou cliquez pour remplacer',
+                    remove: 'Supprimer',
+                    error: 'Désolé, le fichier trop volumineux'
+                }
+            });
+
+            // Used events
+            var drEvent = $('#input-file-events').dropify();
+
+            drEvent.on('dropify.beforeClear', function (event, element) {
+                return confirm("Do you really want to delete \"" + element.file.name + "\" ?");
+            });
+
+            drEvent.on('dropify.afterClear', function (event, element) {
+                alert('File deleted');
+            });
+
+            drEvent.on('dropify.errors', function (event, element) {
+                console.log('Has Errors');
+            });
+
+            var drDestroy = $('#input-file-to-destroy').dropify();
+            drDestroy = drDestroy.data('dropify')
+            $('#toggleDropify').on('click', function (e) {
+                e.preventDefault();
+                if (drDestroy.isDropified()) {
+                    drDestroy.destroy();
+                } else {
+                    drDestroy.init();
+                }
+            })
+        });
+        $("#create").on("click", function (e) {
+            e.preventDefault();
+            var error = "";
+            var formData = new FormData();
+
+            if ($("event_name").val() == "") {
+                sweetAlert("Warning", "Please enter a valid name", "warning");
+                error = error + 'name';
+            } else {
+                formData.append('event_name', $("#event_name").val());
+            }
+            if ($("#event_descrip").val() == "") {
+                sweetAlert("Warning", "Please enter a valid name", "warning");
+                error = error + 'event_descrip';
+            } else {
+                formData.append('event_descrip', $("#event_descrip").val());
+            }
+            if ($("#start-date").val() == "") {
+                sweetAlert("Warning", "Please enter a valid start date", "warning");
+                error = error + 'date';
+            } else {
+                formData.append('start_date', $("#start-date").val());
+            }
+            if ($("#end-date").val() == "") {
+                sweetAlert("Warning", "Please enter a end date", "warning");
+                error = error + 'date';
+            } else {
+                formData.append('end_date', $("#end-date").val());
+            }
+            if ($("#logo").val() == "") {
+                sweetAlert("Warning", "Please enter a valid image", "warning");
+                error = error + 'image';
+            } else {
+                formData.append('logo', $("#logo")[0].files[0]);
+            }
+
+
+
+            if (error == "") {
+
+                $.ajax({
+                    type: 'POST',
+                    url: 'PHP/add_event.php',
+                    dataType: "json",
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    data: formData,
+                    success: function (data) {
+                        if (data.status == 201) {
+
+                            alert(
+                                "registration sucessful, Please contact with admin to active your account"
+                            );
+                            // window.location = "index_1";
+
+                        } else if (data.status == 301) {
+                            //Email already registered
+                            alert(data.error);
+                        } else if (data.status == 302) {
+                            //mobie already registered
+                            alert(data.error);
+                        } else if (data.status == 501) {
+                            alert("please contact with admin to active your account");
+                        } else if (data.status == 601) {
+                            alert("unsucessfully check your details. fill up again");
+                        } else {
+                            alert(
+                                "Some error occured. Our team is dedicatedly addressing this issue. Thankyou for your patience"
+                            );
+                        }
+                    }
+                });
+            }
         });
 
         $(document).ready(function () {

@@ -6,12 +6,18 @@ RewriteCond %{HTTP_HOST} ^(www\.)?example\.com
 RewriteRule ^(.*)$ https://www.example.com/$1 [R,L]
 
 #remove html file extension-e.g. https://example.com/file.html will become https://example.com/file
+
+RewriteEngine on 
+RewriteCond %{REQUEST_URI} !-d
+RewriteCond %{REQUEST_URI} live-info
+RewriteRule ^live-info\/([^.?]+)$ live-info.php?event=$1 [NE,NC,L]
  
+RewriteEngine on 
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}\.html -f
 RewriteRule ^(.*)$ $1.html [NC,L]
 
-
+RewriteEngine on 
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}\.php -f
 RewriteRule ^(.*)$ $1.php [NC,L]

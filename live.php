@@ -1,7 +1,14 @@
+<?php
+session_start();
+require_once('php/link.php');
+
+$current_date = strtotime(date("r"));
+?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+    <!-- <base href="<?php echo $baseurl; ?>" target="_blank"> -->
 
     <!-- Enter a proper page title here -->
     <title>Template | Example with all standards</title>
@@ -11,9 +18,7 @@
     <!-- css to include style.css -->
     <link rel="stylesheet" href="assets/css/style.css">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css"
-        integrity="sha512-Mo79lrQ4UecW8OCcRUZzf0ntfMNgpOFR46Acj2ZtWO8vKhBvD79VCp3VOKSzk6TovLg5evL3Xi3u475Q/jMu4g=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css" integrity="sha512-Mo79lrQ4UecW8OCcRUZzf0ntfMNgpOFR46Acj2ZtWO8vKhBvD79VCp3VOKSzk6TovLg5evL3Xi3u475Q/jMu4g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -72,30 +77,43 @@
             </div>
             <div class="container-fluid live-section1">
                 <h2 class="text-center"><span style="color: #FFFFFF;">LIVE</span> EVENTS</h2>
-                <div class="container main-match">
-                    <div class="d-flex justify-content-center image-bg">
-                        <a href="#"><img src="assets/images/match_box.png"></a>
-                    </div>
-                    <div class="match-box container">
-                        <div class="row">
-                            <div class="col-6 d-flex justify-content-center mt-2">
-                                <a href="live-info"><img src="assets/images/my_match_clan01.png" alt=""></a>
+                <?php
+                $result = mysqli_query($link, "SELECT * FROM  `events`");
+                if (mysqli_num_rows($result) != 0) {
+                    while ($row = mysqli_fetch_array($result)) {
+
+
+
+
+                ?>
+                        <div class="container main-match pb-5">
+                            <div class="d-flex justify-content-center image-bg">
+                                <a href="#"><img src="assets/images/match_box.png"></a>
                             </div>
-                            <div class="col-6 mt-5" style="padding-left:80px;font-size:28px;">
-                                <a href="live-info">
-                                    XAVION 2022
-                                </a>
+                            <div class="match-box container">
+                                <div class="row">
+                                    <div class="col-6 d-flex justify-content-center mt-2">
+                                        <a href="live-info"><img src="assets/images/uploads/<?php echo ($row['logo']); ?>" alt=""></a>
+                                    </div>
+                                    <div class="col-6 mt-5" style="padding-left:80px;font-size:28px;">
+                                        <a href="live-info/<?php echo ($row['event_slug']); ?>">
+                                            <?php echo ($row['event_name']); ?>
+                                        </a>
+
+                                    </div>
+
+                                </div>
+
 
                             </div>
+
 
                         </div>
-
-
-                    </div>
-
-
-                </div>
-                <div class=" container">
+                <?php
+                    }
+                }
+                ?>
+                <!-- <div class=" container">
                     <div class="d-flex justify-content-center image-bg">
                         <img src="assets/images/match_box.png">
                     </div>
@@ -117,7 +135,7 @@
                     </div>
 
 
-                </div>
+                </div> -->
 
             </div>
         </div>
@@ -127,9 +145,7 @@
             <!-- Enter Code for Mobile UI here -->
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <a class="navbar-brand p-3 pt-4" href="#"> <img src="assets/images/f_logo.png"></a>
-                <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse"
-                    data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
-                    aria-label="Toggle navigation">
+                <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -169,32 +185,35 @@
 
             <div class="container-fluid live-section1" style="padding-top:150px;padding-bottom: 100px;">
                 <h2 class="text-center pb-5"><span style="color: #FFFFFF;">LIVE</span> EVENTS</h2>
-                <div class="container match-box-mob">
-
-
-                    <div class="d-flex justify-content-center">
-                        <a href="#"> <img src="assets/images/my_match_clan01.png" alt=""></a>
-                    </div>
-
-                    <a class="text-center mt-5" href="live-info">XAVION 2022</a>
+                <?php
+                $result = mysqli_query($link, "SELECT * FROM  `events`");
+                if (mysqli_num_rows($result) != 0) {
+                    while ($row = mysqli_fetch_array($result)) {
 
 
 
 
-                </div>
-                <div class="container match-box-mob">
+                ?>
+                        <div class="container match-box-mob">
 
 
-                    <div class="d-flex justify-content-center">
-                        <a href="#"><img src="assets/images/my_match_clan02.png" alt=""></a>
-                    </div>
+                            <div class="d-flex justify-content-center pb-5 ">
+                                <a href="#"> <img src="assets/images/uploads/<?php echo ($row['logo']); ?>" alt=""></a>
 
-                    <p class="text-center mt-5">GPL 2022</p>
-
-
+                            </div>
+                            <a class="d-flex justify-content-center" href="live-info/<?php echo ($row['event_slug']); ?>"><?php echo ($row['event_name']); ?></a>
 
 
-                </div>
+
+
+
+
+                        </div>
+                <?php
+                    }
+                }
+                ?>
+
 
 
             </div>
@@ -233,11 +252,11 @@
         // }
 
         // init();
-        $(document).ready(function () {
+        $(document).ready(function() {
             $(".header").load('template/header.php');
             $(".footer-top").load('template/footer.html');
 
-            $(window).on('scroll', function () {
+            $(window).on('scroll', function() {
                 var scroll = $(window).scrollTop();
                 if (scroll < 245) {
 

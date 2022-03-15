@@ -69,16 +69,16 @@ session_start();
     <div class="row header-two">
         <div class="col-6 justify-content-left">
             <ul style="padding-left: 68px">
-                <li><a class=" active" href="index_1.html">Home</a></li>
+                <li><a href="index_1">Home</a></li>
                 <li><a href="#">HOW IT WORKS</a></li>
-                <li><a href="#">ABOUT US</a></li>
+                <li><a href="about_us">ABOUT US</a></li>
 
             </ul>
         </div>
         <div class="col-6 justify-content-right">
             <ul style="float:right;">
-                <li class=" active"><a href="#">Create event</a></li>
-                <li><a href="#">Live events</a></li>
+                <li><a href="create">Create event</a></li>
+                <li><a href="live">Live events</a></li>
                 <li><a href="#">Dashboard</a></li>
 
             </ul>

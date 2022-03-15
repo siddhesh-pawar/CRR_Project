@@ -44,43 +44,48 @@
 
     <!-- Enter Page Specific CSS here. Please make sure all the CSS  -->
     <style>
-        *{
+        * {
             margin: 0;
             padding: 0;
         }
-        body{
-            background-color: rgb(25,29,38);
+
+        body {
+            background-color: rgb(25, 29, 38);
             color: white;
         }
-        html{
+
+        html {
             scroll-behavior: smooth;
         }
+
         @font-face {
-        font-family: grind;
-        src: url(../fonts/grind_demolished-webfont.woff2);
-        font-display: swap;
+            font-family: grind;
+            src: url(../fonts/grind_demolished-webfont.woff2);
+            font-display: swap;
         }
 
 
 
-                                                            /*Aboutus*/
+        /*Aboutus*/
 
-        #content{
+        #content {
             margin-top: 150px;
             padding: 0px;
             text-align: center;
         }
-        
-        .overlay h1{
+
+        .overlay h1 {
             font-size: 46px;
             font-family: grind;
         }
-        .overlay h1 span{
+
+        .overlay h1 span {
             font-size: 44px;
             font-family: grind;
-            color: rgb(241,78,26);
+            color: rgb(241, 78, 26);
         }
-        .bigimage{
+
+        .bigimage {
             min-height: 70vh;
             display: flex;
             align-items: center;
@@ -91,7 +96,8 @@
             background-size: cover;
             background-repeat: no-repeat;
         }
-        .overlay{
+
+        .overlay {
             display: flex;
             align-items: center;
             justify-content: center;
@@ -102,18 +108,20 @@
             margin-top: 60px;
         }
 
-        .wpb_single_image{
+        .wpb_single_image {
             text-align: center;
             margin-bottom: 35px;
         }
-        .wpb_wrapper{
+
+        .wpb_wrapper {
             display: inline-block;
             vertical-align: top;
             margin: 0;
             max-width: 100%;
 
         }
-        .vc_row{
+
+        .vc_row {
             transition: opacity .5s;
             overflow: hidden;
             margin-bottom: 48px;
@@ -121,34 +129,38 @@
             margin-right: -15px;
 
         }
-        .wpb_column{
+
+        .wpb_column {
             padding-left: 0;
             padding-right: 0;
             font-size: 20px;
         }
-        .vc_column-inner{
+
+        .vc_column-inner {
             box-sizing: border-box;
             padding-right: 15px;
             padding-left: 15px;
             width: 100%;
         }
 
-        .wpb_content_element{
+        .wpb_content_element {
             margin-bottom: 35px;
         }
-        .wpb_wrappers{
+
+        .wpb_wrappers {
             margin-bottom: 0;
         }
 
 
 
-                                                            /*squad*/
+        /*squad*/
 
-        .squad{
-            margin:100px 0;
+        .squad {
+            margin: 100px 0;
 
         }
-        .main{
+
+        .main {
             width: 100%;
             height: 50vh;
             display: flex;
@@ -157,7 +169,8 @@
             /*flex-direction: column;*/
             margin-top: 20px;
         }
-        .profile-card{
+
+        .profile-card {
             position: relative;
             width: 220px;
             height: 260px;
@@ -166,62 +179,75 @@
             transition: .6s;
             margin: 0 25px;
         }
-        .profile-card:hover{
+
+        .profile-card:hover {
             border-radius: 10px;
             height: 260px;
         }
-        .profile-card .img{
+
+        .profile-card .img {
             position: relative;
             width: 100%;
             height: 100%;
             transition: .6s;
             z-index: 99;
         }
-        .profile-card:hover .img{
+
+        .profile-card:hover .img {
             transform: translateY(-60px);
         }
+
         .img img {
             width: 100%;
             border-radius: 50%;
             box-shadow: 0 0 22px #3336;
             transition: .6s;
         }
-        .profile-card:hover img{
+
+        .profile-card:hover img {
             border-radius: 10px;
         }
-        .caption{
+
+        .caption {
             text-align: center;
             transform: translateY(-80px);
             transition: .6s;
             opacity: 0;
         }
-        .profile-card:hover .caption{
+
+        .profile-card:hover .caption {
             opacity: 1;
         }
-        .caption h3{
+
+        .caption h3 {
             font-size: 21px;
 
         }
-        .caption p{
-            font-size:16px;
+
+        .caption p {
+            font-size: 16px;
             margin: 2px 0 9px 0;
         }
-        .caption .fw-social a{
-            color:rgb(148,173,169);
+
+        .caption .fw-social a {
+            color: rgb(148, 173, 169);
             margin-right: 8px;
             font-size: 21px;
             transition: .6s;
         }
-        .fw-social a:hover{
+
+        .fw-social a:hover {
             color: blue;
         }
-        #features{
+
+        #features {
             background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("assets/images/R (4).jfif");
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
         }
-        .third-contact-form .btn{
+
+        .third-contact-form .btn {
             background-color: rgb(247, 106, 51);
             color: white;
             float: left;
@@ -229,8 +255,8 @@
 
 
 
-                                                            /*pagescroll*/
-        .page-scroll-nav{
+        /*pagescroll*/
+        .page-scroll-nav {
             position: fixed;
             top: 50%;
             right: 60px;
@@ -238,17 +264,20 @@
             z-index: 20;
             width: 120px;
         }
-        ul{
+
+        ul {
             list-style: none;
 
         }
-        .page-scroll-nav li{
+
+        .page-scroll-nav li {
             float: left;
             width: 100%;
             margin-bottom: 10px;
             text-align: Center;
         }
-        .page-scroll-nav li a{
+
+        .page-scroll-nav li a {
             color: white;
             font-size: 15px;
             text-transform: uppercase;
@@ -260,9 +289,11 @@
             transform: translateY(10px);
             text-decoration: none;
         }
-        .page-scroll-nav li a.actscr-link:before{
+
+        .page-scroll-nav li a.actscr-link:before {
             width: 15px;
         }
+
         .page-scroll-nav li a:before {
             content: '';
             position: absolute;
@@ -270,32 +301,36 @@
             height: 1px;
             top: 50%;
             width: 0;
-            background: rgba(255,255,255, 0.5);
+            background: rgba(255, 255, 255, 0.5);
             transition: all .2s ease-in-out;
         }
-        
-        @media only screen and (max-width: 992px){
-            .vc_row{
+
+        @media only screen and (max-width: 992px) {
+            .vc_row {
                 margin-left: -15px;
                 margin-right: -15px;
             }
-            .wpb_column{
+
+            .wpb_column {
                 margin-bottom: 20px;
                 width: 100%;
                 float: left;
                 padding-left: 0;
                 padding-right: 0;
             }
-            .vc_column-inner{
+
+            .vc_column-inner {
                 box-sizing: border-box;
                 padding-left: 15px;
                 padding-right: 15px;
                 width: 100%;
             }
-            .wpb_content_element{
+
+            .wpb_content_element {
                 margin-bottom: 20px;
-                font-size:21px;
+                font-size: 21px;
             }
+
             .section-2 {
                 background-color: #191D26;
                 padding: 0px;
@@ -303,25 +338,30 @@
                 padding-bottom: 20px;
                 color: #ffffff;
             }
-            .section_2_icons{
+
+            .section_2_icons {
                 border: 2px solid #ff4800;
             }
-            .card{
+
+            .card {
                 background: transparent !important;
                 height: 350px;
                 margin: 0 25px;
                 align-items: center;
             }
-            .card img{
+
+            .card img {
                 border-radius: 50%;
                 width: 220px;
             }
-            .card .fw-social a{
-                color:rgb(148,173,169);
+
+            .card .fw-social a {
+                color: rgb(148, 173, 169);
                 font-size: 25px;
                 margin-right: 12px;
             }
-            .col-12{
+
+            .col-12 {
                 margin-bottom: 70px;
             }
         }
@@ -329,18 +369,19 @@
 </head>
 
 <body style="background-color: rgb(25,29,38); color: #ffffff;">
-    
+
     <div class="d-none d-lg-block">
         <div class="header fixed-top"></div>
-        <div id="content" class="container-fluid" >
+        <div id="content" class="container-fluid">
             <div id="About_us">
                 <!-- heading -->
                 <div id="heading" class="bigimage">
                     <div class="overlay">
                         <h1>About <span>us</span></h1>
                     </div>
-                    
-                    <div style="text-align: center; position: center; left: -280.8px; box-sizing: border-box; width: 100%; padding-left: 280.8px; padding-right: 281.2px; margin-top: 40px;" class="vc_row wpb_row vc_row-fluid vc-service-content vc_custom_1458379419553">
+
+                    <div style="text-align: center; position: center; left: -280.8px; box-sizing: border-box; width: 100%; padding-left: 280.8px; padding-right: 281.2px; margin-top: 40px;"
+                        class="vc_row wpb_row vc_row-fluid vc-service-content vc_custom_1458379419553">
                         <div class="wpb_column vc_column_container vc_col-sm-12">
                             <div class="vc_column-inner">
                                 <div class="">
@@ -348,7 +389,13 @@
                                         <div class="wpb_text_column wpb_content_element ">
                                             <div class="wpb_wrappers">
                                                 <p>
-                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore exercitation ullamco laboris nisi  ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate  velit esse cillum dolore.
+                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+                                                    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                                                    aliquip ex ea commodo consequat. Duis aute irure dolor in
+                                                    reprehenderit in voluptate velit esse cillum dolore exercitation
+                                                    ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                                                    irure dolor in reprehenderit in voluptate velit esse cillum dolore.
                                                 </p>
                                             </div>
                                         </div>
@@ -361,14 +408,14 @@
             </div>
 
 
-           <!--  Squad  -->
+            <!--  Squad  -->
             <div id="Squad" class="squad container-fluid">
                 <div>
                     <div style="margin-bottom:20px; padding-bottom: 10px;">
                         <h3>Our Expert Squad</h3>
                     </div>
                 </div>
-                
+
                 <div id="Team" class="main">
                     <div class="profile-card">
                         <div class="img">
@@ -382,7 +429,7 @@
                                 <a href="#"><i class="fa fa-instagram"></i></a>
                                 <a href="#"><i class="fa fa-linkedin"></i></a>
                             </div>
-                        </div>      
+                        </div>
                     </div>
                     <div class="profile-card">
                         <div class="img">
@@ -396,7 +443,7 @@
                                 <a href="#"><i class="fa fa-instagram"></i></a>
                                 <a href="#"><i class="fa fa-linkedin"></i></a>
                             </div>
-                        </div>      
+                        </div>
                     </div>
                     <div class="profile-card">
                         <div class="img">
@@ -410,10 +457,10 @@
                                 <a href="#"><i class="fa fa-instagram"></i></a>
                                 <a href="#"><i class="fa fa-linkedin"></i></a>
                             </div>
-                        </div>      
+                        </div>
                     </div>
                 </div>
-            </div>   
+            </div>
 
 
             <!-- Features -->
@@ -423,31 +470,38 @@
                     <div class="row">
                         <div class="col-3 justify-content-center">
                             <div class="parent">
-                                <i class="fa fa-bolt d-flex justify-content-center section_2_icons" aria-hidden="true" style="color:#ff4800; font-size: 60px;"></i>
+                                <i class="fa fa-bolt d-flex justify-content-center section_2_icons" aria-hidden="true"
+                                    style="color:#ff4800; font-size: 60px;"></i>
                                 <br>
                                 <h4 class="text-center pt-3">LIVE SCORE</h4>
-                                <p class="text-center pt-2">Update scores of simultaneous events through admin dashboard for your tournament in real time.</p>
+                                <p class="text-center pt-2">Update scores of simultaneous events through admin dashboard
+                                    for your tournament in real time.</p>
                             </div>
                         </div>
                         <div class="col-3 justify-content-center">
                             <div class="parent">
-                                <i class="fa fa-credit-card d-flex justify-content-center section_2_icons" aria-hidden="true" style="color:#ff4800; font-size: 60px;"></i>
+                                <i class="fa fa-credit-card d-flex justify-content-center section_2_icons"
+                                    aria-hidden="true" style="color:#ff4800; font-size: 60px;"></i>
                                 <br>
                                 <h4 class="text-center pt-3">PAYMENT INTEGRATION</h4>
-                                <p class="text-center pt-2">Integrate payment option to your registrations with minimal steps.</p>
+                                <p class="text-center pt-2">Integrate payment option to your registrations with minimal
+                                    steps.</p>
                             </div>
                         </div>
                         <div class="col-3 justify-content-center">
                             <div class="parent">
-                                <i class="fa fa-bar-chart d-flex justify-content-center section_2_icons" aria-hidden="true" style="color:#ff4800; font-size: 60px;"></i>
+                                <i class="fa fa-bar-chart d-flex justify-content-center section_2_icons"
+                                    aria-hidden="true" style="color:#ff4800; font-size: 60px;"></i>
                                 <br>
                                 <h4 class="text-center pt-3">EASY STATISTICS</h4>
-                                <p class="text-center pt-2">Manage the data of all the players in the most hassie-free way.</p>
+                                <p class="text-center pt-2">Manage the data of all the players in the most hassie-free
+                                    way.</p>
                             </div>
                         </div>
                         <div class="col-3 justify-content-center">
                             <div class="parent">
-                                <i class="fa fa-calendar d-flex justify-content-center section_2_icons" aria-hidden="true" style="color:#ff4800; font-size: 60px;"></i>
+                                <i class="fa fa-calendar d-flex justify-content-center section_2_icons"
+                                    aria-hidden="true" style="color:#ff4800; font-size: 60px;"></i>
                                 <br>
                                 <h4 class="text-center pt-3">AUTOMATIC FIXTURES</h4>
                                 <p class="text-center pt-2">Randomize fixtures for the tournaments automatically.</p>
@@ -457,31 +511,38 @@
                     <div class="row">
                         <div class="col-3 justify-content-center">
                             <div class="parent">
-                                <i class="fa fa-bolt d-flex justify-content-center section_2_icons" aria-hidden="true" style="color:#ff4800; font-size: 60px;"></i>
+                                <i class="fa fa-bolt d-flex justify-content-center section_2_icons" aria-hidden="true"
+                                    style="color:#ff4800; font-size: 60px;"></i>
                                 <br>
                                 <h4 class="text-center pt-3">LIVE SCORE</h4>
-                                <p class="text-center pt-2">Update scores of simultaneous events through admin dashboard for your tournament in real time.</p>
+                                <p class="text-center pt-2">Update scores of simultaneous events through admin dashboard
+                                    for your tournament in real time.</p>
                             </div>
                         </div>
                         <div class="col-3 justify-content-center">
                             <div class="parent">
-                                <i class="fa fa-credit-card d-flex justify-content-center section_2_icons" aria-hidden="true" style="color:#ff4800; font-size: 60px;"></i>
+                                <i class="fa fa-credit-card d-flex justify-content-center section_2_icons"
+                                    aria-hidden="true" style="color:#ff4800; font-size: 60px;"></i>
                                 <br>
                                 <h4 class="text-center pt-3">PAYMENT INTEGRATION</h4>
-                                <p class="text-center pt-2">Integrate payment option to your registrations with minimal steps.</p>
+                                <p class="text-center pt-2">Integrate payment option to your registrations with minimal
+                                    steps.</p>
                             </div>
                         </div>
                         <div class="col-3 justify-content-center">
                             <div class="parent">
-                                <i class="fa fa-bar-chart d-flex justify-content-center section_2_icons" aria-hidden="true" style="color:#ff4800; font-size: 60px;"></i>
+                                <i class="fa fa-bar-chart d-flex justify-content-center section_2_icons"
+                                    aria-hidden="true" style="color:#ff4800; font-size: 60px;"></i>
                                 <br>
                                 <h4 class="text-center pt-3">EASY STATISTICS</h4>
-                                <p class="text-center pt-2">Manage the data of all the players in the most hassie-free way.</p>
+                                <p class="text-center pt-2">Manage the data of all the players in the most hassie-free
+                                    way.</p>
                             </div>
                         </div>
                         <div class="col-3 justify-content-center">
                             <div class="parent">
-                                <i class="fa fa-calendar d-flex justify-content-center section_2_icons" aria-hidden="true" style="color:#ff4800; font-size: 60px;"></i>
+                                <i class="fa fa-calendar d-flex justify-content-center section_2_icons"
+                                    aria-hidden="true" style="color:#ff4800; font-size: 60px;"></i>
                                 <br>
                                 <h4 class="text-center pt-3">AUTOMATIC FIXTURES</h4>
                                 <p class="text-center pt-2">Randomize fixtures for the tournaments automatically.</p>
@@ -494,37 +555,37 @@
 
             <!-- Contact -->
             <div id="Contact" class="container-fluid section-5">
-               <div class="container">
-                   <div class="row">
-                       <div class="col-lg-6">
-                           <div class="third-contact-wrap">
-                               <div class="third-title-style">
-                                   <h2>CONTACT<span &nbsp>US</span></h2>
-                               </div>
-                               <div class="inner">
-                                   <h2>MEET OUR<span style="color:#ff4800">TEAM</span></h2>
-                                   <p class="pt-4 mb-3"><span>Our LOCATION:</span>Central 
-                                   Park Roselle W78 New Jersey.</p>
-                                   <p><span>Phone:</span>+97 325 6254 322</p>
-                               </div>
-                           </div>
-                       </div>
-                       <div class="col-lg-6">
-                           <form action="#" class="third-contact-form">
-                               <div class="row">
-                                   <div class="col-sm-6">
-                                       <input type="text" placeholder="Your Name">
-                                   </div>
-                                   <div class="col-sm-6">
-                                       <input type="text" placeholder="Your Phone">
-                                   </div>
-                               </div>
-                               <textarea name="message" id="message" placeholder="Write Message"></textarea>
-                               <button class="btn rotated-btn">Submit</button>
-                           </form>
-                       </div>
-                   </div>
-               </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="third-contact-wrap">
+                                <div class="third-title-style">
+                                    <h2>CONTACT<span &nbsp>US</span></h2>
+                                </div>
+                                <div class="inner">
+                                    <h2>MEET OUR<span style="color:#ff4800">TEAM</span></h2>
+                                    <p class="pt-4 mb-3"><span>Our LOCATION:</span>Central
+                                        Park Roselle W78 New Jersey.</p>
+                                    <p><span>Phone:</span>+97 325 6254 322</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <form action="#" class="third-contact-form">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <input type="text" placeholder="Your Name">
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="text" placeholder="Your Phone">
+                                    </div>
+                                </div>
+                                <textarea name="message" id="message" placeholder="Write Message"></textarea>
+                                <button class="btn rotated-btn">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- Scroll -->
@@ -532,33 +593,37 @@
                 <nav class="scrol-init">
                     <ul>
                         <li>
-                            <a class="scroll-link actscr-link" href="#About_us" style="opacity: 1; transform:translate3d(0px, 0px, 0px);"><span>About</span></a>
+                            <a class="scroll-link actscr-link" href="#About_us"
+                                style="opacity: 1; transform:translate3d(0px, 0px, 0px);"><span>About</span></a>
                         </li>
                         <li>
-                            <a class="scroll-link actscr-link" href="#Squad" style="opacity: 1; transform:translate3d(0px, 0px, 0px);"><span>Squad</span></a>
+                            <a class="scroll-link actscr-link" href="#Squad"
+                                style="opacity: 1; transform:translate3d(0px, 0px, 0px);"><span>Squad</span></a>
                         </li>
                         <li>
-                            <a class="scroll-link actscr-link" href="#features" style="opacity: 1; transform:translate3d(0px, 0px, 0px);"><span>Features</span></a>
+                            <a class="scroll-link actscr-link" href="#features"
+                                style="opacity: 1; transform:translate3d(0px, 0px, 0px);"><span>Features</span></a>
                         </li>
                         <li>
-                            <a class="scroll-link actscr-link" href="#Contact" style="opacity: 1; transform:translate3d(0px, 0px, 0px);"><span>Contact</span></a>
+                            <a class="scroll-link actscr-link" href="#Contact"
+                                style="opacity: 1; transform:translate3d(0px, 0px, 0px);"><span>Contact</span></a>
                         </li>
                     </ul>
                 </nav>
-            </div> 
+            </div>
         </div>
         <div class="footer-top"></div>
     </div>
-    
 
 
 
 
 
-    
+
+
     <!-- mobile view -->
     <div class="d-lg-none position-relative">
-        
+
         <!-- header -->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand p-3 pt-4" href="#"> <img src="assets/images/f_logo.png"></a>
@@ -588,16 +653,16 @@
                         <a class="nav-link" href="#">Community</a>
                     </li>
                     <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Dropdown link
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                </li>
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Dropdown link
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -611,23 +676,32 @@
                     <div class="wpb_column vc_column_container vc_col-sm-12">
                         <div class="vc_column-inner">
                             <div class="wpb_wrappers">
-                                <h2 style="font-size:55px; line-height: normal; text-align: center; font-family: grind; font-weight: 100; font-style: normal;">
-                                ABOUT <span style="color:rgb(255,88,23)">Us</span>    
+                                <h2
+                                    style="font-size:55px; line-height: normal; text-align: center; font-family: grind; font-weight: 100; font-style: normal;">
+                                    ABOUT <span style="color:rgb(255,88,23)">Us</span>
                                 </h2>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div style="text-align: center; position:relative; padding-left: -47.2px; box-sizing:border-box; width: 100%; padding-left:47.2px ; padding-right: 46.8px;" data-vc-full-width="true" data-vc-full-width-init="true" class="vc_row wpb_row vc_row-fluid vc-service-content vc_custom_1458379419553">
+                <div style="text-align: center; position:relative; padding-left: -47.2px; box-sizing:border-box; width: 100%; padding-left:47.2px ; padding-right: 46.8px;"
+                    data-vc-full-width="true" data-vc-full-width-init="true"
+                    class="vc_row wpb_row vc_row-fluid vc-service-content vc_custom_1458379419553">
                     <div class="wpb_column vc_column_container vc_col-sm-12">
                         <div class="vc_column-inner">
-                             <div class="wpb_wrappers">
-                                 <div class="wpb_text_column wpb_content_element">
-                                     <div class="wpb_wrappers">
-                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore exercitation ullamco laboris nisi  ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate  velit esse cillum dolore</p>
-                                     </div>
-                                 </div>
-                             </div>
+                            <div class="wpb_wrappers">
+                                <div class="wpb_text_column wpb_content_element">
+                                    <div class="wpb_wrappers">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                                            cillum dolore exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                                            cillum dolore</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -680,7 +754,7 @@
                         </div>
                     </div>
                 </div>
-                
+
             </div>
 
             <!-- features -->
@@ -690,67 +764,81 @@
                     <div class="row">
                         <div class="col-12 justify-content-center">
                             <div class="parent">
-                                <i class="fa fa-bolt d-flex justify-content-center section_2_icons" aria-hidden="true" style="color:#ff4800; font-size: 90px;"></i>
+                                <i class="fa fa-bolt d-flex justify-content-center section_2_icons" aria-hidden="true"
+                                    style="color:#ff4800; font-size: 90px;"></i>
                                 <br>
                                 <h4 class="text-center pt-3">LIVE SCORE</h4>
-                                <p class="text-center pt-2">Update scores of simultaneous events through admin dashboard for your tournament in real time</p>
+                                <p class="text-center pt-2">Update scores of simultaneous events through admin dashboard
+                                    for your tournament in real time</p>
                             </div>
                         </div>
                         <div class="col-12 justify-content-center">
                             <div class="parent">
-                                <i class="fa fa-credit-card d-flex justify-content-center section_2_icons" aria-hidden="true" style="color:#ff4800; font-size: 90px;"></i>
+                                <i class="fa fa-credit-card d-flex justify-content-center section_2_icons"
+                                    aria-hidden="true" style="color:#ff4800; font-size: 90px;"></i>
                                 <br>
                                 <h4 class="text-center pt-3">PAYMENT INTEGRATION</h4>
-                                <p class="text-center pt-2">Integrate payment option to your registrations with minimal steps</p>
+                                <p class="text-center pt-2">Integrate payment option to your registrations with minimal
+                                    steps</p>
                             </div>
                         </div>
                         <div class="col-12 justify-content-center">
                             <div class="parent">
-                                <i class="fa fa-bar-chart d-flex justify-content-center section_2_icons" aria-hidden="true" style="color:#ff4800; font-size: 90px;"></i>
+                                <i class="fa fa-bar-chart d-flex justify-content-center section_2_icons"
+                                    aria-hidden="true" style="color:#ff4800; font-size: 90px;"></i>
                                 <br>
                                 <h4 class="text-center pt-3">EASY FIXTURES</h4>
-                                <p class="text-center pt-2">Manage the data of all the players in the most hassle-free way</p>
+                                <p class="text-center pt-2">Manage the data of all the players in the most hassle-free
+                                    way</p>
                             </div>
                         </div>
                         <div class="col-12 justify-content-center">
                             <div class="parent">
-                                <i class="fa fa-calendar d-flex justify-content-center section_2_icons" aria-hidden="true" style="color:#ff4800; font-size: 90px;"></i>
+                                <i class="fa fa-calendar d-flex justify-content-center section_2_icons"
+                                    aria-hidden="true" style="color:#ff4800; font-size: 90px;"></i>
                                 <br>
                                 <h4 class="text-center pt-3">AUTOMATIC FIXTURES</h4>
                                 <p class="text-center pt-2">Randomize fixtures for the tournaments automatically</p>
                             </div>
                         </div>
 
-                            
+
                     </div>
                     <div class="row">
                         <div class="col-12 justify-content-center">
                             <div class="parent">
-                                <i class="fa fa-bolt d-flex justify-content-center section_2_icons" aria-hidden="true" style="color:#ff4800; font-size: 90px;"></i>
+                                <i class="fa fa-bolt d-flex justify-content-center section_2_icons" aria-hidden="true"
+                                    style="color:#ff4800; font-size: 90px;"></i>
                                 <br>
                                 <h4 class="text-center pt-3">LIVE SCORE</h4>
-                                <p class="text-center pt-2">Update scores of simultaneous events through admin dashboard for your tournament in real time</p>
+                                <p class="text-center pt-2">Update scores of simultaneous events through admin dashboard
+                                    for your tournament in real time</p>
                             </div>
                         </div>
                         <div class="col-12 justify-content-center">
                             <div class="parent">
-                                <i class="fa fa-credit-card d-flex justify-content-center section_2_icons" aria-hidden="true" style="color:#ff4800; font-size: 90px;"></i>
+                                <i class="fa fa-credit-card d-flex justify-content-center section_2_icons"
+                                    aria-hidden="true" style="color:#ff4800; font-size: 90px;"></i>
                                 <br>
                                 <h4 class="text-center pt-3">PAYMENT INTEGRATION</h4>
-                                <p class="text-center pt-2">Integrate payment option to your registrations with minimal steps</p>
+                                <p class="text-center pt-2">Integrate payment option to your registrations with minimal
+                                    steps</p>
                             </div>
                         </div>
                         <div class="col-12 justify-content-center">
                             <div class="parent">
-                                <i class="fa fa-bar-chart d-flex justify-content-center section_2_icons" aria-hidden="true" style="color:#ff4800; font-size: 90px;"></i>
+                                <i class="fa fa-bar-chart d-flex justify-content-center section_2_icons"
+                                    aria-hidden="true" style="color:#ff4800; font-size: 90px;"></i>
                                 <br>
                                 <h4 class="text-center pt-3">EASY FIXTURES</h4>
-                                <p class="text-center pt-2">Manage the data of all the players in the most hassle-free way</p>
+                                <p class="text-center pt-2">Manage the data of all the players in the most hassle-free
+                                    way</p>
                             </div>
                         </div>
                         <div class="col-12 justify-content-center">
                             <div class="parent">
-                                <i class="fa fa-calendar d-flex justify-content-center section_2_icons" aria-hidden="true" style="color:#ff4800; font-size: 90px;"></i>
+                                <i class="fa fa-calendar d-flex justify-content-center section_2_icons"
+                                    aria-hidden="true" style="color:#ff4800; font-size: 90px;"></i>
                                 <br>
                                 <h4 class="text-center pt-3">AUTOMATIC FIXTURES</h4>
                                 <p class="text-center pt-2">Randomize fixtures for the tournaments automatically</p>
@@ -763,42 +851,42 @@
 
             <!-- contact -->
             <div id="Contact" class="container-fluid section-5">
-               <div class="container">
-                   <div class="row">
-                       <div style="margin-bottom: 20px;" class="col-lg-6">
-                           <div class="third-contact-wrap">
-                               <div class="third-title-style">
-                                   <h2>CONTACT<span &nbsp>US</span></h2>
-                               </div>
-                               <div class="inner">
-                                   <h2>MEET OUR<span style="color:#ff4800">TEAM</span></h2>
-                                   <p class="pt-4 mb-3"><span>Our LOCATION:</span>Central 
-                                   Park Roselle W78 New Jersey.</p>
-                                   <p><span>Phone:</span>+97 325 6254 322</p>
-                               </div>
-                           </div>
-                       </div>
-                       <div class="col-lg-6">
-                           <form action="#" class="third-contact-form">
-                               <div class="row">
-                                   <div class="col-sm-6">
-                                       <input type="text" placeholder="Your Name">
-                                   </div>
-                                   <div class="col-sm-6">
-                                       <input type="text" placeholder="Your Phone">
-                                   </div>
-                               </div>
-                               <textarea name="message" id="message" placeholder="Write Message"></textarea>
-                               <button class="btn rotated-btn">Submit</button>
-                           </form>
-                       </div>
-                   </div>
-               </div>
+                <div class="container">
+                    <div class="row">
+                        <div style="margin-bottom: 20px;" class="col-lg-6">
+                            <div class="third-contact-wrap">
+                                <div class="third-title-style">
+                                    <h2>CONTACT<span &nbsp>US</span></h2>
+                                </div>
+                                <div class="inner">
+                                    <h2>MEET OUR<span style="color:#ff4800">TEAM</span></h2>
+                                    <p class="pt-4 mb-3"><span>Our LOCATION:</span>Central
+                                        Park Roselle W78 New Jersey.</p>
+                                    <p><span>Phone:</span>+97 325 6254 322</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <form action="#" class="third-contact-form">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <input type="text" placeholder="Your Name">
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="text" placeholder="Your Phone">
+                                    </div>
+                                </div>
+                                <textarea name="message" id="message" placeholder="Write Message"></textarea>
+                                <button class="btn rotated-btn">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="footer-top"></div>
     </div>
-    
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -807,7 +895,7 @@
 
     <script>
         $(document).ready(function () {
-            $(".header").load('template/header.html');
+            $(".header").load('template/header.php');
             $(".footer-top").load('template/footer.html');
 
             $(window).on('scroll', function () {
@@ -828,8 +916,8 @@
             });
         });
     </script>
-    
-            
+
+
 </body>
 
 </html>
