@@ -2,6 +2,7 @@
 
 require_once 'link.php';
 
+
 if (isset($_POST['email'])) {
     session_start();
     $data = array();
@@ -19,6 +20,7 @@ if (isset($_POST['email'])) {
     if (mysqli_num_rows($result) != 0) {
         while ($row = $result->fetch_assoc()) {
             $name = $row['name'];
+            $id = $row['id'];
         }
         // $row=mysqli_fetch_array($result);
         // if($row['account_status']== 'active'){
@@ -27,6 +29,7 @@ if (isset($_POST['email'])) {
 
         $_SESSION['user_email'] = $email;
         $_SESSION['user_name'] = $name;
+        $_SESSION['user_id'] = $id;
         // $_SESSION['access_id']=$row['access_id'];
         echo json_encode($data);
     } else {

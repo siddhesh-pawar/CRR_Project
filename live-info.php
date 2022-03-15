@@ -1,46 +1,32 @@
+<?php
+session_start();
+require_once('php/link.php');
+$event_slug =  $_GET['event'];;
+?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
 
     <!-- Enter a proper page title here -->
-    <title>Template | Example with all standards</title>
+    <base href="<?php echo $baseurl; ?>">
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Kriyata</title>
 
     <!-- CSS to include bootstrap -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <!-- css to include style.css -->
     <link rel="stylesheet" href="assets/css/style.css">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css"
-        integrity="sha512-Mo79lrQ4UecW8OCcRUZzf0ntfMNgpOFR46Acj2ZtWO8vKhBvD79VCp3VOKSzk6TovLg5evL3Xi3u475Q/jMu4g=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css" integrity="sha512-Mo79lrQ4UecW8OCcRUZzf0ntfMNgpOFR46Acj2ZtWO8vKhBvD79VCp3VOKSzk6TovLg5evL3Xi3u475Q/jMu4g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <!-- required meta tags essential for seo and link sharing -->
 
-    <!-- Enter a proper description for the page in the meta description tag -->
-    <meta name="description" content="ENTER_PAGE_DESCRIPTION">
-
-    <!-- Enter a keywords for the page in tag -->
-    <meta name="Keywords" content="ENTER_KEYWORDS_HERE">
-
-    <!-- Enter Page title -->
-    <meta property="og:title" content="ENTER_PAGE_TITLE" />
-
-    <!-- Enter Page URL -->
-    <meta property="og:url" content="ENTER_PAGE_URL" />
-
-    <!-- Enter page description -->
-    <meta property="og:description" content="ENTER_PAGE_DESCRIPTION">
 
     <!-- Enter Logo image URL for example : http://cryptonite.finstreet.in/images/cryptonitepost.png -->
-    <meta property="og:image" itemprop="image" content="ENTER_IMAGE_URL" />
-    <meta property="og:image:secure_url" itemprop="image" content="ENTER_IMAGE_URL" />
-    <meta property="og:image:width" content="600">
-    <meta property="og:image:height" content="315">
-    <meta property="og:type" content="website" />
+
 
     <!-- Favicon location for example :  images/cropped-Fin-270x270.jpg -->
     <link rel="icon" href="ENTER_FAVICON_LOCATION">
@@ -86,23 +72,39 @@
             <div class="container-fluid pl-0 pr-0 header fixed-top">
             </div>
             <div class="container-fluid live-info">
-                <div class="container">
-                    <h1 class="text-center">GPL 2020</h1>
-                    <hr style="border-bottom: 3px solid #ff4800;width: 10%;">
-                    <div class="row mt-5">
-                        <div class="col-6 d-flex justify-content-center ">
-                            <a href="live-info" class="pt-4"><img src="assets/images/my_match_clan01.png" alt=""
-                                    style="width: 150%;"></a>
-                        </div>
-                        <div class="col-6">
 
-                            <div class="pt-5">
-                                <p>Start Date : <span style="color: #ff4800;;"> 16/02/2022</span> </p>
-                                <p>End Date : <span style="color: #ff4800;;">24/02/2022</span></p>
-                                <p>Organized by : <span style="color: #ff4800;;">K.C. College </span> </p>
+                <?php
+                $result = mysqli_query($link, "SELECT * FROM `events` WHERE `event_slug` = '$event_slug' ");
+                ?>
+                <div class="container">
+                    <?php
+                    if (mysqli_num_rows($result) != 0) {
+                        while ($row = mysqli_fetch_array($result)) {
+
+
+
+
+                    ?>
+
+                            <h1 class="text-center"><?php echo ($row['event_name']); ?></h1>
+                            <hr style="border-bottom: 3px solid #ff4800;width: 10%;">
+                            <div class="row mt-5">
+                                <div class="col-6 d-flex justify-content-center ">
+                                    <a href="live-info" class="pt-4"><img src="assets/images/uploads/<?php echo ($row['logo']); ?>" alt="" style="width: 150%;"></a>
+                                </div>
+                                <div class="col-6">
+
+                                    <div class="pt-5">
+                                        <p>Start Date : <span style="color: #ff4800;;"> <?php echo ($row['start_date']); ?></span> </p>
+                                        <p>End Date : <span style="color: #ff4800;;"><?php echo ($row['end_date']); ?></span></p>
+                                        <p>Organized by : <span style="color: #ff4800;;">K.C. College </span> </p>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
+                    <?php
+                        }
+                    }
+                    ?>
 
                 </div>
 
@@ -118,9 +120,7 @@
     <div class="d-lg-none position-relative">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand p-3 pt-4" href="#"> <img src="images/f_logo.png"></a>
-            <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse"
-                data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
-                aria-label="Toggle navigation">
+            <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -196,11 +196,11 @@
         // }
 
         // init();
-        $(document).ready(function () {
+        $(document).ready(function() {
             $(".header").load('template/header.php');
             $(".footer-top").load('template/footer.html');
 
-            $(window).on('scroll', function () {
+            $(window).on('scroll', function() {
                 var scroll = $(window).scrollTop();
                 if (scroll < 245) {
 
