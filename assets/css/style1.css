@@ -351,10 +351,12 @@
     margin-top: 40px;
     font-size: 60px;
     text-transform: uppercase;
+    
 }
 
 .hero-text h2 {
     font-size: 45px;
+    
     /* font-weight: bold; */
 }
 
@@ -368,6 +370,7 @@
     padding-right: 30px;
     margin-right: 14px;
     cursor: pointer;
+    
 
 }
 
