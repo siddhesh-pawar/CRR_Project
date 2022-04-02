@@ -57,7 +57,7 @@
 
         @font-face {
             font-family: grind;
-            src: url(assets/fonts/grind_demolished-webfont.woff2);
+            src: url(../fonts/grind_demolished-webfont.woff2);
             font-display: swap;
         }
 
@@ -83,6 +83,7 @@
         }
         #content .col-6{
             max-width: 45% !important;
+            padding-top: 2em;
         }
         .form-group{
             margin-bottom: 1em;
@@ -173,73 +174,6 @@
             overflow: hidden;
         }
         
-
-        
-        /* .button a span{
-            display: block;
-            position: absolute;
-            background: #ff5817;
-        }
-        .button a span:nth-child(1){
-            left: 0;
-            bottom: 0;
-            width: 1px;
-            height: 100%;
-            transform: scale(0);
-            transform-origin: top;
-            transition: transform .5s;
-        }
-        .button a:hover span:nth-child(1){
-            transform: scale(1);
-            transform-origin: bottom;
-            transition: transform .5s;
-        }    
-        .button a span:nth-child(2){
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            height: 1px;
-            transform: scalex(0);
-            transform-origin: right;
-            transition: transform .5s;
-        }
-        .button a:hover span:nth-child(2){
-            transform: scale(1);
-            transform-origin: left;
-            transition: transform .5s;
-        }   
-        .button a span:nth-child(3){
-            right: 0;
-            bottom: 0;
-            width: 1px;
-            height: 100%;
-            transform: scale(0);
-            transform-origin: top;
-            transition: transform .5s;
-            transition-delay: 0.5 !important;
-        }
-        .button a:hover span:nth-child(3){
-            transform: scale(1);
-            transform-origin: bottom;
-            transition: transform .5s;
-            transition-delay: 0.5 !important;
-        }
-        .button a span:nth-child(4){
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 1px;
-            transform: scalex(0);
-            transform-origin: right;
-            transition: transform .5s;
-            transition-delay: 0.5 !important;
-        }
-        .button a:hover span:nth-child(4){
-            transform: scale(1);
-            transform-origin: left;
-            transition: transform .5s;
-            transition-delay: 0.5 !important;
-        }   */
         .button a:hover{
             box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
             
@@ -298,6 +232,9 @@
             -webkit-animation-iteration-count: infinite;
             -webkit-animation-duration: 10s;
         }
+        #content .col-6 .row{
+            margin-top: 0;
+        }
 
         @media only screen and (max-width: 992px){
             .content h3{
@@ -310,12 +247,12 @@
             .content .col{
                 margin-bottom: 4em;
             }
-            .content p{
-                text-align: center;
-            }
             .content{
                 background-image: linear-gradient(rgba(0, 0, 0, 0.7), 
             rgba(0, 0, 0, 0.7)), url("assets/images/R (4).jfif");
+            }
+            form .row .col{
+                margin-bottom: 0;
             }
         }
 
@@ -329,7 +266,7 @@
         <div id="content" class="container-fluid">
             
             <div class="container">
-                <h3>Sign <span>In</span></h3>
+                <h3>Sign <span>Up</span></h3>
                 <div class="row">
                     <div class="col">
                         <div class="ml-xl-50-none">
@@ -338,21 +275,42 @@
                     </div>
                     <div class="container col-6">
                         <form action="" method="post" class="form"> 
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="FirstName"
+                                        id="FirstName" name="FirstName" tabindex="1" required>
+                                        <label for="FirstName" class="form-label">First Name</label>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="LastName"
+                                        id="LastName" name="LastName" tabindex="2" required>
+                                        <label for="LastName" class="form-label">Last Name</label>
+                                    </div>
+                                </div>
+                            </div>
+                            
                             <div class="form-group">
                                 <input type="text" class="form-control" placeholder="Email"
-                                id="email" name="email" tabindex="1" required>
+                                id="email" name="email" tabindex="3" required>
                                 <label for="email" class="form-label">Email</label>
                             </div>
                             <div class="form-group">
-                                <input type="password" class="form-control" placeholder="Password"
-                                id="password" name="password" tabindex="2" required>
-                                <label for="password" class="form-label">Password</label>
+                                <input type="tel" class="form-control" placeholder="Phone" maxlength="10"
+                                id="Phone" name="Phone" tabindex="4" required>
+                                <label for="Phone" class="form-label">Phone</label>
                             </div>
-                            <div class="d-flex justify-content-around">
-                                <a href="">Forgot Password?</a>
-                                <p>Not a member?
-                                    <a href="signup.html">Register</a>
-                                </p>
+                            <div class="form-group">
+                                <input type="password" class="form-control" placeholder="Password"
+                                id="password" name="password" tabindex="5" required>
+                                <label for="password" class="form-label">New Password</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control" placeholder="Confirm Password"
+                                id="confirm password" name="confirm password" tabindex="6" required>
+                                <label for="confirm password" class="form-label">Confirm Password</label>
                             </div>
                             <div class="button">
                                 <a class="bt" href="#">
@@ -360,7 +318,7 @@
                                     <span></span>
                                     <span></span>
                                     <span></span>
-                                    <p>Sign in</p>
+                                    <p>Sign up</p>
                                     
                                 </a>
 
@@ -433,7 +391,7 @@
 
         <div class="container-fluid content">
             <div class="container">
-                <h3>Sign <span>In</span></h3>
+                <h3>Sign <span>Up</span></h3>
                 <div class="row">
                     <div class="col d-flex justify-content-around">
                         <div class="ml-xl-50-none">
@@ -442,21 +400,42 @@
                     </div>
                     <div class="container col-12">
                         <form action="" method="post" class="form"> 
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="FirstName"
+                                        id="FirstName" name="FirstName" tabindex="1" required>
+                                        <label for="FirstName" class="form-label">First Name</label>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="LastName"
+                                        id="LastName" name="LastName" tabindex="2" required>
+                                        <label for="LastName" class="form-label">Last Name</label>
+                                    </div>
+                                </div>
+                            </div>
+                            
                             <div class="form-group">
                                 <input type="text" class="form-control" placeholder="Email"
-                                id="email" name="email" tabindex="1" required>
+                                id="email" name="email" tabindex="3" required>
                                 <label for="email" class="form-label">Email</label>
                             </div>
                             <div class="form-group">
-                                <input type="password" class="form-control" placeholder="Password"
-                                id="password" name="password" tabindex="2" required>
-                                <label for="password" class="form-label">Password</label>
+                                <input type="tel" class="form-control" placeholder="Phone" maxlength="10"
+                                id="Phone" name="Phone" tabindex="4" required>
+                                <label for="Phone" class="form-label">Phone</label>
                             </div>
-                            <div class="d-flex justify-content-around">
-                                <a href="">Forgot Password?</a>
-                                <p>Not a member?
-                                    <a href="signup.html">Register</a>
-                                </p>
+                            <div class="form-group">
+                                <input type="password" class="form-control" placeholder="Password"
+                                id="password" name="password" tabindex="5" required>
+                                <label for="password" class="form-label">New Password</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control" placeholder="Confirm Password"
+                                id="confirm password" name="confirm password" tabindex="6" required>
+                                <label for="confirm password" class="form-label">Confirm Password</label>
                             </div>
                             <div class="button">
                                 <a class="bt" href="#">
@@ -464,11 +443,12 @@
                                     <span></span>
                                     <span></span>
                                     <span></span>
-                                    <p>Sign in</p>
+                                    <p>Sign up</p>
                                     
                                 </a>
 
                             </div>
+                            
                         </form>
                     </div>
                 </div>
