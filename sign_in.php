@@ -1,5 +1,5 @@
 <?php
-require_once('php/link.php');
+require_once('admin-dashboard/php/link.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -260,7 +260,7 @@ require_once('php/link.php');
 
                 $.ajax({
                     type: 'POST',
-                    url: 'php/login.php',
+                    url: 'admin-dashboard/php/login_user.php',
                     dataType: "json",
                     data: {
                         email: $("#email").val(),

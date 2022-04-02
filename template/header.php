@@ -46,7 +46,7 @@ session_start();
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                 <p class="dropdown-item" style="font-size: 15px;text-transform: lowercase;color:#ff4800;padding:none"><?php echo ($_SESSION['user_email']) ?></p>
-                                <a style="font-size: 15px;color:#ff4800;" class="dropdown-item" href="php/logout.php">Logout</a>
+                                <a style="font-size: 15px;color:#ff4800;" class="dropdown-item" href="admin-dashboard/php/logout_user.php">Logout</a>
 
                             </div>
                         </div>
@@ -79,7 +79,7 @@ session_start();
             <ul style="float:right;">
                 <li><a href="create">Create event</a></li>
                 <li><a href="live">Live events</a></li>
-                <li><a href="#">Dashboard</a></li>
+                <li><a href="admin-dashboard/sign-in">Dashboard</a></li>
 
             </ul>
         </div>

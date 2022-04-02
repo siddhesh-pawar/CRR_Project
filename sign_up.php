@@ -298,7 +298,7 @@ require_once('php/link.php');
 
                 $.ajax({
                     type: 'POST',
-                    url: 'PHP/signup.php',
+                    url: 'admin-dashboard/PHP/signup.php',
                     dataType: "json",
                     data: {
                         name: $("#name").val(),
