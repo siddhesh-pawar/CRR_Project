@@ -57,10 +57,12 @@
             height: 500vh;
         }
 
-        canvas {
+        #hero-lightpass {
+            left: -1%;
             position: fixed;
-            width: 150%;
+            width: 155% ; 
             top: -2%;
+            
             /* left: 50%;
             top: 50%;
             max-height: 100vh;
@@ -83,7 +85,9 @@
     </div> -->
     <div class="main">
         <div class="d-none d-lg-block">
+            
             <div class="container-fluid">
+                
                 <canvas id="hero-lightpass">
                 </canvas>
             </div>
@@ -443,7 +447,7 @@
         const canvas = document.getElementById("hero-lightpass");
         const context = canvas.getContext("2d");
 
-        const frameCount = 303;
+        const frameCount = 290;
         const currentFrame = index => (
             `assets/images/scroll/${index.toString().padStart(4, '0')}.jpg`
         )
