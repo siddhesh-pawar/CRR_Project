@@ -351,10 +351,12 @@
     margin-top: 40px;
     font-size: 60px;
     text-transform: uppercase;
+    
 }
 
 .hero-text h2 {
     font-size: 45px;
+    
     /* font-weight: bold; */
 }
 
@@ -368,6 +370,7 @@
     padding-right: 30px;
     margin-right: 14px;
     cursor: pointer;
+    
 
 }
 
@@ -685,20 +688,6 @@
     /* font-size: 30px; */
 }
 
-.live-info button {
-    background: #ff4800;
-    text-transform: uppercase;
-    color: #ffffff;
-    font-weight: 700;
-    font-size: 16px;
-    font-family: 'Oxanium-Regular';
-    padding: 12px;
-    margin-top: 30px;
-
-    box-shadow: rgb(0 0 0 / 35%) 0px 3px 7px 0px;
-    width: 30%;
-}
-
 /* ********    live-info ************ */
 
 
@@ -832,10 +821,6 @@
 
 
 /* ******************sign-up **************/
-
-
-
-
 
 
 /*****************mobile-view*****************/

@@ -61,38 +61,35 @@
             font-display: swap;
         }
 
-        #content {
+        #content{
             height: fit-content;
-            margin-top: 12%;
+            margin-top:12%;
             background-color: #ffffff;
-            background-image: linear-gradient(rgba(0, 0, 0, 0.7),
-                    rgba(0, 0, 0, 0.7)), url("assets/images/R (4).jfif");
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), 
+            rgba(0, 0, 0, 0.7)), url("assets/images/R (4).jfif");
         }
-
-        #content .container {
+        #content .container{
             padding-top: 60px;
             padding-bottom: 50px;
-
+            
         }
-
-        .row .container {
+        .row .container{
             width: 25vw;
-            box-shadow: 0 15px 35px rgba(50, 50, 93, .1), 0 5px 15px rgba(0, 0, 0, .07);
+            box-shadow: 0 15px 35px rgba(50,50,93,.1),0 5px 15px
+             rgba(0,0,0,.07);
             padding: 2em;
             background-color: transparent;
             border-radius: 5px;
         }
-
-        #content .col-6 {
+        #content .col-6{
             max-width: 45% !important;
+            padding-top: 2em;
         }
-
-        .form-group {
+        .form-group{
             margin-bottom: 1em;
             transition: all .3s;
-        }
-
-        .form-label {
+        } 
+        .form-label{
             font-size: 1em;
             color: #94ada9;
             opacity: 1;
@@ -100,8 +97,7 @@
             transform-origin: 0 0;
             transition: all .3s;
         }
-
-        .form-control {
+        .form-control{
             padding: 5px !important;
             height: auto !important;
             box-shadow: none;
@@ -112,72 +108,59 @@
             border-color: #94ada9 !important;
             transition: all .5s;
         }
-
-        .form-control::placeholder {
+        .form-control::placeholder{
             color: transparent !important;
         }
-
-        .form-control:focus {
+        .form-control:focus{
             box-shadow: none !important;
             outline: none !important;
-            border-bottom: 2px solid #ff5817 !important;
+            border-bottom:2px solid #ff5817 !important ;
         }
-
-        .form-control:focus+.form-label,
-        .form-control:not(:placeholder-shown)+.form-label {
+        .form-control:focus + .form-label,
+        .form-control:not(:placeholder-shown) + .form-label{
             transform: translateY(-3em) scale(.8);
             color: #ff5817;
         }
-
-        .form-group:focus-within {
-            transform: scale(1.05, 1.05);
+        .form-group:focus-within{
+            transform: scale(1.05,1.05);
         }
-
-        .form {
+        .form{
             color: #94ada9;
         }
-
-        #content p {
+        #content p{
             text-align: center;
         }
-
-        a {
+        a{
             text-decoration: none !important;
             text-align: center;
         }
-
-        a:hover {
+        a:hover{
             color: #ff5817 !important;
         }
-
-        #content h3 {
+        #content h3{
             font-family: grind;
             text-align: center;
             font-size: 40px !important;
         }
-
-        span {
+        span{
             color: #ff5817;
         }
-
-        #content .container .row {
+        #content .container .row{
             margin-top: 80px;
         }
-
         ::-ms-reveal {
             filter: invert(100%);
-        }
+        } 
 
-        /* Button css */
+                                                               /* Button css */
 
-        .button {
+        .button{
             margin: 12px;
             display: flex;
             justify-content: center;
             align-items: center;
         }
-
-        .button a {
+        .button a{
             position: relative;
             display: inline-block;
             padding: 5px 20px;
@@ -190,79 +173,12 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
             overflow: hidden;
         }
-
-
-        /* .button a span{
-            display: block;
-            position: absolute;
-            background: #ff5817;
-        }
-        .button a span:nth-child(1){
-            left: 0;
-            bottom: 0;
-            width: 1px;
-            height: 100%;
-            transform: scale(0);
-            transform-origin: top;
-            transition: transform .5s;
-        }
-        .button a:hover span:nth-child(1){
-            transform: scale(1);
-            transform-origin: bottom;
-            transition: transform .5s;
-        }    
-        .button a span:nth-child(2){
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            height: 1px;
-            transform: scalex(0);
-            transform-origin: right;
-            transition: transform .5s;
-        }
-        .button a:hover span:nth-child(2){
-            transform: scale(1);
-            transform-origin: left;
-            transition: transform .5s;
-        }   
-        .button a span:nth-child(3){
-            right: 0;
-            bottom: 0;
-            width: 1px;
-            height: 100%;
-            transform: scale(0);
-            transform-origin: top;
-            transition: transform .5s;
-            transition-delay: 0.5 !important;
-        }
-        .button a:hover span:nth-child(3){
-            transform: scale(1);
-            transform-origin: bottom;
-            transition: transform .5s;
-            transition-delay: 0.5 !important;
-        }
-        .button a span:nth-child(4){
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 1px;
-            transform: scalex(0);
-            transform-origin: right;
-            transition: transform .5s;
-            transition-delay: 0.5 !important;
-        }
-        .button a:hover span:nth-child(4){
-            transform: scale(1);
-            transform-origin: left;
-            transition: transform .5s;
-            transition-delay: 0.5 !important;
-        }   */
-        .button a:hover {
+        
+        .button a:hover{
             box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
-
+            
         }
-
-        .button a::after {
+        .button a::after{
             position: absolute;
             content: '';
             color: #ffffff;
@@ -272,51 +188,40 @@
             width: 140%;
             transition: all .5s ease-in-out;
             background: #000;
-            transform: translate(-121%, -25%) rotate(45deg);
-
-        }
-
-        .button a:hover::after {
-            transform: translate(-9%, -25%) rotate(45deg);
-        }
-
-        .button a p {
+            transform: translate(-121%,-25%) rotate(45deg);
+            
+        }   
+        .button a:hover::after{
+            transform: translate(-9%,-25%) rotate(45deg);
+        }   
+        .button a p{
             margin: 0;
             position: relative;
             z-index: 1;
             color: #ffffff;
         }
 
-        /* rotating animation */
-        .col {
+/* rotating animation */
+        .col{
             align-items: center;
         }
-
         @keyframes spin {
-            from {
+            from{
                 transform: rotateY(0deg);
                 moz-transform: rotateY(0deg);
-                ms-transform: rotateY(0deg);
+                ms-transform: rotateY(0deg);     
             }
-
-            to {
+            to{
                 transform: rotateY(360deg);
                 moz-transform: rotateY(360deg);
                 ms-transform: rotateY(360deg);
             }
         }
-
-        @-webkit-keyframes spin {
-            from {
-                -webkit-transform: rotateY(0deg);
-            }
-
-            to {
-                -webkit-transform: rotateY(360deg);
-            }
+        @-webkit-keyframes spin{
+        from{-webkit-transform: rotateY(0deg);}
+        to{-webkit-transform: rotateY(360deg);}
         }
-
-        .imageSpin {
+        .imageSpin{
             height: 40%;
             animation-name: spin;
             animation-timing-function: linear;
@@ -327,29 +232,30 @@
             -webkit-animation-iteration-count: infinite;
             -webkit-animation-duration: 10s;
         }
+        #content .col-6 .row{
+            margin-top: 0;
+        }
 
-        @media only screen and (max-width: 992px) {
-            .content h3 {
+        @media only screen and (max-width: 992px){
+            .content h3{
                 text-align: center;
                 font-family: grind;
                 font-size: 40px;
                 margin-bottom: 1em;
                 padding-top: 1em;
             }
-
-            .content .col {
+            .content .col{
                 margin-bottom: 4em;
             }
-
-            .content p {
-                text-align: center;
+            .content{
+                background-image: linear-gradient(rgba(0, 0, 0, 0.7), 
+            rgba(0, 0, 0, 0.7)), url("assets/images/R (4).jfif");
             }
-
-            .content {
-                background-image: linear-gradient(rgba(0, 0, 0, 0.7),
-                        rgba(0, 0, 0, 0.7)), url("assets/images/R (4).jfif");
+            form .row .col{
+                margin-bottom: 0;
             }
         }
+
     </style>
 </head>
 
@@ -358,9 +264,9 @@
     <div class="d-none d-lg-block">
         <div class="header fixed-top"></div>
         <div id="content" class="container-fluid">
-
+            
             <div class="container">
-                <h3>Sign <span>In</span></h3>
+                <h3>Sign <span>Up</span></h3>
                 <div class="row">
                     <div class="col">
                         <div class="ml-xl-50-none">
@@ -368,22 +274,43 @@
                         </div>
                     </div>
                     <div class="container col-6">
-                        <form action="" method="post" class="form">
+                        <form action="" method="post" class="form"> 
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="FirstName"
+                                        id="FirstName" name="FirstName" tabindex="1" required>
+                                        <label for="FirstName" class="form-label">First Name</label>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="LastName"
+                                        id="LastName" name="LastName" tabindex="2" required>
+                                        <label for="LastName" class="form-label">Last Name</label>
+                                    </div>
+                                </div>
+                            </div>
+                            
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Email" id="email" name="email"
-                                    tabindex="1" required>
+                                <input type="text" class="form-control" placeholder="Email"
+                                id="email" name="email" tabindex="3" required>
                                 <label for="email" class="form-label">Email</label>
                             </div>
                             <div class="form-group">
-                                <input type="password" class="form-control" placeholder="Password" id="password"
-                                    name="password" tabindex="2" required>
-                                <label for="password" class="form-label">Password</label>
+                                <input type="tel" class="form-control" placeholder="Phone" maxlength="10"
+                                id="Phone" name="Phone" tabindex="4" required>
+                                <label for="Phone" class="form-label">Phone</label>
                             </div>
-                            <div class="d-flex justify-content-around">
-                                <a href="">Forgot Password?</a>
-                                <p>Not a member?
-                                    <a href="signup.html">Register</a>
-                                </p>
+                            <div class="form-group">
+                                <input type="password" class="form-control" placeholder="Password"
+                                id="password" name="password" tabindex="5" required>
+                                <label for="password" class="form-label">New Password</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control" placeholder="Confirm Password"
+                                id="confirm password" name="confirm password" tabindex="6" required>
+                                <label for="confirm password" class="form-label">Confirm Password</label>
                             </div>
                             <div class="button">
                                 <a class="bt" href="#">
@@ -391,25 +318,25 @@
                                     <span></span>
                                     <span></span>
                                     <span></span>
-                                    <p>Sign in</p>
-
+                                    <p>Sign up</p>
+                                    
                                 </a>
 
                             </div>
-
+                            
                         </form>
                     </div>
                 </div>
 
             </div>
+            
 
-
-
+            
         </div>
         <div class="footer-top"></div>
-
+        
     </div>
-
+    
 
 
 
@@ -464,7 +391,7 @@
 
         <div class="container-fluid content">
             <div class="container">
-                <h3>Sign <span>In</span></h3>
+                <h3>Sign <span>Up</span></h3>
                 <div class="row">
                     <div class="col d-flex justify-content-around">
                         <div class="ml-xl-50-none">
@@ -472,22 +399,43 @@
                         </div>
                     </div>
                     <div class="container col-12">
-                        <form action="" method="post" class="form">
+                        <form action="" method="post" class="form"> 
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="FirstName"
+                                        id="FirstName" name="FirstName" tabindex="1" required>
+                                        <label for="FirstName" class="form-label">First Name</label>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="LastName"
+                                        id="LastName" name="LastName" tabindex="2" required>
+                                        <label for="LastName" class="form-label">Last Name</label>
+                                    </div>
+                                </div>
+                            </div>
+                            
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Email" id="email" name="email"
-                                    tabindex="1" required>
+                                <input type="text" class="form-control" placeholder="Email"
+                                id="email" name="email" tabindex="3" required>
                                 <label for="email" class="form-label">Email</label>
                             </div>
                             <div class="form-group">
-                                <input type="password" class="form-control" placeholder="Password" id="password"
-                                    name="password" tabindex="2" required>
-                                <label for="password" class="form-label">Password</label>
+                                <input type="tel" class="form-control" placeholder="Phone" maxlength="10"
+                                id="Phone" name="Phone" tabindex="4" required>
+                                <label for="Phone" class="form-label">Phone</label>
                             </div>
-                            <div class="d-flex justify-content-around">
-                                <a href="">Forgot Password?</a>
-                                <p>Not a member?
-                                    <a href="signup.html">Register</a>
-                                </p>
+                            <div class="form-group">
+                                <input type="password" class="form-control" placeholder="Password"
+                                id="password" name="password" tabindex="5" required>
+                                <label for="password" class="form-label">New Password</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control" placeholder="Confirm Password"
+                                id="confirm password" name="confirm password" tabindex="6" required>
+                                <label for="confirm password" class="form-label">Confirm Password</label>
                             </div>
                             <div class="button">
                                 <a class="bt" href="#">
@@ -495,11 +443,12 @@
                                     <span></span>
                                     <span></span>
                                     <span></span>
-                                    <p>Sign in</p>
-
+                                    <p>Sign up</p>
+                                    
                                 </a>
 
                             </div>
+                            
                         </form>
                     </div>
                 </div>
@@ -543,3 +492,4 @@
 </body>
 
 </html>
+
