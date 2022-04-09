@@ -89,6 +89,13 @@ if (!isset($_SESSION['session_user'])) {
                 color: #2b8fe9;
 
             }
+
+            .form-control {
+                border-radius: 7px;
+                width: 100%;
+                padding: 12px 18px;
+                font-size: 15px;
+            }
         </style>
     </head>
 
@@ -252,11 +259,8 @@ if (!isset($_SESSION['session_user'])) {
                                             </div>
                                         </div>
                                         <div class="col-lg-12">
-
-                                            <div class="form-group" id="player_add">
-
-
-                                            </div>
+                                            <div class="form-group" id="team_add"></div>
+                                            <div class="form-group" id="player_add"></div>
                                         </div>
 
                                     </div>
@@ -349,6 +353,7 @@ if (!isset($_SESSION['session_user'])) {
             function player_input(value) {
 
                 $('#player_add').empty();
+                $('#team_add').empty();
                 $.ajax({
                     type: 'POST',
                     url: 'PHP/get_player_limit.php',
@@ -360,6 +365,8 @@ if (!isset($_SESSION['session_user'])) {
                     },
                     success: function(data) {
                         if (data.status == 201) {
+
+                            $("#team_add").html($("#team_add").html() + '<label class="control-label" style="font-weight:bold;font-size:1.3rem;color:#717BA2;">Enter team name</label><input type="text" class="form-control" placeholder="Enter team name" id="team_name">');
 
                             player_limit = data.player_limit;
                             for (var i = 1; i <= player_limit; i++) {
@@ -408,6 +415,13 @@ if (!isset($_SESSION['session_user'])) {
                 } else {
 
                     formData.append('tour_id', $('#tour select').val());
+                }
+                if ($('#team_name').val() == "") {
+                    sweetAlert("Warning", "Please enter a valid name", "warning");
+                    error = error + 'team_name';
+                } else {
+
+                    formData.append('team_name', $('#team_name').val());
                 }
 
                 if (error == "") {

@@ -88,11 +88,14 @@ if (!isset($_SESSION['admin_email'])) {
                         <li>
                             <a href="index"><i class="material-icons-outlined">text_format</i>Events</a>
                         </li>
-                        <li class="active-page">
+                        <li>
                             <a href="tournaments"><i class="material-icons-outlined">account_circle</i>Tournaments</a>
                         </li>
+                        <li class="active-page">
+                            <a href="entries"><i class="material-icons-outlined">create</i>Entries</a>
+                        </li>
                         <li>
-                            <a href="add_comments_home"><i class="material-icons-outlined">create</i>Users</a>
+                            <a href="fixtures"><i class="material-icons-outlined">create</i>Fixtures</a>
                         </li>
                         <li>
                             <a href="#"><i class="material-icons">text_format</i>Settings<i class="material-icons has-sub-menu">add</i></a>
@@ -224,12 +227,12 @@ if (!isset($_SESSION['admin_email'])) {
                                             <thead>
                                                 <tr>
                                                     <th>id</th>
-                                                    <th>Tournament name</th>
-                                                    <th>Player limit</th>
-                                                    <th>Event name</th>
-                                                    <th>Start date</th>
-                                                    <th>End date</th>
-                                                    <th>Tournament description</th>
+                                                    <th>Player name</th>
+                                                    <th>Tournament Name</th>
+                                                    <th>Team name</th>
+                                                    <th>Tournament Start date</th>
+                                                    <th>Tournament End date</th>
+
                                                     <th style="width: 100px;">Action</th>
                                                 </tr>
                                             </thead>
@@ -240,15 +243,15 @@ if (!isset($_SESSION['admin_email'])) {
                                                     die("<script>console.log('There is a problem with mysql connection')</script>");
                                                 }
                                                 $admin_id = $_SESSION['admin_id'];
-                                                $result = mysqli_query($link, "SELECT * FROM (tournaments LEFT JOIN events ON tournaments.event_id = events.event_id) WHERE tournaments.created_by = '$admin_id' ");
+                                                $result = mysqli_query($link, "SELECT * FROM (entries INNER JOIN tournaments ON entries.tournament_id = tournaments.id) WHERE entries.created_by = '$admin_id' ");
                                                 $i = 1;
                                                 while ($row = mysqli_fetch_array($result)) {
                                                     // $category_id = $row['category_id'];
                                                     // echo "<input type=\"hidden\" id=\"category_id\" value=\"{$row['category_id']}\">";
 
-                                                    $start_date = date("d/m/Y", strtotime($row['start_date']));
-                                                    $end_date = date("d/m/Y", strtotime($row['end_date']));
-                                                    echo "<tr><td>{$i}</td><td>{$row['tour_name']}</td><td>{$row['player_limit']}</td><td>{$row['event_name']}</td><td> $start_date</td><td>$end_date</td><td>{$row['tour_descrip']}</td>
+                                                    $start_date = date("d/m/Y", strtotime($row['start_tour_date']));
+                                                    $end_date = date("d/m/Y", strtotime($row['end_tour_date']));
+                                                    echo "<tr><td>{$i}</td><td>{$row['player_name']}</td><td>{$row['tour_name']}</td><td>{$row['team_name']}</td><td>$start_date</td><td>$end_date</td>
                                                         <td style=\"width: 100px;\">
                                                            </td></tr>\n";
                                                     $i = $i + 1;
@@ -261,11 +264,11 @@ if (!isset($_SESSION['admin_email'])) {
                                             <tfoot>
                                                 <tr>
                                                     <th>id</th>
-                                                    <th>Tournament name</th>
-                                                    <th>Event name</th>
-                                                    <th>Start date</th>
-                                                    <th>End date</th>
-                                                    <th>Tournament description</th>
+                                                    <th>Player name</th>
+                                                    <th>Tournament Name</th>
+                                                    <th>Team name</th>
+                                                    <th>Tournament Start date</th>
+                                                    <th>Tournament End date</th>
                                                     <th style="width: 100px;">Action</th>
                                                 </tr>
                                             </tfoot>

@@ -26,6 +26,7 @@ if (isset($_POST['player_list'])) {
     $uuid = guidv4(openssl_random_pseudo_bytes(16));
     $players = explode(",", mysqli_real_escape_string($link, $_POST['player_list']));
     $tour_id = mysqli_real_escape_string($link, $_POST['tour_id']);
+    $team_name = mysqli_real_escape_string($link, $_POST['team_name']);
 
 
     if (isset($_SESSION['user_id'])) {
@@ -37,7 +38,7 @@ if (isset($_POST['player_list'])) {
 
 
     foreach ($players as $key => $value) {
-        $query = "INSERT INTO `entries`(`tournament_id`,`player_name`,`from_ip`,`from_browser`,`time`,`created_by`,`uuid`) VALUES ('$tour_id','$value','$from_ip','$from_browser','$date_now','$user_id','$uuid')";
+        $query = "INSERT INTO `entries`(`tournament_id`,`player_name`,`from_ip`,`from_browser`,`time`,`created_by`,`uuid`,`team_name`) VALUES ('$tour_id','$value','$from_ip','$from_browser','$date_now','$user_id','$uuid','$team_name')";
         if ($result = mysqli_query($link, $query)) {
             $data['status'] = 201;
             echo json_encode($data);
