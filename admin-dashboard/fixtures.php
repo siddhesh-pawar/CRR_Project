@@ -93,6 +93,64 @@ if (!isset($_SESSION['session_user'])) {
             ol {
                 padding: 0px;
             }
+
+            main {
+                display: flex;
+                flex-direction: row;
+            }
+
+            .round {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                width: 200px;
+                list-style: none;
+                padding: 0;
+            }
+
+            .round .spacer {
+                flex-grow: 1;
+            }
+
+            .round .spacer:first-child,
+            .round .spacer:last-child {
+                flex-grow: .5;
+            }
+
+            .round .game-spacer {
+                flex-grow: 1;
+            }
+
+            /*
+ *  General Styles
+*/
+
+
+            li.game {
+                padding-left: 20px;
+            }
+
+            li.game.winner {
+                font-weight: bold;
+            }
+
+            li.game span {
+                float: right;
+                margin-right: 5px;
+            }
+
+            li.game-top {
+                border-bottom: 1px solid #aaa;
+            }
+
+            li.game-spacer {
+                border-right: 1px solid #aaa;
+                min-height: 40px;
+            }
+
+            li.game-bottom {
+                border-top: 1px solid #aaa;
+            }
         </style>
     </head>
 
@@ -341,10 +399,175 @@ if (!isset($_SESSION['session_user'])) {
                                                         </div>
                                                     </div>
                                                 </div> -->
+                                                <!-- <main id="tournament">
+                                                    <?php
+                                                    $result = mysqli_query($link, "SELECT * FROM `fixture_fomat` WHERE `fixture_uuid` = '113f736a-7747-4dc5-a0c3-5c04c2ee66ab'");
+                                                    while ($row = $result->fetch_assoc()) {
+                                                        $no_of_rounds = $row['no_of_rounds'];
+                                                    }
+                                                    for ($i = 1; $i <= $no_of_rounds; $i++) {
+
+
+                                                    ?>
+                                                        <ul class="round round-<?php echo ($i) ?>">
+
+                                                            <li class="spacer">&nbsp;</li>
+                                                            <?php
+                                                            $result = mysqli_query($link, "SELECT * FROM `upper_half` WHERE `fixture_id` = '113f736a-7747-4dc5-a0c3-5c04c2ee66ab'  AND `bye` = 'false' ");
+                                                            while ($row = $result->fetch_assoc()) {
+                                                                $team_name = $row['team_name'];
+                                                            ?>
+                                                                <li class="game game-top"><?php echo ($team_name); ?></li>
+                                                                <li class="game game-spacer">&nbsp;</li>
+                                                                <li class="game game-bottom "><?php echo ($team_name); ?></li>
+
+                                                                <li class="spacer">&nbsp;</li>
+
+                                                            <?php
+                                                            }
+                                                            ?>
+
+
+
+
+
+
+                                                            <li class="game game-top winner">Lousville <span>79</span></li>
+                                                            <li class="game game-spacer">&nbsp;</li>
+                                                            <li class="game game-bottom ">NC A&T <span>48</span></li>
+
+
+                                                            <li class="game game-top winner">Lousville <span>79</span></li>
+                                                            <li class="game game-spacer">&nbsp;</li>
+                                                            <li class="game game-bottom ">NC A&T <span>48</span></li>
+
+                                                            <li class="spacer">&nbsp;</li>
+
+                                                            <li class="game game-top winner">Lousville <span>79</span></li>
+                                                            <li class="game game-spacer">&nbsp;</li>
+                                                            <li class="game game-bottom ">NC A&T <span>48</span></li>
+
+                                                            <li class="spacer">&nbsp;</li>
+
+
+                                                        </ul>
+                                                        <li class="spacer">&nbsp;</li>
+                                                    <?php
+                                                    }
+                                                    ?>
+
+
+                                                </main> -->
+                                                <!-- <main id="tournament">
+                                                    <ul class="round round-1">
+                                                        <li class="spacer">&nbsp;</li>
+
+                                                        <li class="game game-top winner">Lousville <span>79</span></li>
+                                                        <li class="game game-spacer">&nbsp;</li>
+                                                        <li class="game game-bottom ">NC A&T <span>48</span></li>
+
+                                                        <li class="spacer">&nbsp;</li>
+
+                                                        <li class="game game-top winner">Colo St <span>84</span></li>
+                                                        <li class="game game-spacer">&nbsp;</li>
+                                                        <li class="game game-bottom ">Missouri <span>72</span></li>
+
+                                                        <li class="spacer">&nbsp;</li>
+
+                                                        <li class="game game-top ">Oklahoma St <span>55</span></li>
+                                                        <li class="game game-spacer">&nbsp;</li>
+                                                        <li class="game game-bottom winner">Oregon <span>68</span></li>
+
+                                                        <li class="spacer">&nbsp;</li>
+
+                                                        <li class="game game-top winner">Saint Louis <span>64</span></li>
+                                                        <li class="game game-spacer">&nbsp;</li>
+                                                        <li class="game game-bottom ">New Mexico St <span>44</span></li>
+
+                                                        <li class="spacer">&nbsp;</li>
+
+                                                        <li class="game game-top winner">Memphis <span>54</span></li>
+                                                        <li class="game game-spacer">&nbsp;</li>
+                                                        <li class="game game-bottom ">St Mary's <span>52</span></li>
+
+                                                        <li class="spacer">&nbsp;</li>
+
+                                                        <li class="game game-top winner">Mich St <span>65</span></li>
+                                                        <li class="game game-spacer">&nbsp;</li>
+                                                        <li class="game game-bottom ">Valparaiso <span>54</span></li>
+
+                                                        <li class="spacer">&nbsp;</li>
+
+                                                        <li class="game game-top winner">Creighton <span>67</span></li>
+                                                        <li class="game game-spacer">&nbsp;</li>
+                                                        <li class="game game-bottom ">Cincinnati <span>63</span></li>
+
+                                                        <li class="spacer">&nbsp;</li>
+
+                                                        <li class="game game-top winner">Duke <span>73</span></li>
+                                                        <li class="game game-spacer">&nbsp;</li>
+                                                        <li class="game game-bottom ">Albany <span>61</span></li>
+
+                                                        <li class="spacer">&nbsp;</li>
+                                                    </ul>
+                                                    <ul class="round round-2">
+                                                        <li class="spacer">&nbsp;</li>
+
+                                                        <li class="game game-top winner">Lousville <span>82</span></li>
+                                                        <li class="game game-spacer">&nbsp;</li>
+                                                        <li class="game game-bottom ">Colo St <span>56</span></li>
+
+                                                        <li class="spacer">&nbsp;</li>
+
+                                                        <li class="game game-top winner">Oregon <span>74</span></li>
+                                                        <li class="game game-spacer">&nbsp;</li>
+                                                        <li class="game game-bottom ">Saint Louis <span>57</span></li>
+
+                                                        <li class="spacer">&nbsp;</li>
+
+                                                        <li class="game game-top ">Memphis <span>48</span></li>
+                                                        <li class="game game-spacer">&nbsp;</li>
+                                                        <li class="game game-bottom winner">Mich St <span>70</span></li>
+
+                                                        <li class="spacer">&nbsp;</li>
+
+                                                        <li class="game game-top ">Creighton <span>50</span></li>
+                                                        <li class="game game-spacer">&nbsp;</li>
+                                                        <li class="game game-bottom winner">Duke <span>66</span></li>
+
+                                                        <li class="spacer">&nbsp;</li>
+                                                    </ul>
+                                                    <ul class="round round-3">
+                                                        <li class="spacer">&nbsp;</li>
+
+                                                        <li class="game game-top winner">Lousville <span>77</span></li>
+                                                        <li class="game game-spacer">&nbsp;</li>
+                                                        <li class="game game-bottom ">Oregon <span>69</span></li>
+
+                                                        <li class="spacer">&nbsp;</li>
+
+                                                        <li class="game game-top ">Mich St <span>61</span></li>
+                                                        <li class="game game-spacer">&nbsp;</li>
+                                                        <li class="game game-bottom winner">Duke <span>71</span></li>
+
+                                                        <li class="spacer">&nbsp;</li>
+                                                    </ul>
+                                                    <ul class="round round-4">
+                                                        <li class="spacer">&nbsp;</li>
+
+                                                        <li class="game game-top winner">Lousville <span>85</span></li>
+                                                        <li class="game game-spacer">&nbsp;</li>
+                                                        <li class="game game-bottom ">Duke <span>63</span></li>
+
+                                                        <li class="spacer">&nbsp;</li>
+                                                    </ul>
+                                                </main> -->
+
 
                                                 <div class="form-group pt-5 d-flex justify-content-center">
 
-                                                    <button class="btn" id="add-fixtures" type="button" style="font-size: 1rem;background-color: #2b8fe9;color: #ffffff;">Add Fixtures</button>
+                                                    <button class="btn" id="add-fixtures" type="button" style="font-size: 1rem;background-color: #2b8fe9;color: #ffffff;">Get Fixture Format</button>
+                                                    <button class="btn" id="show-fixtures" type="button" style="font-size: 1rem;background-color: #2b8fe9;color: #ffffff;">Show fixtures</button>
                                                 </div>
 
 
@@ -535,6 +758,14 @@ if (!isset($_SESSION['session_user'])) {
 
 
                 // Add comment 
+                var fixture_id;
+                var number_of_teams;
+                var number_of_rounds;
+                var number_of_matches;
+                var uh_teams;
+                var lh_teams;
+                var byes_uh;
+                var byes_lh;
 
                 $('#add-fixtures').on('click', function(e) {
                     e.preventDefault();
@@ -544,174 +775,151 @@ if (!isset($_SESSION['session_user'])) {
 
 
                     $.ajax({
-                        type: 'POST',
-                        url: 'PHP/get_team_names.php',
-                        dataType: "json",
-                        async: false,
-                        data: {
-                            tour_id: $("#tour_name select").val()
+                            type: 'POST',
+                            url: 'PHP/get_team_names.php',
+                            dataType: "json",
+                            async: false,
+                            data: {
+                                tour_id: $("#tour_name select").val()
 
-                        },
-                        success: function(data) {
+                            },
+                            success: function(data) {
 
-                            if (data.status == 201) {
-                                var no_of_matches;
-                                var no_of_teams;
-                                var upper_half_teams;
-                                var lower_half_teams;
-                                var no_of_byes;
-                                var no_of_rounds;
-                                var no_of_byes_uh;
-                                var no_of_byes_lh;
-                                var bye_temp = 1;
-                                var flag = 0;
-
-
-
-                                team_fix_list = data.team;
-                                no_of_teams = team_fix_list.length;
-                                no_of_matches = team_fix_list.length - 1;
-
-                                if (no_of_teams % 2 == 0) {
-                                    //upper and lower half
-                                    upper_half_teams = no_of_teams / 2;
-                                    lower_half_teams = no_of_teams / 2;
-
-                                    for (var n = 1; n < 20; n++) {
-                                        bye_temp = Math.pow(2, n);
-                                        if (bye_temp == no_of_teams) {
-                                            no_of_byes = 0;
-                                            no_of_byes_uh = 0;
-                                            no_of_byes_lh = 0;
-                                            no_of_rounds = n;
-                                            flag = 1;
-                                            break;
-                                        } else if (bye_temp > no_of_teams) {
-                                            break;
-                                        }
-                                    }
+                                if (data.status == 201) {
+                                    // var no_of_matches;
+                                    // var no_of_teams;
+                                    // var upper_half_teams;
+                                    // var lower_half_teams;
+                                    // var no_of_byes;
+                                    // var no_of_rounds;
+                                    // var no_of_byes_uh;
+                                    // var no_of_byes_lh;
+                                    // var bye_temp = 1;
+                                    // var flag = 0;
 
 
-                                    if (flag == 0) {
-                                        no_of_byes = bye_temp - no_of_teams;
-                                        no_of_rounds = n;
-                                        if (no_of_byes % 2 == 0) {
-                                            no_of_byes_uh = no_of_byes / 2;
-                                            no_of_byes_lh = no_of_byes / 2;
-                                        } else {
-                                            no_of_byes_uh = no_of_byes - 1 / 2;
-                                            no_of_byes_lh = no_of_byes + 1 / 2;
-                                        }
+
+                                    // team_fix_list = data.team;
+                                    // no_of_teams = team_fix_list.length;
+                                    // no_of_matches = team_fix_list.length - 1;
+
+                                    // if (no_of_teams % 2 == 0) {
+                                    //     //upper and lower half
+                                    //     upper_half_teams = no_of_teams / 2;
+                                    //     lower_half_teams = no_of_teams / 2;
+
+                                    //     for (var n = 1; n < 20; n++) {
+                                    //         bye_temp = Math.pow(2, n);
+                                    //         if (bye_temp == no_of_teams) {
+                                    //             no_of_byes = 0;
+                                    //             no_of_byes_uh = 0;
+                                    //             no_of_byes_lh = 0;
+                                    //             no_of_rounds = n;
+                                    //             flag = 1;
+                                    //             break;
+                                    //         } else if (bye_temp > no_of_teams) {
+                                    //             break;
+                                    //         }
+                                    //     }
+                                    //     if (flag == 0) {
+                                    //         no_of_byes = bye_temp - no_of_teams;
+                                    //         no_of_rounds = n;
+                                    //         if (no_of_byes % 2 == 0) {
+                                    //             no_of_byes_uh = no_of_byes / 2;
+                                    //             no_of_byes_lh = no_of_byes / 2;
+                                    //         } else {
+                                    //             no_of_byes_uh = no_of_byes - 1 / 2;
+                                    //             no_of_byes_lh = no_of_byes + 1 / 2;
+                                    //         }
 
 
-                                    }
-                                    // console.log(no_of_teams);
-                                    // console.log(no_of_matches);
-                                    // console.log(upper_half_teams);
-                                    // console.log(lower_half_teams);
-                                    // console.log(no_of_byes);
-                                    // console.log(no_of_rounds);
-                                    // console.log(no_of_byes_uh);
-                                    // console.log(no_of_byes_lh);
+                                    //     }
 
-                                } else {
-                                    //upper and lower half
-                                    upper_half_teams = no_of_teams + 1 / 2;
-                                    lower_half_teams = no_of_teams - 1 / 2;
+
+
+
+
+                                    // } else {
+                                    //     //upper and lower half
+                                    //     upper_half_teams = (no_of_teams + 1) / 2;
+                                    //     lower_half_teams = (no_of_teams - 1) / 2;
+
+
+                                    //     for (var n = 1; n < 20; n++) {
+                                    //         bye_temp = Math.pow(2, n);
+                                    //         if (bye_temp == no_of_teams) {
+                                    //             no_of_byes = 0;
+                                    //             no_of_byes_uh = 0;
+                                    //             no_of_byes_lh = 0;
+                                    //             no_of_rounds = n;
+                                    //             flag = 1;
+                                    //             break;
+                                    //         } else if (bye_temp > no_of_teams) {
+                                    //             break;
+                                    //         }
+                                    //     }
+                                    //     if (flag == 0) {
+                                    //         no_of_byes = bye_temp - no_of_teams;
+                                    //         no_of_rounds = n;
+                                    //         if (no_of_byes % 2 == 0) {
+                                    //             no_of_byes_uh = (no_of_byes) / 2;
+                                    //             no_of_byes_lh = (no_of_byes) / 2;
+                                    //         } else {
+                                    //             no_of_byes_uh = (no_of_byes - 1) / 2;
+                                    //             no_of_byes_lh = (no_of_byes + 1) / 2;
+                                    //         }
+
+
+                                    //     }
                                 }
+                                // console.log(team_fix_list.length);
+                                // console.log(no_of_teams);
+                                // console.log(no_of_matches);
+                                // console.log(upper_half_teams);
+                                // console.log(lower_half_teams);
+                                // console.log(no_of_byes);
+                                // console.log(no_of_rounds);
+                                // console.log(no_of_byes_uh);
+                                // console.log(no_of_byes_lh);
 
-                                var x;
-                                team_fix_list = data.team;
-                                fixtures = [];
-                                for (var i = 0; i <= team_fix_list.length; i++) {
-                                    // console.log(team_fix_list);
-                                    var item = team_fix_list[Math.floor(Math.random() * team_fix_list.length)];
-                                    // console.log(item);
-                                    var temp_2 = item['team_id'];
-                                    var temp_3 = item['team_name'];
-                                    var team1 = temp_2;
-                                    var team_1_name = item['team_name'];
-                                    // console.log(temp_2);
-                                    var index = team_fix_list.findIndex(x => x.team_id === temp_2);
-                                    console.log(index);
-                                    team_fix_list.splice(index, 1);
 
-                                    var item = team_fix_list[Math.floor(Math.random() * team_fix_list.length)];
-                                    // console.log(item);
-                                    var temp_2 = item['team_id'];
-                                    var temp_3 = item['team_name'];
-                                    var team2 = temp_2;
-                                    var team_2_name = item['team_name'];
-                                    // console.log(temp_2);
-                                    var index = team_fix_list.findIndex(x => x.team_id === temp_2);
-                                    console.log(index);
-                                    team_fix_list.splice(index, 1);
 
-                                    fixtures.push({
-                                        team_1: team1,
-                                        team_1_name: team_1_name,
-                                        team_2: team2,
-                                        team_2_name: team_2_name
-                                    });
-
-                                    // console.log(team_fix_list);
-
-                                }
-                                console.log(JSON.stringify(fixtures));
-                                if (fixtures.length == 0) {
-                                    error = error + 'meta';
-                                    sweetAlert("Warning", "Please enter player", "warning");
-                                } else {
-                                    formData.append('fixtures', JSON.stringify(fixtures));
-                                }
                                 if (no_of_teams == 0) {
                                     error = error + 'teams';
-                                    sweetAlert("Warning", "Please enter player", "warning");
+                                    sweetAlert("Warning", "teams", "warning");
                                 } else {
                                     formData.append('no_of_teams', no_of_teams);
                                 }
                                 if (no_of_rounds == "") {
                                     error = error + 'rounds';
-                                    sweetAlert("Warning", "Please enter player", "warning");
+                                    sweetAlert("Warning", "rounds", "warning");
                                 } else {
                                     formData.append('no_of_rounds', no_of_rounds);
                                 }
                                 if (no_of_matches == 0) {
                                     error = error + 'matches';
-                                    sweetAlert("Warning", "Please enter player", "warning");
+                                    sweetAlert("Warning", "matches", "warning");
                                 } else {
                                     formData.append('no_of_matches', no_of_matches);
                                 }
                                 if (upper_half_teams == "") {
                                     error = error + 'upper_half';
-                                    sweetAlert("Warning", "Please enter player", "warning");
+                                    sweetAlert("Warning", "upper_half", "warning");
                                 } else {
                                     formData.append('upper_half_teams', upper_half_teams);
                                 }
                                 if (lower_half_teams == "") {
                                     error = error + 'lower_half_teams ';
-                                    sweetAlert("Warning", "Please enter player", "warning");
+                                    sweetAlert("Warning", "lower_half", "warning");
                                 } else {
                                     formData.append('lower_half_teams', lower_half_teams);
                                 }
-                                if (no_of_byes == "") {
-                                    error = error + 'byes';
-                                    sweetAlert("Warning", "Please enter player", "warning");
-                                } else {
-                                    formData.append('no_of_byes', no_of_byes);
-                                }
-                                if (no_of_byes_lh == "") {
-                                    error = error + 'no_of_byes_lh';
-                                    sweetAlert("Warning", "Please enter player", "warning");
-                                } else {
-                                    formData.append('no_of_byes_lh', no_of_byes_lh);
-                                }
-                                if (no_of_byes_uh == "") {
-                                    error = error + 'no_of_byes_uh';
-                                    sweetAlert("Warning", "Please enter player", "warning");
-                                } else {
-                                    formData.append('no_of_byes_uh', no_of_byes_uh);
-                                }
+                                formData.append('no_of_byes', no_of_byes);
+                                formData.append('no_of_byes_lh', no_of_byes_lh);
+                                formData.append('no_of_byes_uh', no_of_byes_uh);
+
+
+
                                 if (error == "") {
                                     // console.log(formData);
 
@@ -727,8 +935,227 @@ if (!isset($_SESSION['session_user'])) {
                                         success: function(data) {
 
                                             if (data.status == 201) {
+                                                fixtures = [];
+                                                var x;
+                                                // console.log(data.fixture_id);
+                                                number_of_teams = data.number_of_teams;
+                                                var number_of_rounds = data.number_of_rounds;
+                                                var number_of_matches = data.number_of_matches;
+                                                var uh_teams = data.uh_teams;
+                                                var lh_teams = data.uh_teams;
+                                                var byes_uh = data.no_of_byes_uh;
+                                                var byes_lh = data.no_of_byes_lh;
 
-                                                alert("success");
+
+                                                console.log(data.number_of_teams);
+                                                console.log(data.uh_teams);
+                                                console.log(data.lh_teams);
+                                                console.log(data.number_of_byes);
+                                                console.log(data.number_of_rounds);
+                                                console.log(data.number_of_matches);
+                                                console.log(data.no_of_byes_uh);
+                                                console.log(data.no_of_byes_lh);
+
+                                                fixture_id = data.fixture_id;
+
+                                                while (team_fix_list.length == 0) {
+                                                    if (team_fix_list.length % 2 == 0) {
+
+                                                        for (var i = 0; i <= team_fix_list; i++) {
+
+                                                            var item = team_fix_list[Math.floor(Math.random() * team_fix_list)];
+
+
+
+
+                                                            var temp_2 = item['team_id'];
+                                                            var temp_3 = item['team_name'];
+                                                            var team1 = temp_2;
+                                                            var team_1_name = item['team_name'];
+
+                                                            // console.log(temp_2);
+                                                            var index = team_fix_list.findIndex(x => x.team_id === temp_2);
+                                                            console.log(index);
+                                                            team_fix_list.splice(index, 1);
+
+
+
+
+
+                                                            var item = team_fix_list[Math.floor(Math.random() * team_fix_list.length)];
+                                                            // console.log(item);
+                                                            var temp_2 = item['team_id'];
+                                                            var temp_3 = item['team_name'];
+                                                            var team2 = temp_2;
+                                                            var team_2_name = item['team_name'];
+                                                            // console.log(temp_2);
+                                                            var index = team_fix_list.findIndex(x => x.team_id === temp_2);
+                                                            console.log(index);
+                                                            team_fix_list.splice(index, 1);
+
+                                                            fixtures.push({
+                                                                team_1: team1,
+                                                                team_1_name: team_1_name,
+                                                                team_2: team2,
+                                                                team_2_name: team_2_name,
+
+                                                            });
+
+
+
+
+                                                            // console.log(team_fix_list);
+
+                                                        }
+
+                                                    } else {
+                                                        var item = team_fix_list[Math.floor(Math.random() * team_fix_list)];
+                                                        var temp_2 = item['team_id'];
+                                                        var temp_3 = item['team_name'];
+                                                        var team1 = temp_2;
+                                                        var team_1_name = item['team_name'];
+
+                                                        var index = team_fix_list.findIndex(x => x.team_id === temp_2);
+
+                                                        team_fix_list.splice(index, 1);
+                                                        fixtures.push({
+                                                            team_1: team1,
+                                                            team_1_name: team_1_name,
+                                                            team_2: "bye",
+                                                            team_2_name: "bye",
+
+                                                        });
+
+
+                                                    }
+                                                }
+
+
+                                                console.log(JSON.stringify(fixtures));
+                                                var formData = new FormData();
+                                                if (fixtures.length == 0) {
+                                                    error = error + 'meta';
+                                                    sweetAlert("Warning", "Please enter player", "warning");
+                                                } else {
+                                                    formData.append('fixtures', JSON.stringify(fixtures));
+                                                }
+                                                $.ajax({
+                                                    type: 'POST',
+                                                    url: 'PHP/add_fixtures.php',
+                                                    dataType: "json",
+                                                    cache: false,
+                                                    contentType: false,
+                                                    processData: false,
+                                                    data: formData,
+                                                    success: function(data) {
+                                                        if (data.status == 201) {
+
+                                                            alert("success");
+
+
+
+                                                        } else if (data.status == 301) {
+                                                            //Email already registered
+                                                            alert(data.error);
+                                                        } else {
+                                                            alert("Some error occured. Our team is dedicatedly addressing this issue. Thankyou for your patience");
+                                                        }
+                                                    }
+                                                });
+
+
+
+                                                // for (var i = 0; i < data.uh_teams; i++) {
+                                                //     bye_temp_uh = "false"
+                                                //     if (byes_uh != 0) {
+                                                //         bye_temp_uh = "true";
+                                                //         byes_uh = byes_uh - 1;
+                                                //     }
+
+                                                //     var item = team_fix_list[Math.floor(Math.random() * team_fix_list.length)];
+                                                //     var temp_2 = item['team_id'];
+                                                //     var temp_3 = item['team_name'];
+
+                                                //     var index = team_fix_list.findIndex(x => x.team_id === temp_2);
+                                                //     team_fix_list.splice(index, 1);
+                                                //     $.ajax({
+                                                //         type: 'POST',
+                                                //         url: 'PHP/add_upper.php',
+                                                //         dataType: "json",
+                                                //         async: false,
+                                                //         data: {
+                                                //             team_id: temp_2,
+                                                //             team_name: temp_3,
+                                                //             fixture_id: data.fixture_id,
+                                                //             bye: bye_temp_uh
+
+                                                //         },
+                                                //         success: function(data) {
+                                                //             if (data.status == 201) {
+
+                                                //                 alert("success");
+
+
+
+                                                //             } else if (data.status == 301) {
+                                                //                 //Email already registered
+                                                //                 alert(data.error);
+                                                //             } else {
+                                                //                 alert("Some error occured. Our team is dedicatedly addressing this issue. Thankyou for your patience");
+                                                //             }
+                                                //         }
+                                                //     });
+
+                                                // }
+
+                                                // for (var i = 0; i < data.lh_teams; i++) {
+                                                //     bye_temp_lh = "false"
+                                                //     if (byes_lh != 0) {
+                                                //         bye_temp_lh = "true";
+                                                //         byes_lh = byes_lh - 1;
+
+                                                //     }
+                                                //     console.log(bye_temp);
+
+                                                //     var item = team_fix_list[Math.floor(Math.random() * team_fix_list.length)];
+                                                //     var temp_2 = item['team_id'];
+                                                //     var temp_3 = item['team_name'];
+
+                                                //     var index = team_fix_list.findIndex(x => x.team_id === temp_2);
+                                                //     team_fix_list.splice(index, 1);
+                                                //     $.ajax({
+                                                //         type: 'POST',
+                                                //         url: 'PHP/add_lower.php',
+                                                //         dataType: "json",
+                                                //         async: false,
+                                                //         data: {
+                                                //             team_id: temp_2,
+                                                //             team_name: temp_3,
+                                                //             fixture_id: data.fixture_id,
+                                                //             bye: bye_temp_lh
+
+                                                //         },
+                                                //         success: function(data) {
+                                                //             if (data.status == 201) {
+
+                                                //                 // alert("success");
+
+
+
+                                                //             } else if (data.status == 301) {
+                                                //                 //Email already registered
+                                                //                 alert(data.error);
+                                                //             } else {
+                                                //                 alert("Some error occured. Our team is dedicatedly addressing this issue. Thankyou for your patience");
+                                                //             }
+                                                //         }
+                                                //     });
+
+
+
+                                                // }
+
+
 
 
                                             } else if (data.status == 301) {
@@ -756,219 +1183,140 @@ if (!isset($_SESSION['session_user'])) {
                             } else {
                                 //     alert("problem with query");
                             }
+
+
                         }
 
 
-                        // success: function(data) {
-                        //     if (data.status == 201) {
 
-                        //        
-
-                        //         if (fixtures.length == 0) {
-                        //             error = error + 'meta';
-                        //             sweetAlert("Warning", "Please enter player", "warning");
-                        //         } else {
-                        //             formData.append('fixtures', JSON.stringify(fixtures));
-                        //         }
-                        //         if (error == "") {
-                        //             // console.log(formData);
-
-                        //             $.ajax({
-                        //                 url: "PHP/add_fixtures.php",
-                        //                 type: "POST",
-                        //                 dataType: "json",
-                        //                 cache: false,
-                        //                 contentType: false,
-                        //                 processData: false,
-                        //                 data: formData,
-
-                        //                 success: function(data) {
-
-                        //                     if (data.status == 201) {
-
-                        //                         alert("success");
-
-
-                        //                     } else if (data.status == 301) {
-                        //                         console.log(data.error);
-                        //                         alert("error");
-                        //                     } else if (data.status == 601) {
-                        //                         console.log(data.error);
-                        //                         alert("error");
-                        //                     } else if (data.status == 603) {
-                        //                         console.log(data.error);
-                        //                         alert("error");
-                        //                     } else {
-
-                        //                     }
-                        //                 }
-                        //             });
-                        //         } else {
-
-                        //         }
-
-                        //         // $("#teams").show();
-                        //         // $("#teams").empty();
-
-                        //         // while (team_fix_list.length > 0) {
-
-
-                        //         // var team1 = temp_2;
-
-                        //         // var item = team_fix_list[Math.floor(Math.random() * team_fix_list.length)];
-                        //         // // console.log(item);
-                        //         // var temp_2 = item['team_id'];
-                        //         // // console.log(temp_2);
-                        //         // var index = team_fix_list.findIndex(x => x.team_id === temp_2);
-                        //         // console.log(index);
-                        //         // team_fix_list.splice(index, 1);
-
-                        //         // console.log(team_fix_list);
-
-
-
-                        //         // var team2 = temp_2;
-                        //         // fixtures.push({
-                        //         //     team_1: team1,
-                        //         //     team_2: team2
-                        //         // });
-
-                        //         // console.log(team1);
-                        //         // console.log(team2);
-
-
-                        //         // 
-
-
-                        //         // for (var i = 0; i < tour_list.length; i++) {
-
-
-                        //         // }
-
-
-
-
-
-
-
-
-                        //         // }
-
-
-                        //         // console.log(index);
-                        //         // team_list.remove(item);
-
-                        //         // for (var i = 0; i < team_list.length; i++) {
-                        //         //     team_temp.push({
-
-                        //         //         'name': team_list[i]['team_name']
-                        //         //     });
-
-                        //         //     console.log(team_list[i]['team_name']);
-
-
-                        //         //     // var j;
-                        //         //     // j = i + 1;
-
-                        //         //     // $("#teams").html($("#teams").html() + '<ol>' + j + ". " + team_list[i]['team_name'] + '</ol>');
-                        //         // }
-
-
-
-
-
-                        //     } else if (data.status == 301) {
-                        //         //Email already registered
-                        //         alert(data.error);
-                        //     } else {
-                        //         alert("Some error occured. Our team is dedicatedly addressing this issue. Thankyou for your patience");
-                        //     }
-                        // }
                     });
 
 
 
-                    // if ($('#event select').val() == "select") {
-                    //     sweetAlert("Warning", "Please enter all fields", "warning");
-                    //     error = error + 'title';
-                    // } else {
+                });
+                $('#add-tournament').on('click', function(e) {
+                    e.preventDefault();
+                    var error = "";
 
-                    //     formData.append('event_id', $('#event select').val());
-                    // }
-                    // if ($('#tour_name').val() == "") {
-                    //     sweetAlert("Warning", "Please enter a valid name", "warning");
-                    //     error = error + 'name';
-                    // } else {
+                    var formData = new FormData();
+                    var x;
 
-                    //     formData.append('tour_name', $('#tour_name').val());
-                    // }
-                    // if ($("#tour_descrip").val() == "") {
+                    fixtures = [];
+                    var team_upper_list;
 
-                    //     sweetAlert("Warning", "Please enter all fields", "warning");
-                    //     error = error + 'tour_descrip';
-                    // } else {
+                    $.ajax({
+                        type: 'POST',
+                        url: 'PHP/get_upper_half.php',
+                        dataType: "json",
+                        async: false,
+                        data: {
+                            fixture_id: fixture_id
 
-                    //     formData.append('tour_descrip', $("#tour_descrip").val());
-                    // }
-                    // if ($("#player_limit").val() == "") {
-
-                    //     sweetAlert("Warning", "Please enter all fields", "warning");
-                    //     error = error + 'player_limit';
-                    // } else {
-
-                    //     formData.append('player_limit', $("#player_limit").val());
-                    // }
-                    // if ($("#start-date").val() == "") {
-                    //     sweetAlert("Warning", "Please enter a valid start date", "warning");
-                    //     error = error + 'date';
-                    // } else {
-                    //     formData.append('start_date', $("#start-date").val());
-                    // }
-                    // if ($("#end-date").val() == "") {
-                    //     sweetAlert("Warning", "Please enter a end date", "warning");
-                    //     error = error + 'date';
-                    // } else {
-                    //     formData.append('end_date', $("#end-date").val());
-
-                    // }
-                    // if (error == "") {
-                    //     console.log(formData);
-
-                    //     $.ajax({
-                    //         url: "PHP/addTour.php",
-                    //         type: "POST",
-                    //         dataType: "json",
-                    //         cache: false,
-                    //         contentType: false,
-                    //         processData: false,
-                    //         data: formData,
-
-                    //         success: function(data) {
-                    //             console.log(data);
-                    //             if (data.status == 201) {
-
-                    //                 window.location.replace("tournaments.php");
+                        },
+                        success: function(data) {
+                            if (data.status == 201) {
 
 
-                    //             } else if (data.status == 301) {
-                    //                 console.log(data.error);
-                    //                 alert("error");
-                    //             } else if (data.status == 601) {
-                    //                 console.log(data.error);
-                    //                 console.log(data.start_date_event);
-                    //                 console.log(data.end_date_event);
-                    //                 alert("error");
-                    //             } else if (data.status == 701) {
 
-                    //                 alert(data.error);
-                    //             } else {
 
-                    //             }
-                    //         }
-                    //     });
-                    // } else {
 
-                    // }
+
+
+
+
+                            } else if (data.status == 301) {
+                                //Email already registered
+                                alert(data.error);
+                            } else {
+                                alert("Some error occured. Our team is dedicatedly addressing this issue. Thankyou for your patience");
+                            }
+                        }
+                    });
+
+
+
+
+                    if ($('#event select').val() == "select") {
+                        sweetAlert("Warning", "Please enter all fields", "warning");
+                        error = error + 'title';
+                    } else {
+
+                        formData.append('event_id', $('#event select').val());
+                    }
+                    if ($('#tour_name').val() == "") {
+                        sweetAlert("Warning", "Please enter a valid name", "warning");
+                        error = error + 'name';
+                    } else {
+
+                        formData.append('tour_name', $('#tour_name').val());
+                    }
+                    if ($("#tour_descrip").val() == "") {
+
+                        sweetAlert("Warning", "Please enter all fields", "warning");
+                        error = error + 'tour_descrip';
+                    } else {
+
+                        formData.append('tour_descrip', $("#tour_descrip").val());
+                    }
+                    if ($("#player_limit").val() == "") {
+
+                        sweetAlert("Warning", "Please enter all fields", "warning");
+                        error = error + 'player_limit';
+                    } else {
+
+                        formData.append('player_limit', $("#player_limit").val());
+                    }
+                    if ($("#start-date").val() == "") {
+                        sweetAlert("Warning", "Please enter a valid start date", "warning");
+                        error = error + 'date';
+                    } else {
+                        formData.append('start_date', $("#start-date").val());
+                    }
+                    if ($("#end-date").val() == "") {
+                        sweetAlert("Warning", "Please enter a end date", "warning");
+                        error = error + 'date';
+                    } else {
+                        formData.append('end_date', $("#end-date").val());
+
+                    }
+                    if (error == "") {
+                        console.log(formData);
+
+                        $.ajax({
+                            url: "PHP/addTour.php",
+                            type: "POST",
+                            dataType: "json",
+                            cache: false,
+                            contentType: false,
+                            processData: false,
+                            data: formData,
+
+                            success: function(data) {
+                                console.log(data);
+                                if (data.status == 201) {
+
+                                    window.location.replace("tournaments.php");
+
+
+                                } else if (data.status == 301) {
+                                    console.log(data.error);
+                                    alert("error");
+                                } else if (data.status == 601) {
+                                    console.log(data.error);
+                                    console.log(data.start_date_event);
+                                    console.log(data.end_date_event);
+                                    alert("error");
+                                } else if (data.status == 701) {
+
+                                    alert(data.error);
+                                } else {
+
+                                }
+                            }
+                        });
+                    } else {
+
+                    }
                 });
             </script>
     </body>

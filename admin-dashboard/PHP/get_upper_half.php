@@ -3,31 +3,28 @@
 require_once 'link.php';
 session_start();
 
-if (isset($_POST['tour_id'])) {
+if (isset($_POST['fixture_id'])) {
 
 
     $data = array();
     $team = array();
 
 
-    $tour_id = mysqli_real_escape_string($link, $_POST['tour_id']);
+    $fixture_id = mysqli_real_escape_string($link, $_POST['fixture_id']);
 
 
-    $result = mysqli_query($link, "SELECT DISTINCT uuid,team_name FROM entries WHERE tournament_id = '$tour_id' ");
+    $result = mysqli_query($link, "SELECT * FROM `upper_half` WHERE `fixture_id` = '$fixture_id' ");
 
     if (mysqli_num_rows($result) != 0) {
         $i = 0;
         while ($row = $result->fetch_assoc()) {
-            // $team[$i]['id'] = $row['uuid'];
+            $team[$i]['team_id'] = $row['team_uuid'];
             $team[$i]['team_name'] = $row['team_name'];
-            $team[$i]['team_id'] = $row['uuid'];
             $i = $i + 1;
         }
 
-
         $data['status'] = 201;
-        $data['team'] = $team;
-        $data['tour_id'] = $tour_id;
+        $data['team_upper'] = $team;
         echo json_encode($data);
     } else {
         $data['status'] = 301;
