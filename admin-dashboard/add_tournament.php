@@ -240,11 +240,11 @@ if (!isset($_SESSION['session_user'])) {
                                 <div class="card-body pt-3">
 
                                     <div class="row pt-3">
-                                        <div class="col-lg-12">
 
+                                        <div class="col-lg-12">
                                             <div class="form-group" id="event">
                                                 <label class="control-label" style="font-weight:bold;font-size:1.3rem;color:#717BA2;">Select Event</label>
-                                                <select class="form-control custom-select" style="border-radius: 7px;width: 100%;padding: 12px 18px;font-size:15px" data-placeholder="Choose a Category" tabindex="1">
+                                                <select class="form-control custom-select" style="border-radius: 7px;width: 100%;padding: 12px 18px;font-size:15px" data-placeholder="Choose a Category" tabindex="1" onchange="fetch_dates(this.value)">
                                                     <option value="select">Select Event</option>
                                                 </select>
 
@@ -254,6 +254,8 @@ if (!isset($_SESSION['session_user'])) {
 
                                         <div class="col-lg-12">
                                             <div class="form-group">
+                                                <div class="dates mt-2 mb-1"></div>
+
                                                 <label class="control-label" style="font-weight:bold;font-size:1.3rem;color:#717BA2;">Name of the tournament</label>
                                                 <input type="text " id="tour_name" class="form-control" required="" placeholder="Tournament name" style="border-radius: 7px;width: 100%;padding: 12px 18px;font-size:15px">
 
@@ -262,16 +264,20 @@ if (!isset($_SESSION['session_user'])) {
 
 
                                                 <label class="control-label" style="font-weight:bold;font-size:1.3rem;color:#717BA2;">Players per team</label>
-                                                <input type="number" class="form-control" id="player_limit">
+                                                <input type="number" class="form-control" id="player_limit" style="padding: 12px 18px;border-radius: 7px;">
 
 
 
                                                 <label class="control-label" style="font-weight:bold;font-size:1.3rem;color:#717BA2;">Start date</label>
-                                                <input type="text" class="form-control" placeholder="2017-06-04" id="start-date">
+                                                <input type="text" class="form-control" placeholder="2017-06-04" id="start-date" style="padding: 12px 18px;border-radius: 7px;">
 
                                                 <label class="control-label" style="font-weight:bold;font-size:1.3rem;color:#717BA2;">End date</label>
-                                                <input type="text" class="form-control " placeholder="2017-06-04" id="end-date">
+                                                <input type="text" class="form-control " placeholder="2017-06-04" id="end-date" style="padding: 12px 18px;border-radius: 7px;">
 
+                                                <div class="form-group pt-5 d-flex justify-content-center">
+
+                                                    <button class="btn" id="add-tournament" type="button" style="font-size: 1rem;background-color: #2b8fe9;color: #ffffff;">Add Tournaments</button>
+                                                </div>
 
 
 
@@ -283,192 +289,217 @@ if (!isset($_SESSION['session_user'])) {
 
 
 
+
+
+
+
+
+
+
                                     </div>
-                                    <div class="form-group pt-3 d-flex justify-content-center">
-                                        <button class="btn" id="add-tournament" type="button" style="font-size: 1rem;background-color: #2b8fe9;color: #ffffff;">Add Tournaments</button>
-
-                                    </div>
-
-
-
-
-
                                 </div>
+
+
+
+
+
+
+
+
                             </div>
-
-
-
-
-
-
-
-
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
 
 
 
 
-        <!-- Javascripts -->
-        <script src="assets/plugins/jquery/jquery-3.4.1.min.js "></script>
-        <script src="assets/plugins/bootstrap/popper.min.js "></script>
-        <script src="assets/plugins/bootstrap/js/bootstrap.min.js "></script>
-        <script src="assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js "></script>
-        <script src="assets/plugins/jquery-sparkline/jquery.sparkline.min.js "></script>
-        <script src="assets/plugins/apexcharts/dist/apexcharts.min.js "></script>
-        <script src="assets/plugins/blockui/jquery.blockUI.js "></script>
-        <script src="assets/plugins/flot/jquery.flot.min.js "></script>
-        <script src="assets/plugins/flot/jquery.flot.time.min.js "></script>
-        <script src="assets/plugins/flot/jquery.flot.symbol.min.js "></script>
-        <script src="assets/plugins/flot/jquery.flot.resize.min.js "></script>
-        <script src="assets/plugins/flot/jquery.flot.tooltip.min.js "></script>
-        <script src="assets/js/connect.min.js "></script>
-        <script src="assets/js/pages/dashboard.js "></script>
-        <script src="assets/plugins/DataTables/datatables.min.js"></script>
-        <script src="assets/plugins/DataTables/dataTables.select.min.js"></script>
-        <script src="assets/sweetalert/sweetalert.min.js"></script>
-        <script src="assets/sweetalert/jquery.sweet-alert.custom.js"></script>
-        <script src="../assets/moment/moment.js"></script>
-        <!-- <script src="../assets/dropify/dist/js/dropify.min.js"></script> -->
-        <script src="../assets/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
+            <!-- Javascripts -->
+            <script src="assets/plugins/jquery/jquery-3.4.1.min.js "></script>
+            <script src="assets/plugins/bootstrap/popper.min.js "></script>
+            <script src="assets/plugins/bootstrap/js/bootstrap.min.js "></script>
+            <script src="assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js "></script>
+            <script src="assets/plugins/jquery-sparkline/jquery.sparkline.min.js "></script>
+            <script src="assets/plugins/apexcharts/dist/apexcharts.min.js "></script>
+            <script src="assets/plugins/blockui/jquery.blockUI.js "></script>
+            <script src="assets/plugins/flot/jquery.flot.min.js "></script>
+            <script src="assets/plugins/flot/jquery.flot.time.min.js "></script>
+            <script src="assets/plugins/flot/jquery.flot.symbol.min.js "></script>
+            <script src="assets/plugins/flot/jquery.flot.resize.min.js "></script>
+            <script src="assets/plugins/flot/jquery.flot.tooltip.min.js "></script>
+            <script src="assets/js/connect.min.js "></script>
+            <script src="assets/js/pages/dashboard.js "></script>
+            <script src="assets/plugins/DataTables/datatables.min.js"></script>
+            <script src="assets/plugins/DataTables/dataTables.select.min.js"></script>
+            <script src="assets/sweetalert/sweetalert.min.js"></script>
+            <script src="assets/sweetalert/jquery.sweet-alert.custom.js"></script>
+            <script src="../assets/moment/moment.js"></script>
+            <!-- <script src="../assets/dropify/dist/js/dropify.min.js"></script> -->
+            <script src="../assets/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
 
 
-        <script>
-            $('#start-date').bootstrapMaterialDatePicker({
-                time: false,
-                weekStart: 0
-            });
-            $('#end-date').bootstrapMaterialDatePicker({
-                time: false,
-                minDate: new Date(),
-                weekStart: 0
-            }).on('change', function(e, date) {
-                $('#end-date').bootstrapMaterialDatePicker('setMinDate', date);
-            });
-            var event_list;
+            <script>
+                $('#start-date').bootstrapMaterialDatePicker({
+                    time: false,
+                    weekStart: 0
+                });
+                $('#end-date').bootstrapMaterialDatePicker({
+                    time: false,
+                    minDate: new Date(),
+                    weekStart: 0
+                }).on('change', function(e, date) {
+                    $('#end-date').bootstrapMaterialDatePicker('setMinDate', date);
+                });
+                var event_list;
+                var value;
 
-            // Fetch all articles 
-            $.ajax({
-                type: 'POST',
-                url: 'PHP/get_events.php',
-                dataType: "json",
-                async: false,
-                data: {
-                    type: 'events'
-                },
-                success: function(data) {
-                    if (data.status == 201) {
+                // Fetch all articles 
+                $.ajax({
+                    type: 'POST',
+                    url: 'PHP/get_events.php',
+                    dataType: "json",
+                    async: false,
+                    data: {
+                        type: 'events'
+                    },
+                    success: function(data) {
+                        if (data.status == 201) {
 
-                        event_list = data.event;
-                        for (var i = 0; i < event_list.length; i++) {
-                            $("#event select").html($("#event select").html() + '<option value="' + event_list[i]['event_id'] + '">' + event_list[i]['event_name'] + ' </option>');
+                            event_list = data.event;
+                            for (var i = 0; i < event_list.length; i++) {
+                                $("#event select").html($("#event select").html() + '<option value="' + event_list[i]['event_id'] + '">' + event_list[i]['event_name'] + ' </option>');
+                            }
+
+
+
+                        } else if (data.status == 301) {
+                            //Email already registered
+                            alert(data.error);
+                        } else {
+                            alert("Some error occured. Our team is dedicatedly addressing this issue. Thankyou for your patience");
                         }
-
-
-
-                    } else if (data.status == 301) {
-                        //Email already registered
-                        alert(data.error);
-                    } else {
-                        alert("Some error occured. Our team is dedicatedly addressing this issue. Thankyou for your patience");
                     }
-                }
-            });
+                });
 
-
-
-
-            // Add comment 
-
-            $('#add-tournament').on('click', function(e) {
-                e.preventDefault();
-                var error = "";
-                var formData = new FormData();
-
-                if ($('#event select').val() == "select") {
-                    sweetAlert("Warning", "Please enter all fields", "warning");
-                    error = error + 'title';
-                } else {
-
-                    formData.append('event_id', $('#event select').val());
-                }
-                if ($('#tour_name').val() == "") {
-                    sweetAlert("Warning", "Please enter a valid name", "warning");
-                    error = error + 'name';
-                } else {
-
-                    formData.append('tour_name', $('#tour_name').val());
-                }
-                if ($("#tour_descrip").val() == "") {
-
-                    sweetAlert("Warning", "Please enter all fields", "warning");
-                    error = error + 'tour_descrip';
-                } else {
-
-                    formData.append('tour_descrip', $("#tour_descrip").val());
-                }
-                if ($("#player_limit").val() == "") {
-
-                    sweetAlert("Warning", "Please enter all fields", "warning");
-                    error = error + 'player_limit';
-                } else {
-
-                    formData.append('player_limit', $("#player_limit").val());
-                }
-                if ($("#start-date").val() == "") {
-                    sweetAlert("Warning", "Please enter a valid start date", "warning");
-                    error = error + 'date';
-                } else {
-                    formData.append('start_date', $("#start-date").val());
-                }
-                if ($("#end-date").val() == "") {
-                    sweetAlert("Warning", "Please enter a end date", "warning");
-                    error = error + 'date';
-                } else {
-                    formData.append('end_date', $("#end-date").val());
-
-                }
-                if (error == "") {
-                    console.log(formData);
-
+                function fetch_dates(value) {
                     $.ajax({
-                        url: "PHP/addTour.php",
-                        type: "POST",
+                        type: 'POST',
+                        url: 'PHP/get_event_dates.php',
                         dataType: "json",
-                        cache: false,
-                        contentType: false,
-                        processData: false,
-                        data: formData,
+                        async: false,
+                        data: {
+                            event_id: value
 
+                        },
                         success: function(data) {
-                            console.log(data);
                             if (data.status == 201) {
 
-                                window.location.replace("tournaments.php");
+                                $(".dates").html('<label class="control-label" style="font-weight:bold;font-size:1.3rem;color:#717BA2;">Event Start date</label><input type="text" class="form-control" style="border-radius: 7px;width: 100%;padding: 12px 18px;font-size:15px" value=" ' + data.start_date + ' "readonly ><label class="control-label" style="font-weight:bold;font-size:1.3rem;color:#717BA2;">Event End date</label><input type="text" class="form-control" style="border-radius: 7px;width: 100%;padding: 12px 18px;font-size:15px" value=" ' + data.end_date + ' "readonly >');
+
 
 
                             } else if (data.status == 301) {
-                                console.log(data.error);
-                                alert("error");
-                            } else if (data.status == 601) {
-                                console.log(data.error);
-                                alert("error");
-                            } else if (data.status == 603) {
-                                console.log(data.error);
-                                alert("error");
+                                //Email already registered
+                                alert(data.error);
                             } else {
-
+                                alert("Some error occured. Our team is dedicatedly addressing this issue. Thankyou for your patience");
                             }
                         }
                     });
-                } else {
-
                 }
-            });
-        </script>
+
+
+                // Add comment 
+
+                $('#add-tournament').on('click', function(e) {
+                    e.preventDefault();
+                    var error = "";
+                    var formData = new FormData();
+
+                    if ($('#event select').val() == "select") {
+                        sweetAlert("Warning", "Please enter all fields", "warning");
+                        error = error + 'title';
+                    } else {
+
+                        formData.append('event_id', $('#event select').val());
+                    }
+                    if ($('#tour_name').val() == "") {
+                        sweetAlert("Warning", "Please enter a valid name", "warning");
+                        error = error + 'name';
+                    } else {
+
+                        formData.append('tour_name', $('#tour_name').val());
+                    }
+                    if ($("#tour_descrip").val() == "") {
+
+                        sweetAlert("Warning", "Please enter all fields", "warning");
+                        error = error + 'tour_descrip';
+                    } else {
+
+                        formData.append('tour_descrip', $("#tour_descrip").val());
+                    }
+                    if ($("#player_limit").val() == "") {
+
+                        sweetAlert("Warning", "Please enter all fields", "warning");
+                        error = error + 'player_limit';
+                    } else {
+
+                        formData.append('player_limit', $("#player_limit").val());
+                    }
+                    if ($("#start-date").val() == "") {
+                        sweetAlert("Warning", "Please enter a valid start date", "warning");
+                        error = error + 'date';
+                    } else {
+                        formData.append('start_date', $("#start-date").val());
+                    }
+                    if ($("#end-date").val() == "") {
+                        sweetAlert("Warning", "Please enter a end date", "warning");
+                        error = error + 'date';
+                    } else {
+                        formData.append('end_date', $("#end-date").val());
+
+                    }
+                    if (error == "") {
+                        console.log(formData);
+
+                        $.ajax({
+                            url: "PHP/addTour.php",
+                            type: "POST",
+                            dataType: "json",
+                            cache: false,
+                            contentType: false,
+                            processData: false,
+                            data: formData,
+
+                            success: function(data) {
+                                console.log(data);
+                                if (data.status == 201) {
+
+                                    window.location.replace("tournaments.php");
+
+
+                                } else if (data.status == 301) {
+                                    console.log(data.error);
+                                    alert("error");
+                                } else if (data.status == 601) {
+                                    console.log(data.error);
+                                    console.log(data.start_date_event);
+                                    console.log(data.end_date_event);
+                                    alert("error");
+                                } else if (data.status == 701) {
+
+                                    alert(data.error);
+                                } else {
+
+                                }
+                            }
+                        });
+                    } else {
+
+                    }
+                });
+            </script>
     </body>
 
     </html>

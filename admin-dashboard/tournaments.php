@@ -92,7 +92,7 @@ if (!isset($_SESSION['admin_email'])) {
                             <a href="tournaments"><i class="material-icons-outlined">account_circle</i>Tournaments</a>
                         </li>
                         <li>
-                            <a href="entries"><i class="material-icons-outlined">create</i>Users</a>
+                            <a href="entries"><i class="material-icons-outlined">create</i>Entries</a>
                         </li>
                         <li>
                             <a href="#"><i class="material-icons">text_format</i>Settings<i class="material-icons has-sub-menu">add</i></a>
@@ -246,8 +246,8 @@ if (!isset($_SESSION['admin_email'])) {
                                                     // $category_id = $row['category_id'];
                                                     // echo "<input type=\"hidden\" id=\"category_id\" value=\"{$row['category_id']}\">";
 
-                                                    $start_date = date("d/m/Y", strtotime($row['start_date']));
-                                                    $end_date = date("d/m/Y", strtotime($row['end_date']));
+                                                    $start_date = date("d/m/Y", strtotime($row['start_tour_date']));
+                                                    $end_date = date("d/m/Y", strtotime($row['end_tour_date']));
                                                     echo "<tr><td>{$i}</td><td>{$row['tour_name']}</td><td>{$row['player_limit']}</td><td>{$row['event_name']}</td><td> $start_date</td><td>$end_date</td><td>{$row['tour_descrip']}</td>
                                                         <td style=\"width: 100px;\">
                                                            </td></tr>\n";

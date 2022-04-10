@@ -44,6 +44,9 @@ if (isset($_POST['tour_name'])) {
     $end_date = mysqli_real_escape_string($link, $_POST['end_date']);
     $event_id = mysqli_real_escape_string($link, $_POST['event_id']);
     $tour_id =  guidv4(openssl_random_pseudo_bytes(16));
+    $end_date_event = "";
+    $start_date_event = "";
+    $temp = "";
 
     if (isset($_SESSION['user_id'])) {
         $user_id = $_SESSION['user_id'];
@@ -52,21 +55,40 @@ if (isset($_POST['tour_name'])) {
     }
 
 
+    $result = mysqli_query($link, "SELECT * FROM `events` WHERE `event_id` = '$event_id'");
 
+    if (mysqli_num_rows($result) != 0) {
 
+        while ($row = $result->fetch_assoc()) {
+            $end_date_event = $row['end_date'];
+            $start_date_event = $row['start_date'];
+        }
+    }
 
-    $query = "INSERT INTO `tournaments`(`id`, `event_id`, `tour_name`, `tour_slug`, `tour_descrip`,`player_limit`, `start_date`, `end_date`, `from_ip`, `from_browser`, `time`, `created_by`) VALUES ('$tour_id','$event_id','$tour_name','$tour_slug','$tour_descrip','$player_limit','$start_date','$end_date','$from_ip','$from_browser','$date_now','$user_id')";
-
-
-
-    // echo $query;
-
-    if ($result = mysqli_query($link, $query)) {
-        $data['status'] = 201;
+    if ($start_date < $start_date_event || $start_date > $end_date_event) {
+        $temp = "start-date";
+        $data['status'] = 701;
+        $data['error'] = "Invalid start date";
+        echo json_encode($data);
+    } else if ($end_date > $end_date_event || $end_date < $start_date_event) {
+        $temp = "end-date";
+        $data['status'] = 701;
+        $data['error'] = "Invalid end date";
         echo json_encode($data);
     } else {
-        $data['status'] = 601;
-        $data['error'] = $link->error;
-        echo json_encode($data);
+        $query = "INSERT INTO `tournaments`(`id`, `event_id`, `tour_name`, `tour_slug`, `tour_descrip`,`player_limit`, `start_tour_date`, `end_tour_date`, `from_ip`, `from_browser`, `time`, `created_by`) VALUES ('$tour_id','$event_id','$tour_name','$tour_slug','$tour_descrip','$player_limit','$start_date','$end_date','$from_ip','$from_browser','$date_now','$user_id')";
+
+
+
+        // echo $query;
+
+        if ($result = mysqli_query($link, $query)) {
+            $data['status'] = 201;
+            echo json_encode($data);
+        } else {
+            $data['status'] = 601;
+            $data['error'] = $link->error;
+            echo json_encode($data);
+        }
     }
 }

@@ -30,7 +30,7 @@ if (isset($_POST['event_name'])) {
 
 
 
-    $target_dir = "../assets/images/uploads/";
+    $target_dir = "../../assets/images/uploads/";
     $temp = explode(".", $_FILES["logo"]["name"]);
     $newfilename = round(microtime(true)) . '.' . end($temp);
     $target_file = $target_dir . basename($newfilename);
