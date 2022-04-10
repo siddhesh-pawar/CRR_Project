@@ -63,7 +63,7 @@
 
         #content {
             height: fit-content;
-            margin-top: 12%;
+            margin-top: 10%;
             background-color: #ffffff;
             background-image: linear-gradient(rgba(0, 0, 0, 0.7),
                     rgba(0, 0, 0, 0.7)), url("assets/images/R (4).jfif");
@@ -141,9 +141,10 @@
             text-align: center;
         }
 
-        a {
+        .links a {
             text-decoration: none !important;
             text-align: center;
+            color: #ffffff !important;
         }
 
         a:hover {
@@ -178,6 +179,7 @@
         }
 
         .button a {
+            text-decoration: none !important;
             position: relative;
             display: inline-block;
             padding: 5px 20px;
@@ -192,71 +194,7 @@
         }
 
 
-        /* .button a span{
-            display: block;
-            position: absolute;
-            background: #ff5817;
-        }
-        .button a span:nth-child(1){
-            left: 0;
-            bottom: 0;
-            width: 1px;
-            height: 100%;
-            transform: scale(0);
-            transform-origin: top;
-            transition: transform .5s;
-        }
-        .button a:hover span:nth-child(1){
-            transform: scale(1);
-            transform-origin: bottom;
-            transition: transform .5s;
-        }    
-        .button a span:nth-child(2){
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            height: 1px;
-            transform: scalex(0);
-            transform-origin: right;
-            transition: transform .5s;
-        }
-        .button a:hover span:nth-child(2){
-            transform: scale(1);
-            transform-origin: left;
-            transition: transform .5s;
-        }   
-        .button a span:nth-child(3){
-            right: 0;
-            bottom: 0;
-            width: 1px;
-            height: 100%;
-            transform: scale(0);
-            transform-origin: top;
-            transition: transform .5s;
-            transition-delay: 0.5 !important;
-        }
-        .button a:hover span:nth-child(3){
-            transform: scale(1);
-            transform-origin: bottom;
-            transition: transform .5s;
-            transition-delay: 0.5 !important;
-        }
-        .button a span:nth-child(4){
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 1px;
-            transform: scalex(0);
-            transform-origin: right;
-            transition: transform .5s;
-            transition-delay: 0.5 !important;
-        }
-        .button a:hover span:nth-child(4){
-            transform: scale(1);
-            transform-origin: left;
-            transition: transform .5s;
-            transition-delay: 0.5 !important;
-        }   */
+       
         .button a:hover {
             box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
 
@@ -349,6 +287,9 @@
                 background-image: linear-gradient(rgba(0, 0, 0, 0.7),
                         rgba(0, 0, 0, 0.7)), url("assets/images/R (4).jfif");
             }
+            .d-flex{
+                margin-bottom: 2.5em;
+            }
         }
     </style>
 </head>
@@ -379,11 +320,15 @@
                                     name="password" tabindex="2" required>
                                 <label for="password" class="form-label">Password</label>
                             </div>
-                            <div class="d-flex justify-content-around">
+                            <div class="links d-flex justify-content-around">
                                 <a href="">Forgot Password?</a>
-                                <p>Not a member?
-                                    <a href="signup.html">Register</a>
-                                </p>
+
+                                <div class="row" style="margin-top: 0; text-align: center;">
+                                    <div class="col">Not a member?</div>
+                                    <div class="w-100"></div>
+                                    <div class="col"><a href="#">Register</a></div>
+                                    
+                                </div>
                             </div>
                             <div class="button">
                                 <a class="bt" href="#">
@@ -485,9 +430,12 @@
                             </div>
                             <div class="d-flex justify-content-around">
                                 <a href="">Forgot Password?</a>
-                                <p>Not a member?
-                                    <a href="signup.html">Register</a>
-                                </p>
+                                <div class="row" style="margin-top: 0; text-align: center;">
+                                    <div class="col-12">Not a member?</div>
+                                    <div class="w-100"></div>
+                                    <div class="col-12"><a href="#">Register</a></div>
+                                    
+                                </div>
                             </div>
                             <div class="button">
                                 <a class="bt" href="#">
