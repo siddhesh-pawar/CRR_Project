@@ -775,102 +775,102 @@ if (!isset($_SESSION['session_user'])) {
 
 
                     $.ajax({
-                            type: 'POST',
-                            url: 'PHP/get_team_names.php',
-                            dataType: "json",
-                            async: false,
-                            data: {
-                                tour_id: $("#tour_name select").val()
+                        type: 'POST',
+                        url: 'PHP/get_team_names.php',
+                        dataType: "json",
+                        async: false,
+                        data: {
+                            tour_id: $("#tour_name select").val()
 
-                            },
-                            success: function(data) {
+                        },
+                        success: function(data) {
 
-                                if (data.status == 201) {
-                                    // var no_of_matches;
-                                    // var no_of_teams;
-                                    // var upper_half_teams;
-                                    // var lower_half_teams;
-                                    // var no_of_byes;
-                                    // var no_of_rounds;
-                                    // var no_of_byes_uh;
-                                    // var no_of_byes_lh;
-                                    // var bye_temp = 1;
-                                    // var flag = 0;
-
-
-
-                                    // team_fix_list = data.team;
-                                    // no_of_teams = team_fix_list.length;
-                                    // no_of_matches = team_fix_list.length - 1;
-
-                                    // if (no_of_teams % 2 == 0) {
-                                    //     //upper and lower half
-                                    //     upper_half_teams = no_of_teams / 2;
-                                    //     lower_half_teams = no_of_teams / 2;
-
-                                    //     for (var n = 1; n < 20; n++) {
-                                    //         bye_temp = Math.pow(2, n);
-                                    //         if (bye_temp == no_of_teams) {
-                                    //             no_of_byes = 0;
-                                    //             no_of_byes_uh = 0;
-                                    //             no_of_byes_lh = 0;
-                                    //             no_of_rounds = n;
-                                    //             flag = 1;
-                                    //             break;
-                                    //         } else if (bye_temp > no_of_teams) {
-                                    //             break;
-                                    //         }
-                                    //     }
-                                    //     if (flag == 0) {
-                                    //         no_of_byes = bye_temp - no_of_teams;
-                                    //         no_of_rounds = n;
-                                    //         if (no_of_byes % 2 == 0) {
-                                    //             no_of_byes_uh = no_of_byes / 2;
-                                    //             no_of_byes_lh = no_of_byes / 2;
-                                    //         } else {
-                                    //             no_of_byes_uh = no_of_byes - 1 / 2;
-                                    //             no_of_byes_lh = no_of_byes + 1 / 2;
-                                    //         }
-
-
-                                    //     }
+                            if (data.status == 201) {
+                                var no_of_matches;
+                                var no_of_teams;
+                                var upper_half_teams;
+                                var lower_half_teams;
+                                var no_of_byes;
+                                var no_of_rounds;
+                                var no_of_byes_uh;
+                                var no_of_byes_lh;
+                                var bye_temp = 1;
+                                var flag = 0;
 
 
 
+                                team_fix_list = data.team;
+                                no_of_teams = team_fix_list.length;
+                                no_of_matches = team_fix_list.length - 1;
+
+                                if (no_of_teams % 2 == 0) {
+                                    //upper and lower half
+                                    upper_half_teams = no_of_teams / 2;
+                                    lower_half_teams = no_of_teams / 2;
+
+                                    for (var n = 1; n < 20; n++) {
+                                        bye_temp = Math.pow(2, n);
+                                        if (bye_temp == no_of_teams) {
+                                            no_of_byes = 0;
+                                            no_of_byes_uh = 0;
+                                            no_of_byes_lh = 0;
+                                            no_of_rounds = n;
+                                            flag = 1;
+                                            break;
+                                        } else if (bye_temp > no_of_teams) {
+                                            break;
+                                        }
+                                    }
+                                    if (flag == 0) {
+                                        no_of_byes = bye_temp - no_of_teams;
+                                        no_of_rounds = n;
+                                        if (no_of_byes % 2 == 0) {
+                                            no_of_byes_uh = no_of_byes / 2;
+                                            no_of_byes_lh = no_of_byes / 2;
+                                        } else {
+                                            no_of_byes_uh = no_of_byes - 1 / 2;
+                                            no_of_byes_lh = no_of_byes + 1 / 2;
+                                        }
 
 
-                                    // } else {
-                                    //     //upper and lower half
-                                    //     upper_half_teams = (no_of_teams + 1) / 2;
-                                    //     lower_half_teams = (no_of_teams - 1) / 2;
+                                    }
 
 
-                                    //     for (var n = 1; n < 20; n++) {
-                                    //         bye_temp = Math.pow(2, n);
-                                    //         if (bye_temp == no_of_teams) {
-                                    //             no_of_byes = 0;
-                                    //             no_of_byes_uh = 0;
-                                    //             no_of_byes_lh = 0;
-                                    //             no_of_rounds = n;
-                                    //             flag = 1;
-                                    //             break;
-                                    //         } else if (bye_temp > no_of_teams) {
-                                    //             break;
-                                    //         }
-                                    //     }
-                                    //     if (flag == 0) {
-                                    //         no_of_byes = bye_temp - no_of_teams;
-                                    //         no_of_rounds = n;
-                                    //         if (no_of_byes % 2 == 0) {
-                                    //             no_of_byes_uh = (no_of_byes) / 2;
-                                    //             no_of_byes_lh = (no_of_byes) / 2;
-                                    //         } else {
-                                    //             no_of_byes_uh = (no_of_byes - 1) / 2;
-                                    //             no_of_byes_lh = (no_of_byes + 1) / 2;
-                                    //         }
 
 
-                                    //     }
+
+                                } else {
+                                    //upper and lower half
+                                    upper_half_teams = (no_of_teams + 1) / 2;
+                                    lower_half_teams = (no_of_teams - 1) / 2;
+
+
+                                    for (var n = 1; n < 20; n++) {
+                                        bye_temp = Math.pow(2, n);
+                                        if (bye_temp == no_of_teams) {
+                                            no_of_byes = 0;
+                                            no_of_byes_uh = 0;
+                                            no_of_byes_lh = 0;
+                                            no_of_rounds = n;
+                                            flag = 1;
+                                            break;
+                                        } else if (bye_temp > no_of_teams) {
+                                            break;
+                                        }
+                                    }
+                                    if (flag == 0) {
+                                        no_of_byes = bye_temp - no_of_teams;
+                                        no_of_rounds = n;
+                                        if (no_of_byes % 2 == 0) {
+                                            no_of_byes_uh = (no_of_byes) / 2;
+                                            no_of_byes_lh = (no_of_byes) / 2;
+                                        } else {
+                                            no_of_byes_uh = (no_of_byes - 1) / 2;
+                                            no_of_byes_lh = (no_of_byes + 1) / 2;
+                                        }
+
+
+                                    }
                                 }
                                 // console.log(team_fix_list.length);
                                 // console.log(no_of_teams);
