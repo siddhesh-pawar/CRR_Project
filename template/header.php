@@ -3,7 +3,7 @@ session_start();
 ?>
 <div class="container header-top">
     <div class="logo">
-        <img src="assets/images/h3_logo.png">
+        <img src="assets/images/f_logo_temp.png">
     </div>
 
     <div class="row social-parent">

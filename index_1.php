@@ -209,7 +209,7 @@ session_start();
                                             <li><span>Phone :</span> + 97 325 6254 324</li>
                                         </ul> -->
                                     </div>
-                                    <a href="#" class="btn rotated-btn">buy Now</a>
+
                                 </div>
                             </div>
                         </div>
