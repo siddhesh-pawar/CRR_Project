@@ -221,7 +221,7 @@ if (!isset($_SESSION['admin_email'])) {
                             <div class="col">
                                 <div class="card" class="alert alert-secondary" role="alert">
                                     <div class="card-body table-responsive">
-                                        <h2 class="card-title">Posts</h2>
+                                        <h2 class="card-title">Tournaments</h2>
 
                                         <table id="zero-conf" class="display" style="width:100%">
                                             <thead>

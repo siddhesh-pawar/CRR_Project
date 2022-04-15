@@ -211,18 +211,11 @@ if (!isset($_SESSION['admin_email'])) {
                         </div>
                     </div>
                     <div class="main-wrapper">
-
-
-
-
-
-
-
                         <div class="row">
                             <div class="col">
                                 <div class="card" class="alert alert-secondary" role="alert">
                                     <div class="card-body table-responsive">
-                                        <h2 class="card-title">Posts</h2>
+                                        <h2 class="card-title">Tournaments</h2>
 
                                         <table id="zero-conf" class="display" style="width:100%">
                                             <thead>
@@ -231,8 +224,7 @@ if (!isset($_SESSION['admin_email'])) {
                                                     <th>Player name</th>
                                                     <th>Tournament Name</th>
                                                     <th>Team name</th>
-
-
+                                                    <th style="width: 100px;">Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -251,13 +243,15 @@ if (!isset($_SESSION['admin_email'])) {
 
                                                     echo "<tr><td>{$i}</td><td>{$row['player_name']}</td><td>{$row['tour_name']}</td><td>{$row['team_name']}</td>
                                                     <td style=\"width: 100px;\">
+                                                    <button type=\"button\" id=\"delete\" onClick=\"del('{$row['player_id']}')\" class=\"far fa-trash-alt  \" style=\"border: none;background-color: transparent;color:#7d7d83\"></button>
                                                     </td></tr>\n";
                                                     $i = $i + 1;
                                                 }
                                                 ?>
+
                                                 <!-- <a href= \"{$row['meta_url']}\"   data-toggle= \"tooltip \" data-original-title= \"Edit \"> <i class=\"fas fa-eye mr-2 ml-2\" style=\"color:#7d7d83\"></i></a>
                                             <a href= \"edit_article.php?id={$row['article_id']}\"   data-toggle= \"tooltip \" data-original-title= \"Edit \"> <i class=\"fas fa-pencil-alt\" style=\"color:#7d7d83\"></i></a>
-                                            <button type=\"button\" id=\"delete\" onClick=\"del('{$row['article_id']}')\" class=\"far fa-trash-alt  \" style=\"border: none;background-color: transparent;color:#7d7d83\"></button> -->
+
                                             </tbody>
                                             <tfoot>
                                                 <tr>
@@ -265,7 +259,7 @@ if (!isset($_SESSION['admin_email'])) {
                                                     <th>Player name</th>
                                                     <th>Tournament Name</th>
                                                     <th>Team name</th>
-
+                                                    <th style="width: 100px;">Action</th>
                                                 </tr>
                                             </tfoot>
                                         </table>
@@ -273,6 +267,7 @@ if (!isset($_SESSION['admin_email'])) {
                                 </div>
                             </div>
                         </div>
+
                     </div>
 
                     <div class="page-footer ">
@@ -291,82 +286,82 @@ if (!isset($_SESSION['admin_email'])) {
 
 
         <!-- Javascripts -->
-        <script src="assets/plugins/jquery/jquery-3.4.1.min.js "></script>
-        <script src="assets/plugins/bootstrap/popper.min.js "></script>
-        <script src="assets/plugins/bootstrap/js/bootstrap.min.js "></script>
-        <script src="assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js "></script>
-        <script src="assets/plugins/jquery-sparkline/jquery.sparkline.min.js "></script>
-        <script src="assets/plugins/apexcharts/dist/apexcharts.min.js "></script>
-        <script src="assets/plugins/blockui/jquery.blockUI.js "></script>
-        <script src="assets/plugins/flot/jquery.flot.min.js "></script>
-        <script src="assets/plugins/flot/jquery.flot.time.min.js "></script>
-        <script src="assets/plugins/flot/jquery.flot.symbol.min.js "></script>
-        <script src="assets/plugins/flot/jquery.flot.resize.min.js "></script>
-        <script src="assets/plugins/flot/jquery.flot.tooltip.min.js "></script>
-        <script src="assets/js/connect.min.js "></script>
-        <script src="assets/js/pages/dashboard.js "></script>
-        <script src="assets/plugins/DataTables/datatables.min.js"></script>
-        <script src="assets/plugins/DataTables/dataTables.select.min.js"></script>
-        <script src="assets/sweetalert/sweetalert.min.js"></script>
-        <script src="assets/sweetalert/jquery.sweet-alert.custom.js"></script>
+                                                <script src="assets/plugins/jquery/jquery-3.4.1.min.js "></script>
+                                                <script src="assets/plugins/bootstrap/popper.min.js "></script>
+                                                <script src="assets/plugins/bootstrap/js/bootstrap.min.js "></script>
+                                                <script src="assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js "></script>
+                                                <script src="assets/plugins/jquery-sparkline/jquery.sparkline.min.js "></script>
+                                                <script src="assets/plugins/apexcharts/dist/apexcharts.min.js "></script>
+                                                <script src="assets/plugins/blockui/jquery.blockUI.js "></script>
+                                                <script src="assets/plugins/flot/jquery.flot.min.js "></script>
+                                                <script src="assets/plugins/flot/jquery.flot.time.min.js "></script>
+                                                <script src="assets/plugins/flot/jquery.flot.symbol.min.js "></script>
+                                                <script src="assets/plugins/flot/jquery.flot.resize.min.js "></script>
+                                                <script src="assets/plugins/flot/jquery.flot.tooltip.min.js "></script>
+                                                <script src="assets/js/connect.min.js "></script>
+                                                <script src="assets/js/pages/dashboard.js "></script>
+                                                <script src="assets/plugins/DataTables/datatables.min.js"></script>
+                                                <script src="assets/plugins/DataTables/dataTables.select.min.js"></script>
+                                                <script src="assets/sweetalert/sweetalert.min.js"></script>
+                                                <script src="assets/sweetalert/jquery.sweet-alert.custom.js"></script>
 
 
-        <script>
-            function del(article_id) {
-                swal({
-                    title: "Are you sure?",
-                    text: "You will not be able to retrieve data",
-                    type: "warning",
-                    showCancelButton: true,
-                    confirmButtonColor: "#DD6B55",
-                    confirmButtonText: "Yes,Delete it",
-                    cancelButtonText: "Cancel",
-                    closeOnConfirm: false,
-                    closeOnCancel: false
-                }, function(isConfirm) {
-                    if (isConfirm) {
+                                                <script>
+                                                    function del(player_id) {
+                                                        swal({
+                                                            title: "Are you sure?",
+                                                            text: "You will not be able to retrieve data",
+                                                            type: "warning",
+                                                            showCancelButton: true,
+                                                            confirmButtonColor: "#DD6B55",
+                                                            confirmButtonText: "Yes,Delete it",
+                                                            cancelButtonText: "Cancel",
+                                                            closeOnConfirm: false,
+                                                            closeOnCancel: false
+                                                        }, function(isConfirm) {
+                                                            if (isConfirm) {
 
-                        $.ajax({
-                            url: "PHP/deleteArticle.php",
-                            method: "POST",
-                            dataType: "json",
-                            data: {
-                                article_id: article_id,
-                            },
-                            success: function(data) {
-                                console.log(data);
-                                if (data.status == 201) {
-                                    // if(data.link!=""){
-                                    window.location.replace("posts");
-                                    // }else{
-                                    //     window.location.replace("/");
-                                    // }
+                                                                $.ajax({
+                                                                    url: "PHP/deletePlayer.php",
+                                                                    method: "POST",
+                                                                    dataType: "json",
+                                                                    data: {
+                                                                        player_id: player_id,
+                                                                    },
+                                                                    success: function(data) {
+                                                                        console.log(data);
+                                                                        if (data.status == 201) {
+                                                                            // if(data.link!=""){
+                                                                            window.location.replace("tournament-single-info");
+                                                                            // }else{
+                                                                            //     window.location.replace("/");
+                                                                            // }
 
-                                } else if (data.status == 301) {
-                                    console.log(data.error);
-                                    alert("error");
-                                    // $('#contact-success').css('display', 'none');
-                                    // $('#contact-form').css('display', 'block');
-                                    // alert('success'); 
-                                } else {
-                                    //     alert("problem with query");
-                                }
-                            }
-                        });
-
-
-                    } else {
-                        swal("Cancelled", "Your  file is safe :)", "error");
-                    }
-                });
-            }
-            $(document).ready(function() {
-                $('#zero-conf').DataTable();
+                                                                        } else if (data.status == 301) {
+                                                                            console.log(data.error);
+                                                                            alert("error");
+                                                                            // $('#contact-success').css('display', 'none');
+                                                                            // $('#contact-form').css('display', 'block');
+                                                                            // alert('success'); 
+                                                                        } else {
+                                                                            //     alert("problem with query");
+                                                                        }
+                                                                    }
+                                                                });
 
 
+                                                            } else {
+                                                                swal("Cancelled", "Your  file is safe :)", "error");
+                                                            }
+                                                        });
+                                                    }
+                                                    $(document).ready(function() {
+                                                        $('#zero-conf').DataTable();
 
-            });
-        </script>
+
+
+                                                    });
+                                                </script>
     </body>
 
     </html>
