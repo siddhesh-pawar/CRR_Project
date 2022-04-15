@@ -189,8 +189,11 @@ if (!isset($_SESSION['admin_email'])) {
                             </ol>
                         </nav>
                         <div class="page-options d-flex justify-content-center" style="margin-right: 50px;">
-                            <a href="add_tournament" class="btn btn-primary mr-0" type="button" id="dropdownMenuButton22" style="font-size: 1rem;background-color: #2b8fe9;color: #ffffff;">
-                                Add new tournaments
+                            <a href="add_tournaments" class="btn btn-primary mr-4" type="button" id="dropdownMenuButton22" style="font-size: 1rem;background-color: #2b8fe9;color: #ffffff;">
+                                Add tournament
+                            </a>
+                            <a href="add_custom_tournament" class="btn btn-primary mr-0" type="button" id="dropdownMenuButton22" style="font-size: 1rem;background-color: #2b8fe9;color: #ffffff;">
+                                Add custom tournaments
                             </a>
                             <!-- <div class="dropdown">
 
@@ -250,6 +253,10 @@ if (!isset($_SESSION['admin_email'])) {
                                                     $end_date = date("d/m/Y", strtotime($row['end_tour_date']));
                                                     echo "<tr><td>{$i}</td><td>{$row['tour_name']}</td><td>{$row['player_limit']}</td><td>{$row['event_name']}</td><td> $start_date</td><td>$end_date</td><td>{$row['tour_descrip']}</td>
                                                         <td style=\"width: 100px;\">
+                                                        <a href= \"tournament-single-info.php?id={$row['id']}\"   data-toggle= \"tooltip \" data-original-title= \"Edit \"> <i class=\"fas fa-info mr-2\" style=\"color:#7d7d83\"></i></a>
+                                                        <a href= \"edit_tournament.php?id={$row['id']}\"   data-toggle= \"tooltip \" data-original-title= \"Edit \"> <i class=\"fas fa-pencil-alt\" style=\"color:#7d7d83\"></i></a>
+                                                      
+                                                        <button type=\"button\" id=\"delete\" onClick=\"del('{$row['id']}')\" class=\"far fa-trash-alt  \" style=\"border: none;background-color: transparent;color:#7d7d83\"></button>
                                                            </td></tr>\n";
                                                     $i = $i + 1;
                                                 }
@@ -262,6 +269,7 @@ if (!isset($_SESSION['admin_email'])) {
                                                 <tr>
                                                     <th>id</th>
                                                     <th>Tournament name</th>
+                                                    <th>Player limit</th>
                                                     <th>Event name</th>
                                                     <th>Start date</th>
                                                     <th>End date</th>
@@ -313,7 +321,7 @@ if (!isset($_SESSION['admin_email'])) {
 
 
         <script>
-            function del(article_id) {
+            function del(tour_id) {
                 swal({
                     title: "Are you sure?",
                     text: "You will not be able to retrieve data",
@@ -328,17 +336,17 @@ if (!isset($_SESSION['admin_email'])) {
                     if (isConfirm) {
 
                         $.ajax({
-                            url: "PHP/deleteArticle.php",
+                            url: "PHP/deleteTournament.php",
                             method: "POST",
                             dataType: "json",
                             data: {
-                                article_id: article_id,
+                                tour_id: tour_id,
                             },
                             success: function(data) {
                                 console.log(data);
                                 if (data.status == 201) {
                                     // if(data.link!=""){
-                                    window.location.replace("posts");
+                                    window.location.reload();
                                     // }else{
                                     //     window.location.replace("/");
                                     // }

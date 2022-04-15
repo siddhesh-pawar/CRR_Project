@@ -1,6 +1,11 @@
 <?php
 require_once('PHP/link.php');
 session_start();
+$id = $_REQUEST['id'];
+$query = "SELECT * from entries where player_id ='" . $id . "'";
+$result = mysqli_query($link, $query);
+$row = mysqli_fetch_array($result);
+$player_name = $row['player_name'];
 if (!isset($_SESSION['session_user'])) {
     header("location:sign-in");
 } else {
@@ -243,29 +248,17 @@ if (!isset($_SESSION['session_user'])) {
 
                         <div class="row">
                             <div class="card">
-                                <h2 class="d-flex justify-content-center  mb-0 pb-0 pt-4">Add new entries</h2>
+                                <h2 class="d-flex justify-content-center  mb-0 pb-0 pt-4">Edit entry</h2>
                                 <div class="card-body pt-3">
 
                                     <div class="row pt-3">
-                                        <div class="col-lg-12">
-
-                                            <div class="form-group" id="tour">
-                                                <label class="control-label" style="font-weight:bold;font-size:1.3rem;color:#717BA2;">Select Tournament</label>
-                                                <select class="form-control custom-select" style="border-radius: 7px;width: 100%;padding: 12px 18px;font-size:15px" data-placeholder="Choose a Category" tabindex="1" onchange="player_input(this.value)">
-                                                    <option value="select">Select Tournament</option>
-                                                </select>
-
-
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-12">
-                                            <div class="form-group" id="team_add"></div>
-                                            <div class="form-group" id="player_add"></div>
-                                        </div>
+                                        <input type="hidden" id="player_id" class="form-control" value="<?php echo ($row['player_id']); ?>">
+                                        <label class="control-label" style="font-weight:bold;font-size:1.3rem;color:#717BA2;">Player name</label>
+                                        <input type="text" id="player_name" class="form-control" required="" placeholder="Player name" style="border-radius: 7px;width: 100%;padding: 12px 18px;font-size:15px" value="<?php echo ($player_name); ?>">
 
                                     </div>
                                     <div class="form-group pt-3 d-flex justify-content-center">
-                                        <button class="btn" id="add-entries" type="button" style="font-size: 1rem;background-color: #2b8fe9;color: #ffffff;">Add Entries</button>
+                                        <button class="btn" id="edit-entry" type="button" style="font-size: 1rem;background-color: #2b8fe9;color: #ffffff;">Edit Entry</button>
 
                                     </div>
 
@@ -317,118 +310,30 @@ if (!isset($_SESSION['session_user'])) {
 
 
         <script>
-            var event_list;
-            var value;
-            var player_limit;
-
-            // Fetch all tournaments
-            $.ajax({
-                type: 'POST',
-                url: 'PHP/get_tournaments.php',
-                dataType: "json",
-                async: false,
-                data: {
-                    type: 'tour'
-                },
-                success: function(data) {
-                    if (data.status == 201) {
-
-                        tour_list = data.tour;
-                        for (var i = 0; i < tour_list.length; i++) {
-                            $("#tour select").html($("#tour select").html() + '<option value="' + tour_list[i]['tour_id'] + '">' + tour_list[i]['tour_name'] + ' </option>');
-                        }
-
-
-
-                    } else if (data.status == 301) {
-                        //Email already registered
-                        alert(data.error);
-                    } else {
-                        alert("Some error occured. Our team is dedicatedly addressing this issue. Thankyou for your patience");
-                    }
-                }
-            });
-
-
-            function player_input(value) {
-
-                $('#player_add').empty();
-                $('#team_add').empty();
-                $.ajax({
-                    type: 'POST',
-                    url: 'PHP/get_player_limit.php',
-                    dataType: "json",
-                    async: false,
-                    data: {
-                        type: 'tour',
-                        tour_id: value
-                    },
-                    success: function(data) {
-                        if (data.status == 201) {
-
-                            $("#team_add").html($("#team_add").html() + '<label class="control-label" style="font-weight:bold;font-size:1.3rem;color:#717BA2;">Enter team name</label><input type="text" class="form-control" placeholder="Enter team name" id="team_name">');
-
-                            player_limit = data.player_limit;
-                            for (var i = 1; i <= player_limit; i++) {
-                                $("#player_add").html($("#player_add").html() + '<div class="player"><label class="control-label" style="font-weight:bold;font-size:1.3rem;color:#717BA2;">Player ' + i + '</label><input type="text" class="form-control" placeholder="Enter player name" name="task[]" id="task"></div>');
-                            }
-                            console.log(player_limit);
-
-
-
-
-                        } else if (data.status == 301) {
-                            //Email already registered
-                            alert(data.error);
-                        } else {
-                            alert("Some error occured. Our team is dedicatedly addressing this issue. Thankyou for your patience");
-                        }
-                    }
-                });
-
-            }
-
-
-
-
             // Add comment 
 
-            $('#add-entries').on('click', function(e) {
+            $('#edit-entry').on('click', function(e) {
                 e.preventDefault();
 
-                var player_list = $("input[id='task']")
-                    .map(function() {
-                        return $(this).val();
-                    }).get();
+
                 var error = "";
                 var formData = new FormData();
 
-                if (player_list.length == 0) {
-                    error = error + 'meta';
-                    sweetAlert("Warning", "Please enter player", "warning");
-                } else {
-                    formData.append('player_list', player_list);
-                }
-                if ($('#tour select').val() == "select") {
-                    sweetAlert("Warning", "Please enter all fields", "warning");
-                    error = error + 'title';
-                } else {
 
-                    formData.append('tour_id', $('#tour select').val());
-                }
-                if ($('#team_name').val() == "") {
+                if ($('#player_name').val() == "") {
                     sweetAlert("Warning", "Please enter a valid name", "warning");
                     error = error + 'team_name';
                 } else {
 
-                    formData.append('team_name', $('#team_name').val());
+                    formData.append('player_name', $('#player_name').val());
                 }
 
                 if (error == "") {
                     // console.log(formData);
+                    formData.append('player_id', $('#player_id').val());
 
                     $.ajax({
-                        url: "PHP/addPlayers.php",
+                        url: "PHP/editPlayer.php",
                         type: "POST",
                         dataType: "json",
                         cache: false,

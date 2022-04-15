@@ -1,7 +1,11 @@
 <?php
 require_once('PHP/link.php');
 session_start();
-if (!isset($_SESSION['session_user'])) {
+$id = $_REQUEST['id'];
+// $query = "SELECT * from entries where tournament_id ='" . $id . "'";
+// $result = mysqli_query($link, $query);
+// $row = mysqli_fetch_array($result);
+if (!isset($_SESSION['admin_email'])) {
     header("location:sign-in");
 } else {
 ?>
@@ -27,11 +31,7 @@ if (!isset($_SESSION['session_user'])) {
         <link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
         <link href="assets/plugins/font-awesome/css/all.min.css" rel="stylesheet">
         <link href="assets/plugins/DataTables/datatables.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="../assets/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css">
         <link href="assets/sweetalert/sweetalert.css" rel="stylesheet">
-
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
-        <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
 
 
         <!-- Theme Styles -->
@@ -46,58 +46,31 @@ if (!isset($_SESSION['session_user'])) {
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
-        <style>
-            .form-control:focus {
-                border-color: #2b8fe97d;
-                box-shadow: 0 0 0 0.2rem rgb(43 143 233 / 25%);
-            }
-
-            .dataTables_length select {
-                border-radius: 7px;
-                width: 100%;
-                padding: 8px 18px;
-                font-size: 15px
-            }
-
-            input[type=search] {
-                border-radius: 7px;
-                width: 100%;
-                padding: 8px 18px;
-                font-size: 15px
-            }
-
-            .dtp>.dtp-content>.dtp-date-view>header.dtp-header {
-                background: #2b8fe9;
-            }
-
-            .dtp div.dtp-date,
-            .dtp div.dtp-time {
-                background: #2b8fe9;
-
-            }
-
-            .material-icons {
-                color: #ffffff;
-            }
-
-            .dtp table.dtp-picker-days tr>td>a.selected {
-                background: #2b8fe9;
-
-            }
-
-            .year-picker-item.active {
-                color: #2b8fe9;
-
-            }
-
-            .form-control {
-                border-radius: 7px;
-                width: 100%;
-                padding: 12px 18px;
-                font-size: 15px;
-            }
-        </style>
     </head>
+    <style>
+        .dataTables_length select {
+            border-radius: 7px;
+            width: 100%;
+            padding: 8px 18px;
+            font-size: 15px
+        }
+
+        input[type=search] {
+            border-radius: 7px;
+            width: 100%;
+            padding: 8px 18px;
+            font-size: 15px
+        }
+
+        td {
+            max-width: 110px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+    </style>
+
+
 
     <body>
         <div class='loader'>
@@ -116,14 +89,14 @@ if (!isset($_SESSION['session_user'])) {
                         <!-- <li>
                             <a href="index" class="active"><i class="material-icons-outlined">dashboard</i>Dashboard</a>
                         </li> -->
-                        <li class="active-page">
+                        <li>
                             <a href="index"><i class="material-icons-outlined">text_format</i>Events</a>
                         </li>
-                        <li>
+                        <li class="active-page">
                             <a href="tournaments"><i class="material-icons-outlined">account_circle</i>Tournaments</a>
                         </li>
                         <li>
-                            <a href="add_comments_home"><i class="material-icons-outlined">create</i>Users</a>
+                            <a href="entries"><i class="material-icons-outlined">create</i>Entries</a>
                         </li>
                         <li>
                             <a href="#"><i class="material-icons">text_format</i>Settings<i class="material-icons has-sub-menu">add</i></a>
@@ -216,7 +189,7 @@ if (!isset($_SESSION['session_user'])) {
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="#">Apps</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Posts</li>
+                                <li class="breadcrumb-item active" aria-current="page">Tournaments</li>
                             </ol>
                         </nav>
                         <div class="page-options d-flex justify-content-center" style="margin-right: 50px;">
@@ -237,57 +210,82 @@ if (!isset($_SESSION['session_user'])) {
                             </div> -->
                         </div>
                     </div>
-                    <div class="main-wrapper d-flex justify-content-center">
+                    <div class="main-wrapper">
+
+
+
+
 
 
 
                         <div class="row">
-                            <div class="card">
-                                <h2 class="d-flex justify-content-center  mb-0 pb-0 pt-4">Add new entries</h2>
-                                <div class="card-body pt-3">
+                            <div class="col">
+                                <div class="card" class="alert alert-secondary" role="alert">
+                                    <div class="card-body table-responsive">
+                                        <h2 class="card-title">Posts</h2>
 
-                                    <div class="row pt-3">
-                                        <div class="col-lg-12">
+                                        <table id="zero-conf" class="display" style="width:100%">
+                                            <thead>
+                                                <tr>
+                                                    <th>id</th>
+                                                    <th>Player name</th>
+                                                    <th>Tournament Name</th>
+                                                    <th>Team name</th>
 
-                                            <div class="form-group" id="tour">
-                                                <label class="control-label" style="font-weight:bold;font-size:1.3rem;color:#717BA2;">Select Tournament</label>
-                                                <select class="form-control custom-select" style="border-radius: 7px;width: 100%;padding: 12px 18px;font-size:15px" data-placeholder="Choose a Category" tabindex="1" onchange="player_input(this.value)">
-                                                    <option value="select">Select Tournament</option>
-                                                </select>
+
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <?php
+
+                                                if (mysqli_connect_error()) {
+                                                    die("<script>console.log('There is a problem with mysql connection')</script>");
+                                                }
+                                                $admin_id = $_SESSION['admin_id'];
+                                                $result = mysqli_query($link, "SELECT * FROM (entries INNER JOIN tournaments ON entries.tournament_id = tournaments.id) WHERE entries.tournament_id = '$id' ");
+                                                $i = 1;
+                                                while ($row = mysqli_fetch_array($result)) {
+                                                    // $category_id = $row['category_id'];
+                                                    // echo "<input type=\"hidden\" id=\"category_id\" value=\"{$row['category_id']}\">";
 
 
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-12">
-                                            <div class="form-group" id="team_add"></div>
-                                            <div class="form-group" id="player_add"></div>
-                                        </div>
+                                                    echo "<tr><td>{$i}</td><td>{$row['player_name']}</td><td>{$row['tour_name']}</td><td>{$row['team_name']}</td>
+                                                    <td style=\"width: 100px;\">
+                                                    </td></tr>\n";
+                                                    $i = $i + 1;
+                                                }
+                                                ?>
+                                                <!-- <a href= \"{$row['meta_url']}\"   data-toggle= \"tooltip \" data-original-title= \"Edit \"> <i class=\"fas fa-eye mr-2 ml-2\" style=\"color:#7d7d83\"></i></a>
+                                            <a href= \"edit_article.php?id={$row['article_id']}\"   data-toggle= \"tooltip \" data-original-title= \"Edit \"> <i class=\"fas fa-pencil-alt\" style=\"color:#7d7d83\"></i></a>
+                                            <button type=\"button\" id=\"delete\" onClick=\"del('{$row['article_id']}')\" class=\"far fa-trash-alt  \" style=\"border: none;background-color: transparent;color:#7d7d83\"></button> -->
+                                            </tbody>
+                                            <tfoot>
+                                                <tr>
+                                                    <th>id</th>
+                                                    <th>Player name</th>
+                                                    <th>Tournament Name</th>
+                                                    <th>Team name</th>
 
+                                                </tr>
+                                            </tfoot>
+                                        </table>
                                     </div>
-                                    <div class="form-group pt-3 d-flex justify-content-center">
-                                        <button class="btn" id="add-entries" type="button" style="font-size: 1rem;background-color: #2b8fe9;color: #ffffff;">Add Entries</button>
-
-                                    </div>
-
-
-
-
-
                                 </div>
                             </div>
+                        </div>
+                    </div>
 
-
-
-
-
-
-
-
+                    <div class="page-footer ">
+                        <div class="row ">
+                            <div class="col-md-12 ">
+                                <span class="footer-text ">2019 © stacks</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
 
 
 
@@ -311,155 +309,62 @@ if (!isset($_SESSION['session_user'])) {
         <script src="assets/plugins/DataTables/dataTables.select.min.js"></script>
         <script src="assets/sweetalert/sweetalert.min.js"></script>
         <script src="assets/sweetalert/jquery.sweet-alert.custom.js"></script>
-        <script src="../assets/moment/moment.js"></script>
-        <!-- <script src="../assets/dropify/dist/js/dropify.min.js"></script> -->
-        <script src="../assets/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
 
 
         <script>
-            var event_list;
-            var value;
-            var player_limit;
+            function del(article_id) {
+                swal({
+                    title: "Are you sure?",
+                    text: "You will not be able to retrieve data",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#DD6B55",
+                    confirmButtonText: "Yes,Delete it",
+                    cancelButtonText: "Cancel",
+                    closeOnConfirm: false,
+                    closeOnCancel: false
+                }, function(isConfirm) {
+                    if (isConfirm) {
 
-            // Fetch all tournaments
-            $.ajax({
-                type: 'POST',
-                url: 'PHP/get_tournaments.php',
-                dataType: "json",
-                async: false,
-                data: {
-                    type: 'tour'
-                },
-                success: function(data) {
-                    if (data.status == 201) {
+                        $.ajax({
+                            url: "PHP/deleteArticle.php",
+                            method: "POST",
+                            dataType: "json",
+                            data: {
+                                article_id: article_id,
+                            },
+                            success: function(data) {
+                                console.log(data);
+                                if (data.status == 201) {
+                                    // if(data.link!=""){
+                                    window.location.replace("posts");
+                                    // }else{
+                                    //     window.location.replace("/");
+                                    // }
 
-                        tour_list = data.tour;
-                        for (var i = 0; i < tour_list.length; i++) {
-                            $("#tour select").html($("#tour select").html() + '<option value="' + tour_list[i]['tour_id'] + '">' + tour_list[i]['tour_name'] + ' </option>');
-                        }
-
-
-
-                    } else if (data.status == 301) {
-                        //Email already registered
-                        alert(data.error);
-                    } else {
-                        alert("Some error occured. Our team is dedicatedly addressing this issue. Thankyou for your patience");
-                    }
-                }
-            });
-
-
-            function player_input(value) {
-
-                $('#player_add').empty();
-                $('#team_add').empty();
-                $.ajax({
-                    type: 'POST',
-                    url: 'PHP/get_player_limit.php',
-                    dataType: "json",
-                    async: false,
-                    data: {
-                        type: 'tour',
-                        tour_id: value
-                    },
-                    success: function(data) {
-                        if (data.status == 201) {
-
-                            $("#team_add").html($("#team_add").html() + '<label class="control-label" style="font-weight:bold;font-size:1.3rem;color:#717BA2;">Enter team name</label><input type="text" class="form-control" placeholder="Enter team name" id="team_name">');
-
-                            player_limit = data.player_limit;
-                            for (var i = 1; i <= player_limit; i++) {
-                                $("#player_add").html($("#player_add").html() + '<div class="player"><label class="control-label" style="font-weight:bold;font-size:1.3rem;color:#717BA2;">Player ' + i + '</label><input type="text" class="form-control" placeholder="Enter player name" name="task[]" id="task"></div>');
+                                } else if (data.status == 301) {
+                                    console.log(data.error);
+                                    alert("error");
+                                    // $('#contact-success').css('display', 'none');
+                                    // $('#contact-form').css('display', 'block');
+                                    // alert('success'); 
+                                } else {
+                                    //     alert("problem with query");
+                                }
                             }
-                            console.log(player_limit);
+                        });
 
 
-
-
-                        } else if (data.status == 301) {
-                            //Email already registered
-                            alert(data.error);
-                        } else {
-                            alert("Some error occured. Our team is dedicatedly addressing this issue. Thankyou for your patience");
-                        }
+                    } else {
+                        swal("Cancelled", "Your  file is safe :)", "error");
                     }
                 });
-
             }
+            $(document).ready(function() {
+                $('#zero-conf').DataTable();
 
 
 
-
-            // Add comment 
-
-            $('#add-entries').on('click', function(e) {
-                e.preventDefault();
-
-                var player_list = $("input[id='task']")
-                    .map(function() {
-                        return $(this).val();
-                    }).get();
-                var error = "";
-                var formData = new FormData();
-
-                if (player_list.length == 0) {
-                    error = error + 'meta';
-                    sweetAlert("Warning", "Please enter player", "warning");
-                } else {
-                    formData.append('player_list', player_list);
-                }
-                if ($('#tour select').val() == "select") {
-                    sweetAlert("Warning", "Please enter all fields", "warning");
-                    error = error + 'title';
-                } else {
-
-                    formData.append('tour_id', $('#tour select').val());
-                }
-                if ($('#team_name').val() == "") {
-                    sweetAlert("Warning", "Please enter a valid name", "warning");
-                    error = error + 'team_name';
-                } else {
-
-                    formData.append('team_name', $('#team_name').val());
-                }
-
-                if (error == "") {
-                    // console.log(formData);
-
-                    $.ajax({
-                        url: "PHP/addPlayers.php",
-                        type: "POST",
-                        dataType: "json",
-                        cache: false,
-                        contentType: false,
-                        processData: false,
-                        data: formData,
-
-                        success: function(data) {
-
-                            if (data.status == 201) {
-
-                                window.location.replace("entries");
-
-
-                            } else if (data.status == 301) {
-                                console.log(data.error);
-                                alert("error");
-                            } else if (data.status == 601) {
-                                console.log(data.error);
-                                alert("error");
-                            } else if (data.status == 603) {
-                                console.log(data.error);
-                                alert("error");
-                            } else {
-
-                            }
-                        }
-                    });
-                } else {
-
-                }
             });
         </script>
     </body>
@@ -467,5 +372,4 @@ if (!isset($_SESSION['session_user'])) {
     </html>
 <?php
 }
-
 ?>

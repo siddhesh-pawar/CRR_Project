@@ -252,14 +252,19 @@ if (!isset($_SESSION['admin_email'])) {
                                                     $start_date = date("d/m/Y", strtotime($row['start_tour_date']));
                                                     $end_date = date("d/m/Y", strtotime($row['end_tour_date']));
                                                     echo "<tr><td>{$i}</td><td>{$row['player_name']}</td><td>{$row['tour_name']}</td><td>{$row['team_name']}</td><td>$start_date</td><td>$end_date</td>
-                                                        <td style=\"width: 100px;\">
-                                                           </td></tr>\n";
+                                                    <td style=\"width: 100px;\">
+                                                   
+                                                    <a href= \"edit_entries.php?id={$row['player_id']}\"   data-toggle= \"tooltip \" data-original-title= \"Edit \"> <i class=\"fas fa-pencil-alt\" style=\"color:#7d7d83\"></i></a>
+                                                  
+                                                    <button type=\"button\" id=\"delete\" onClick=\"del('{$row['player_id']}')\" class=\"far fa-trash-alt  \" style=\"border: none;background-color: transparent;color:#7d7d83\"></button>
+                                                    </td></tr>\n";
+
+
+
                                                     $i = $i + 1;
                                                 }
                                                 ?>
-                                                <!-- <a href= \"{$row['meta_url']}\"   data-toggle= \"tooltip \" data-original-title= \"Edit \"> <i class=\"fas fa-eye mr-2 ml-2\" style=\"color:#7d7d83\"></i></a>
-                                            <a href= \"edit_article.php?id={$row['article_id']}\"   data-toggle= \"tooltip \" data-original-title= \"Edit \"> <i class=\"fas fa-pencil-alt\" style=\"color:#7d7d83\"></i></a>
-                                            <button type=\"button\" id=\"delete\" onClick=\"del('{$row['article_id']}')\" class=\"far fa-trash-alt  \" style=\"border: none;background-color: transparent;color:#7d7d83\"></button> -->
+
                                             </tbody>
                                             <tfoot>
                                                 <tr>
@@ -316,7 +321,7 @@ if (!isset($_SESSION['admin_email'])) {
 
 
         <script>
-            function del(article_id) {
+            function del(player_id) {
                 swal({
                     title: "Are you sure?",
                     text: "You will not be able to retrieve data",
@@ -331,17 +336,17 @@ if (!isset($_SESSION['admin_email'])) {
                     if (isConfirm) {
 
                         $.ajax({
-                            url: "PHP/deleteArticle.php",
+                            url: "PHP/deletePlayer.php",
                             method: "POST",
                             dataType: "json",
                             data: {
-                                article_id: article_id,
+                                player_id: player_id,
                             },
                             success: function(data) {
                                 console.log(data);
                                 if (data.status == 201) {
                                     // if(data.link!=""){
-                                    window.location.replace("posts");
+                                    window.location.replace("entries");
                                     // }else{
                                     //     window.location.replace("/");
                                     // }

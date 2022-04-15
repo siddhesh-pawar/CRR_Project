@@ -1,7 +1,11 @@
 <?php
 require_once('PHP/link.php');
+$id = $_REQUEST['id'];
+$query = "SELECT * from tournaments where id ='" . $id . "'";
+$result = mysqli_query($link, $query);
+$row = mysqli_fetch_array($result);
 session_start();
-if (!isset($_SESSION['session_user'])) {
+if (!isset($_SESSION['admin_email'])) {
     header("location:sign-in");
 } else {
 ?>
@@ -32,7 +36,6 @@ if (!isset($_SESSION['session_user'])) {
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
-
 
         <!-- Theme Styles -->
         <link href="assets/css/connect.min.css" rel="stylesheet">
@@ -89,13 +92,6 @@ if (!isset($_SESSION['session_user'])) {
                 color: #2b8fe9;
 
             }
-
-            .form-control {
-                border-radius: 7px;
-                width: 100%;
-                padding: 12px 18px;
-                font-size: 15px;
-            }
         </style>
     </head>
 
@@ -116,14 +112,14 @@ if (!isset($_SESSION['session_user'])) {
                         <!-- <li>
                             <a href="index" class="active"><i class="material-icons-outlined">dashboard</i>Dashboard</a>
                         </li> -->
-                        <li class="active-page">
+                        <li>
                             <a href="index"><i class="material-icons-outlined">text_format</i>Events</a>
                         </li>
-                        <li>
+                        <li class="active-page">
                             <a href="tournaments"><i class="material-icons-outlined">account_circle</i>Tournaments</a>
                         </li>
                         <li>
-                            <a href="add_comments_home"><i class="material-icons-outlined">create</i>Users</a>
+                            <a href="entries"><i class="material-icons-outlined">create</i>Entries</a>
                         </li>
                         <li>
                             <a href="#"><i class="material-icons">text_format</i>Settings<i class="material-icons has-sub-menu">add</i></a>
@@ -211,12 +207,12 @@ if (!isset($_SESSION['session_user'])) {
                         </div> -->
                     </nav>
                 </div>
-                <div class="page-content" style="overflow: initial;">
+                <div class="page-content">
                     <div class="page-info" style="overflow: initial;">
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="#">Apps</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Posts</li>
+                                <li class="breadcrumb-item active" aria-current="page">Tournaments</li>
                             </ol>
                         </nav>
                         <div class="page-options d-flex justify-content-center" style="margin-right: 50px;">
@@ -243,36 +239,63 @@ if (!isset($_SESSION['session_user'])) {
 
                         <div class="row">
                             <div class="card">
-                                <h2 class="d-flex justify-content-center  mb-0 pb-0 pt-4">Add new entries</h2>
+                                <h2 class="d-flex justify-content-center  mb-0 pb-0 pt-4">Edit Tournament</h2>
                                 <div class="card-body pt-3">
-
-                                    <div class="row pt-3">
-                                        <div class="col-lg-12">
-
-                                            <div class="form-group" id="tour">
-                                                <label class="control-label" style="font-weight:bold;font-size:1.3rem;color:#717BA2;">Select Tournament</label>
-                                                <select class="form-control custom-select" style="border-radius: 7px;width: 100%;padding: 12px 18px;font-size:15px" data-placeholder="Choose a Category" tabindex="1" onchange="player_input(this.value)">
-                                                    <option value="select">Select Tournament</option>
-                                                </select>
+                                    <div class="row">
 
 
+                                        <div class="row pt-3">
+
+
+
+                                            <!-- <div class="col-lg-12">
+                                                        <div class="form-group" id="event">
+                                                            <label class="control-label" style="font-weight:bold;font-size:1.3rem;color:#717BA2;">Select Event</label>
+                                                            <select class="form-control custom-select" style="border-radius: 7px;width: 100%;padding: 12px 18px;font-size:15px" data-placeholder="Choose a Category" tabindex="1" onchange="fetch_dates(this.value)">
+                                                                <option value="select">Select Event</option>
+                                                            </select>
+
+                                                        </div>
+                                                    </div> -->
+
+                                            <?php
+                                            $tour_id = $row['id'];
+                                            $result1 = mysqli_query($link, "SELECT * FROM `tournaments` WHERE `id` = '$tour_id'");
+                                            $row = mysqli_fetch_array($result1);
+
+                                            ?>
+
+
+                                            <div class="col-lg-12">
+                                                <div class="form-group">
+                                                    <input type="hidden" id="tour_id" class="form-control" value="<?php echo ($row['id']); ?>" style="border-radius: 7px;width: 100%;padding: 12px 18px;font-size:15px">
+                                                    <input type="hidden" id="event_id" class="form-control" value="<?php echo ($row['event_id']); ?>" style="border-radius: 7px;width: 100%;padding: 12px 18px;font-size:15px">
+
+
+
+
+                                                    <label class="control-label" style="font-weight:bold;font-size:1.3rem;color:#717BA2;">Description</label>
+                                                    <textarea id="tour_descrip" class="form-control" rows="5" style="padding: 12px 18px;border-radius: 7px;"><?php echo ($row['tour_descrip']); ?></textarea>
+
+
+
+
+
+
+                                                    <label class="control-label" style="font-weight:bold;font-size:1.3rem;color:#717BA2;">Start date</label>
+                                                    <input type="text" class="form-control" placeholder="2017-06-04" id="start-date" style="padding: 12px 18px;border-radius: 7px;" value="<?php echo ($row['start_tour_date']); ?>">
+
+                                                    <label class="control-label" style="font-weight:bold;font-size:1.3rem;color:#717BA2;">End date</label>
+                                                    <input type="text" class="form-control " placeholder="2017-06-04" id="end-date" style="padding: 12px 18px;border-radius: 7px;" value="<?php echo ($row['end_tour_date']); ?>">
+
+                                                    <div class="form-group pt-5 d-flex justify-content-center">
+
+                                                        <button class="btn" id="edit-tournament" type="button" style="font-size: 1rem;background-color: #2b8fe9;color: #ffffff;">Edit Tournament</button>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="col-lg-12">
-                                            <div class="form-group" id="team_add"></div>
-                                            <div class="form-group" id="player_add"></div>
-                                        </div>
-
                                     </div>
-                                    <div class="form-group pt-3 d-flex justify-content-center">
-                                        <button class="btn" id="add-entries" type="button" style="font-size: 1rem;background-color: #2b8fe9;color: #ffffff;">Add Entries</button>
-
-                                    </div>
-
-
-
-
-
                                 </div>
                             </div>
 
@@ -281,13 +304,20 @@ if (!isset($_SESSION['session_user'])) {
 
 
 
-
-
                         </div>
                     </div>
+
+
+
+
+
+
+
+
                 </div>
             </div>
         </div>
+
 
 
 
@@ -307,128 +337,64 @@ if (!isset($_SESSION['session_user'])) {
         <script src="assets/plugins/flot/jquery.flot.tooltip.min.js "></script>
         <script src="assets/js/connect.min.js "></script>
         <script src="assets/js/pages/dashboard.js "></script>
-        <script src="assets/plugins/DataTables/datatables.min.js"></script>
-        <script src="assets/plugins/DataTables/dataTables.select.min.js"></script>
         <script src="assets/sweetalert/sweetalert.min.js"></script>
         <script src="assets/sweetalert/jquery.sweet-alert.custom.js"></script>
         <script src="../assets/moment/moment.js"></script>
-        <!-- <script src="../assets/dropify/dist/js/dropify.min.js"></script> -->
         <script src="../assets/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
 
 
         <script>
-            var event_list;
-            var value;
-            var player_limit;
-
-            // Fetch all tournaments
-            $.ajax({
-                type: 'POST',
-                url: 'PHP/get_tournaments.php',
-                dataType: "json",
-                async: false,
-                data: {
-                    type: 'tour'
-                },
-                success: function(data) {
-                    if (data.status == 201) {
-
-                        tour_list = data.tour;
-                        for (var i = 0; i < tour_list.length; i++) {
-                            $("#tour select").html($("#tour select").html() + '<option value="' + tour_list[i]['tour_id'] + '">' + tour_list[i]['tour_name'] + ' </option>');
-                        }
-
-
-
-                    } else if (data.status == 301) {
-                        //Email already registered
-                        alert(data.error);
-                    } else {
-                        alert("Some error occured. Our team is dedicatedly addressing this issue. Thankyou for your patience");
-                    }
-                }
+            $('#start-date').bootstrapMaterialDatePicker({
+                time: false,
+                weekStart: 0
             });
+            $('#end-date').bootstrapMaterialDatePicker({
+                time: false,
+                minDate: new Date(),
+                weekStart: 0
+            }).on('change', function(e, date) {
+                $('#end-date').bootstrapMaterialDatePicker('setMinDate', date);
+            });
+            var article_list;
+
+            // Fetch Articles
 
 
-            function player_input(value) {
-
-                $('#player_add').empty();
-                $('#team_add').empty();
-                $.ajax({
-                    type: 'POST',
-                    url: 'PHP/get_player_limit.php',
-                    dataType: "json",
-                    async: false,
-                    data: {
-                        type: 'tour',
-                        tour_id: value
-                    },
-                    success: function(data) {
-                        if (data.status == 201) {
-
-                            $("#team_add").html($("#team_add").html() + '<label class="control-label" style="font-weight:bold;font-size:1.3rem;color:#717BA2;">Enter team name</label><input type="text" class="form-control" placeholder="Enter team name" id="team_name">');
-
-                            player_limit = data.player_limit;
-                            for (var i = 1; i <= player_limit; i++) {
-                                $("#player_add").html($("#player_add").html() + '<div class="player"><label class="control-label" style="font-weight:bold;font-size:1.3rem;color:#717BA2;">Player ' + i + '</label><input type="text" class="form-control" placeholder="Enter player name" name="task[]" id="task"></div>');
-                            }
-                            console.log(player_limit);
-
-
-
-
-                        } else if (data.status == 301) {
-                            //Email already registered
-                            alert(data.error);
-                        } else {
-                            alert("Some error occured. Our team is dedicatedly addressing this issue. Thankyou for your patience");
-                        }
-                    }
-                });
-
-            }
-
-
-
-
-            // Add comment 
-
-            $('#add-entries').on('click', function(e) {
+            // Edit comment 
+            $('#edit-tournament').on('click', function(e) {
                 e.preventDefault();
-
-                var player_list = $("input[id='task']")
-                    .map(function() {
-                        return $(this).val();
-                    }).get();
                 var error = "";
                 var formData = new FormData();
 
-                if (player_list.length == 0) {
-                    error = error + 'meta';
-                    sweetAlert("Warning", "Please enter player", "warning");
-                } else {
-                    formData.append('player_list', player_list);
-                }
-                if ($('#tour select').val() == "select") {
+                if ($("#tour_descrip").val() == "") {
+
                     sweetAlert("Warning", "Please enter all fields", "warning");
-                    error = error + 'title';
+                    error = error + 'tour_descrip';
                 } else {
 
-                    formData.append('tour_id', $('#tour select').val());
+                    formData.append('tour_descrip', $("#tour_descrip").val());
                 }
-                if ($('#team_name').val() == "") {
-                    sweetAlert("Warning", "Please enter a valid name", "warning");
-                    error = error + 'team_name';
+
+                if ($("#start-date").val() == "") {
+                    sweetAlert("Warning", "Please enter a valid start date", "warning");
+                    error = error + 'date';
                 } else {
-
-                    formData.append('team_name', $('#team_name').val());
+                    formData.append('start_date', $("#start-date").val());
                 }
+                if ($("#end-date").val() == "") {
+                    sweetAlert("Warning", "Please enter a end date", "warning");
+                    error = error + 'date';
+                } else {
+                    formData.append('end_date', $("#end-date").val());
 
+                }
                 if (error == "") {
-                    // console.log(formData);
+                    formData.append('tour_id', $("#tour_id").val());
+                    formData.append('event_id', $("#event_id").val());
+                    console.log(formData);
 
                     $.ajax({
-                        url: "PHP/addPlayers.php",
+                        url: "PHP/editTour.php",
                         type: "POST",
                         dataType: "json",
                         cache: false,
@@ -437,10 +403,10 @@ if (!isset($_SESSION['session_user'])) {
                         data: formData,
 
                         success: function(data) {
-
+                            console.log(data);
                             if (data.status == 201) {
 
-                                window.location.replace("entries");
+                                window.location.replace("tournaments.php");
 
 
                             } else if (data.status == 301) {
@@ -448,10 +414,88 @@ if (!isset($_SESSION['session_user'])) {
                                 alert("error");
                             } else if (data.status == 601) {
                                 console.log(data.error);
+                                console.log(data.start_date_event);
+                                console.log(data.end_date_event);
                                 alert("error");
+                            } else if (data.status == 701) {
+
+                                alert(data.error);
+                            } else {
+
+                            }
+                        }
+                    });
+                } else {
+
+                }
+            });
+
+            $('#edit-comment').on('click', function(e) {
+                e.preventDefault();
+                var error = "";
+                var formData = new FormData();
+                if ($('#article select').val() == "selct") {
+                    sweetAlert("Warning", "Please select a valid article name", "warning");
+                    error = error + 'article_name';
+                } else {
+
+                    formData.append('article_id', $('#article select').val());
+                }
+                if ($('#name').val() == "") {
+                    sweetAlert("Warning", "Please enter name", "warning");
+                    error = error + 'name';
+                } else {
+
+                    formData.append('name', $('#name').val());
+                }
+                if ($('#email').val() == "") {
+                    sweetAlert("Warning", "Please enter email", "warning");
+                    error = error + 'email';
+                } else {
+
+                    formData.append('email', $('#email').val());
+                }
+                if ($('#comment').val() == "") {
+                    sweetAlert("Warning", "Please enter comment", "warning");
+                    error = error + 'comment';
+                } else {
+
+                    formData.append('comment', $('#comment').val());
+                }
+
+
+                if (error == "") {
+                    formData.append('comment_id', $('#comment_id').val());
+                    console.log(formData);
+
+                    $.ajax({
+                        url: "PHP/edit_comment.php",
+                        type: "POST",
+                        dataType: "json",
+                        cache: false,
+                        contentType: false,
+                        processData: false,
+                        data: formData,
+
+                        success: function(data) {
+                            console.log(data);
+                            if (data.status == 201) {
+
+                                window.location.replace("add_comments_home");
+
+
+                            } else if (data.status == 301) {
+                                console.log(data.error);
+                                alert("error");
+
+                            } else if (data.status == 601) {
+                                console.log(data.error);
+                                alert("error");
+
                             } else if (data.status == 603) {
                                 console.log(data.error);
                                 alert("error");
+
                             } else {
 
                             }
@@ -467,5 +511,4 @@ if (!isset($_SESSION['session_user'])) {
     </html>
 <?php
 }
-
 ?>
