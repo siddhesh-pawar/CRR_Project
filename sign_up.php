@@ -46,7 +46,7 @@ require_once('php/link.php');
     <meta property="og:type" content="website" />
 
     <!-- Favicon location for example :  images/cropped-Fin-270x270.jpg -->
-    <link rel="icon" href="ENTER_FAVICON_LOCATION">
+    <link rel="icon" href="assets/images/f_logo_temp_mob.png">
 
 
     <!-- Enter Page Specific CSS here. Please make sure all the CSS  -->
@@ -56,52 +56,42 @@ require_once('php/link.php');
 </head>
 
 <body>
-    <div class="container-fluid  vh-100 preloader" style=" background-color: #172027;">
 
 
-        &nbsp;
+    <div class="d-none d-lg-block">
+        <div class="container-fluid pl-0 pr-0 header fixed-top">
+        </div>
 
-        <img src="assets/images/no-halftime-loaders-petrick.gif" style="  position: absolute;background-color: #172027;
-            top: 50%; right: 50%;
-            transform: translate(50%,-50%);  margin: 0;">
 
 
     </div>
-    <div class="main">
-        <div class="d-none d-lg-block">
-            <div class="container-fluid pl-0 pr-0 header fixed-top">
-            </div>
-
-
-
-        </div>
-        <div class="d-lg-none position-relative">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <a class="navbar-brand p-3 pt-4" href="#"> <img src="assets/images/f_logo.png"></a>
-                <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                    <ul class="navbar-nav p-4">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Events</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Gallery</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Contact</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Community</a>
-                        </li>
-                        <!-- <li class="nav-item dropdown">
+    <div class="d-lg-none position-relative">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand p-3 pt-4" href="#"> <img src="assets/images/f_logo.png"></a>
+            <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav p-4">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Community</a>
+                    </li>
+                    <!-- <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Dropdown link
@@ -112,80 +102,80 @@ require_once('php/link.php');
                             <a class="dropdown-item" href="#">Something else here</a>
                         </div>
                     </li> -->
-                    </ul>
-                </div>
-            </nav>
+                </ul>
+            </div>
+        </nav>
 
-            <!-- Enter Code for Mobile UI here -->
-
-
-
-        </div>
-        <div class="container-fluid sign-up_bg">
-            <h2 class="text-center">SIGN<span style="color: #ffffff;"> UP</span></h2>
-            <div class="container ">
-                <div class="card" style="background: transparent;border: none;">
-                    <div class="row mt-lg-5">
-                        <div class="col-lg-6 ">
-                            <img src="assets/images/sign_in.png" style="width:100%;filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));">
-                        </div>
-                        <div class="col-lg-6">
-                            <form>
-
-                                <label class="pr-2 pt-3">Name</label>
-                                <input type="text" class="form-control mt-3 mb-4" placeholder="Name" style="padding: 18px;" id="name">
-
-
-                                <div class="form-group pt-2">
-                                    <label class="pr-4 ">Email</label>
-                                    <input type="text" class="form-control mt-3 mb-4" placeholder="Email" style="padding: 18px;" id="email">
-
-                                    <label class="pr-2 pt-3">Phone</label>
-                                    <input type="text" class="form-control mt-3 mb-4" placeholder="Phone" style="padding: 18px;" id="phone">
-
-                                    <label class="pr-2 pt-3">Password</label>
-                                    <input type="password" class="form-control mt-3 mb-4" placeholder="Password" style="padding: 18px;" id="password">
-
-                                    <label class="pr-2 pt-3">Confirm Password</label>
-                                    <input type="password" class="form-control mt-3 mb-4" placeholder="Password" style="padding: 18px;" id="c_password">
-
-
-                                    <div class=" d-flex justify-content-center pt-4 pb-5">
-
-                                        <button type="submit " class="btn w-40" id="sign_up">Sign up</button>
-                                    </div>
+        <!-- Enter Code for Mobile UI here -->
 
 
 
-                                </div>
-
-
-
-
-                                <div class="form-group pt-4">
-
-
-                                </div>
-
-
-                            </form>
-
-                        </div>
+    </div>
+    <div class="container-fluid sign-up_bg">
+        <h2 class="text-center">SIGN<span style="color: #ffffff;"> UP</span></h2>
+        <div class="container ">
+            <div class="card" style="background: transparent;border: none;">
+                <div class="row mt-lg-5">
+                    <div class="col-lg-6 ">
+                        <img src="assets/images/sign_in.png" style="width:100%;filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));">
                     </div>
+                    <div class="col-lg-6">
+                        <form>
 
+                            <label class="pr-2 pt-3">Name</label>
+                            <input type="text" class="form-control mt-3 mb-4" placeholder="Name" style="padding: 18px;" id="name">
+
+
+                            <div class="form-group pt-2">
+                                <label class="pr-4 ">Email</label>
+                                <input type="text" class="form-control mt-3 mb-4" placeholder="Email" style="padding: 18px;" id="email">
+
+                                <label class="pr-2 pt-3">Phone</label>
+                                <input type="text" class="form-control mt-3 mb-4" placeholder="Phone" style="padding: 18px;" id="phone">
+
+                                <label class="pr-2 pt-3">Password</label>
+                                <input type="password" class="form-control mt-3 mb-4" placeholder="Password" style="padding: 18px;" id="password">
+
+                                <label class="pr-2 pt-3">Confirm Password</label>
+                                <input type="password" class="form-control mt-3 mb-4" placeholder="Password" style="padding: 18px;" id="c_password">
+
+
+                                <div class=" d-flex justify-content-center pt-4 pb-5">
+
+                                    <button type="submit " class="btn w-40" id="sign_up">Sign up</button>
+                                </div>
+
+
+
+                            </div>
+
+
+
+
+                            <div class="form-group pt-4">
+
+
+                            </div>
+
+
+                        </form>
+
+                    </div>
                 </div>
 
             </div>
 
         </div>
 
-        <!-- mobile view -->
+    </div>
 
-        <div class="footer-top footer-bg third-footer-bg">
+    <!-- mobile view -->
 
-        </div>
+    <div class="footer-top footer-bg third-footer-bg">
 
     </div>
+
+
 
 
 
@@ -194,27 +184,12 @@ require_once('php/link.php');
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="assets/js/jquery-3.4.1.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/sweetalert/sweetalert.min.js"></script>
     <script src="assets/sweetalert/jquery.sweet-alert.custom.js"></script>
 
     <script>
-        const loader = document.querySelector('.preloader');
-        const main = document.querySelector('.main');
-
-        function init() {
-            setTimeout(() => {
-                loader.style.opacity = 0;
-                loader.style.display = 'none';
-
-                main.style.display = 'block';
-
-                setTimeout(() => (main.style.opacity = 1), 50);
-            }, 4000);
-
-        }
-
-        init();
         $(document).ready(function() {
             $(".header").load('template/header.php');
             $(".footer-top").load('template/footer.html');

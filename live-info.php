@@ -51,7 +51,7 @@ $event_slug =  $_GET['event'];;
 
 
     <!-- Favicon location for example :  images/cropped-Fin-270x270.jpg -->
-    <link rel="icon" href="ENTER_FAVICON_LOCATION">
+    <link rel="icon" href="assets/images/f_logo_temp_mob.png">
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
 
     <!-- Enter Page Specific CSS here. Please make sure all the CSS  -->
@@ -491,6 +491,7 @@ $event_slug =  $_GET['event'];;
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="assets/js/jquery-3.4.1.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <script>

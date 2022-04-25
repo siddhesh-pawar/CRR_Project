@@ -14,7 +14,7 @@ if (!isset($_SESSION['user_email'])) {
     <head>
 
         <!-- Enter a proper page title here -->
-        <title>Template | Example with all standards</title>
+        <title>Kriyata</title>
 
         <!-- CSS to include bootstrap -->
         <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -51,7 +51,7 @@ if (!isset($_SESSION['user_email'])) {
         <meta property="og:type" content="website" />
 
         <!-- Favicon location for example :  images/cropped-Fin-270x270.jpg -->
-        <link rel="icon" href="ENTER_FAVICON_LOCATION">
+        <link rel="icon" href="assets/images/f_logo_temp_mob.png">
 
 
         <!-- Enter Page Specific CSS here. Please make sure all the CSS  -->

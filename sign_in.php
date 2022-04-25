@@ -7,7 +7,7 @@ require_once('admin-dashboard/php/link.php');
 <head>
 
     <!-- Enter a proper page title here -->
-    <title>Template | Example with all standards</title>
+    <title>Kriyata</title>
 
     <!-- CSS to include bootstrap -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -44,7 +44,7 @@ require_once('admin-dashboard/php/link.php');
     <meta property="og:type" content="website" />
 
     <!-- Favicon location for example :  images/cropped-Fin-270x270.jpg -->
-    <link rel="icon" href="ENTER_FAVICON_LOCATION">
+    <link rel="icon" href="assets/images/f_logo_temp_mob.png">
 
 
     <!-- Enter Page Specific CSS here. Please make sure all the CSS  -->
@@ -301,52 +301,42 @@ require_once('admin-dashboard/php/link.php');
 </head>
 
 <body>
-    <div class="container-fluid  vh-100 preloader" style=" background-color: #172027;">
 
 
-        &nbsp;
+    <div class="d-none d-lg-block">
+        <div class="container-fluid pl-0 pr-0 header fixed-top">
+        </div>
 
-        <img src="assets/images/no-halftime-loaders-petrick.gif" style="  position: absolute;background-color: #172027;
-            top: 50%; right: 50%;
-            transform: translate(50%,-50%);  margin: 0;">
 
 
     </div>
-    <div class="main">
-        <div class="d-none d-lg-block">
-            <div class="container-fluid pl-0 pr-0 header fixed-top">
-            </div>
-
-
-
-        </div>
-        <div class="d-lg-none position-relative">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <a class="navbar-brand p-3 pt-4" href="#"> <img src="assets/images/f_logo.png"></a>
-                <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                    <ul class="navbar-nav p-4">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Events</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Gallery</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Contact</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Community</a>
-                        </li>
-                        <!-- <li class="nav-item dropdown">
+    <div class="d-lg-none position-relative">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand p-3 pt-4" href="#"> <img src="assets/images/f_logo.png"></a>
+            <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav p-4">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Community</a>
+                    </li>
+                    <!-- <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Dropdown link
@@ -357,67 +347,67 @@ require_once('admin-dashboard/php/link.php');
                             <a class="dropdown-item" href="#">Something else here</a>
                         </div>
                     </li> -->
-                    </ul>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Enter Code for Mobile UI here -->
+
+
+
+    </div>
+    <div id="content" class="container-fluid">
+
+        <div class="container">
+            <h3><span class="text-white">Sign </span><span>In</span></h3>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="ml-xl-50-none">
+                        <a href="#"><img class="imageSpin " src="assets/images/02.png" alt="banner-thumb"></a>
+                    </div>
                 </div>
-            </nav>
-
-            <!-- Enter Code for Mobile UI here -->
-
-
-
-        </div>
-        <div id="content" class="container-fluid">
-
-            <div class="container">
-                <h3><span class="text-white">Sign </span><span>In</span></h3>
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="ml-xl-50-none">
-                            <a href="#"><img class="imageSpin " src="assets/images/02.png" alt="banner-thumb"></a>
+                <div class="container col-lg-6">
+                    <form>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Email" id="email" name="email" tabindex="1" required>
+                            <label for="email" class="form-label">Email</label>
                         </div>
-                    </div>
-                    <div class="container col-lg-6">
-                        <form>
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Email" id="email" name="email" tabindex="1" required>
-                                <label for="email" class="form-label">Email</label>
-                            </div>
-                            <div class="form-group">
-                                <input type="password" class="form-control" placeholder="Password" id="password" name="password" tabindex="2" required>
-                                <label for="password" class="form-label">Password</label>
-                            </div>
-                            <div class="links d-flex justify-content-around">
-                                <!-- <a href="">Forgot Password?</a> -->
+                        <div class="form-group">
+                            <input type="password" class="form-control" placeholder="Password" id="password" name="password" tabindex="2" required>
+                            <label for="password" class="form-label">Password</label>
+                        </div>
+                        <div class="links d-flex justify-content-around">
+                            <!-- <a href="">Forgot Password?</a> -->
 
-                                <div class="row" style="margin-top: 0; text-align: center;">
-                                    <div class="col text-white">Not a member?</div>
-                                    <div class="w-100"></div>
-                                    <div class="col"><a href="sign_up">Register</a></div>
-
-                                </div>
-                            </div>
-                            <div class="button" id="login">
-                                <a class="bt">
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                    <p>Sign in</p>
-
-                                </a>
+                            <div class="row" style="margin-top: 0; text-align: center;">
+                                <div class="col text-white">Not a member?</div>
+                                <div class="w-100"></div>
+                                <div class="col"><a href="sign_up">Register</a></div>
 
                             </div>
+                        </div>
+                        <div class="button" id="login">
+                            <a class="bt">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <p>Sign in</p>
 
-                        </form>
-                    </div>
+                            </a>
+
+                        </div>
+
+                    </form>
                 </div>
-
             </div>
 
-
-
         </div>
-        <!-- <div class="container-fluid sign-up_bg">
+
+
+
+    </div>
+    <!-- <div class="container-fluid sign-up_bg">
             <h2 class="text-center">SIGN<span style="color: #ffffff;"> IN</span></h2>
             <div class="container ">
                 <div class="card" style="background: transparent;border: none;">
@@ -468,13 +458,13 @@ require_once('admin-dashboard/php/link.php');
 
         </div> -->
 
-        <!-- mobile view -->
+    <!-- mobile view -->
 
 
-        <div class="footer-top footer-bg third-footer-bg">
+    <div class="footer-top footer-bg third-footer-bg">
 
-        </div>
     </div>
+
 
 
 
@@ -488,22 +478,6 @@ require_once('admin-dashboard/php/link.php');
     <script src="assets/js/bootstrap.min.js"></script>
 
     <script>
-        const loader = document.querySelector('.preloader');
-        const main = document.querySelector('.main');
-
-        function init() {
-            setTimeout(() => {
-                loader.style.opacity = 0;
-                loader.style.display = 'none';
-
-                main.style.display = 'block';
-
-                setTimeout(() => (main.style.opacity = 1), 50);
-            }, 4000);
-
-        }
-
-        init();
         $(document).ready(function() {
             $(".header").load('template/header.php');
             $(".footer-top").load('template/footer.html');

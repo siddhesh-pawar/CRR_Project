@@ -11,7 +11,7 @@ $current_date = strtotime(date("r"));
     <!-- <base href="<?php echo $baseurl; ?>" target="_blank"> -->
 
     <!-- Enter a proper page title here -->
-    <title>Template | Example with all standards</title>
+    <title>Kriyata</title>
 
     <!-- CSS to include bootstrap -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -48,7 +48,7 @@ $current_date = strtotime(date("r"));
     <meta property="og:type" content="website" />
 
     <!-- Favicon location for example :  images/cropped-Fin-270x270.jpg -->
-    <link rel="icon" href="ENTER_FAVICON_LOCATION">
+    <link rel="icon" href="assets/images/f_logo_temp_mob.png">
 
 
     <!-- Enter Page Specific CSS here. Please make sure all the CSS  -->
@@ -233,6 +233,7 @@ $current_date = strtotime(date("r"));
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="assets/js/jquery-3.4.1.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
 
     <script>

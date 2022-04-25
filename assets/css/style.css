@@ -1,9 +1,6 @@
 @charset "utf-8";
 
-.main {
-    display: none;
-    transition: opacity 3s ease-in;
-}
+
 
 /* CSS Document */
 @font-face {
@@ -234,6 +231,7 @@
 
 .fw-title {
     margin-top: 20px;
+    font-family: 'Oxanium-Regular'
 }
 
 .fw-quick-link {

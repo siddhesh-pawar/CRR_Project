@@ -1,10 +1,14 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
 
     <!-- Enter a proper page title here -->
-    <title>KRIYATA</title>
+    <title>Template | Example with all standards</title>
 
     <!-- CSS to include bootstrap -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -46,20 +50,16 @@
 
     <!-- Enter Page Specific CSS here. Please make sure all the CSS  -->
     <style>
-        html {
-            height: 100vh;
-        }
-
-        body {
-            background: rgb(6, 6, 6);
-            height: 500vh;
+        .main {
+            display: none;
+            transition: opacity 3s ease-in;
         }
 
         #hero-lightpass {
             left: -1%;
             position: fixed;
             width: 155%;
-            top: -2%;
+
 
             /* left: 50%;
             top: 50%;
@@ -70,18 +70,17 @@
 </head>
 
 <body>
-
-    <!-- <div class="container-fluid  vh-100 preloader" style=" background-color: #172027;">
+    <div class="container-fluid  vh-100 preloader" style=" background-color: #172027;">
 
 
         &nbsp;
 
-        <img src=" images/no-halftime-loaders-petrick.gif" style="  position: absolute;background-color: #172027;
+        <img src=" assets/images/no-halftime-loaders-petrick.gif" style="  position: absolute;background-color: #172027;
             top: 50%; right: 50%;
             transform: translate(50%,-50%);  margin: 0;">
 
 
-    </div> -->
+    </div>
     <div class="main">
         <div class="d-none d-lg-block">
 
@@ -104,9 +103,9 @@
                         management
                     </p>
                     <!-- <h2 class="pt-2 text-center">AND</h2>
-                    <h2 class="pt-2 text-center"><span style="color:#ff4800;"> MANAGE</span></h2>
+        <h2 class="pt-2 text-center"><span style="color:#ff4800;"> MANAGE</span></h2>
 
-                    <h2 class="pt-2 text-center">TOURNAMENTS</h2> -->
+        <h2 class="pt-2 text-center">TOURNAMENTS</h2> -->
 
 
 
@@ -116,30 +115,30 @@
             </div>
 
             <!-- <div class="container-fluid kriyata" style="padding-bottom: 200px;">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12 d-flex justify-content-center text">
-                            <h2 class="text-center d-flex justify-content-center">
-                                <p><span>KRIYATA</span></p>
-                            </h2>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 d-flex justify-content-center text">
+                <h2 class="text-center d-flex justify-content-center">
+                    <p><span>KRIYATA</span></p>
+                </h2>
 
-                        </div>
-                        <div class="col-12 d-flex justify-content-center">
+            </div>
+            <div class="col-12 d-flex justify-content-center">
 
-                            <p
-                                style="font-size: 30px;font-family: 'Oxanium-Regular';font-weight: bold;margin-top: 50px;">
-                                One stop
-                                solution
-                                for tournament
-                                management
-                            </p>
-                        </div>
+                <p
+                    style="font-size: 30px;font-family: 'Oxanium-Regular';font-weight: bold;margin-top: 50px;">
+                    One stop
+                    solution
+                    for tournament
+                    management
+                </p>
+            </div>
 
 
-                    </div>
-                </div>
+        </div>
+    </div>
 
-            </div> -->
+</div> -->
 
             <div class="container-fluid section-3">
                 <div class="container">
@@ -249,9 +248,9 @@
                                         <p><span>Phone :</span> +91 8104460774</p>
 
                                         <!-- <ul style="padding-left: 10px;font-size:18px;" class="pt-4">
-                                            <span>Our Location :</span> Central Park Roselle W78 New Jersey</li>
-                                            <li><span>Phone :</span> + 97 325 6254 324</li>
-                                        </ul> -->
+                                <span>Our Location :</span> Central Park Roselle W78 New Jersey</li>
+                                <li><span>Phone :</span> + 97 325 6254 324</li>
+                            </ul> -->
                                     </div>
 
                                 </div>
@@ -413,71 +412,69 @@
     <script src="assets/js/bootstrap.min.js"></script>
 
     <script>
-        const html = document.documentElement;
-        const canvas = document.getElementById("hero-lightpass");
-        const context = canvas.getContext("2d");
+        const loader = document.querySelector('.preloader');
+        const main = document.querySelector('.main');
 
-        const frameCount = 290;
-        const currentFrame = index => (
-            `assets/images/scroll/${index.toString().padStart(4, '0')}.jpg`
-        )
+        function init() {
+            setTimeout(() => {
+                loader.style.opacity = 0;
+                loader.style.display = 'none';
 
-        const preloadImages = () => {
-            for (let i = 1; i < frameCount; i++) {
-                const img = new Image();
-                img.src = currentFrame(i);
-            }
-        };
+                main.style.display = 'block';
 
-        const img = new Image()
-        img.src = currentFrame(1);
-        canvas.width = 1950;
-        canvas.height = 1080;
-        img.onload = function() {
-            context.drawImage(img, 0, 0);
+                setTimeout(() => (main.style.opacity = 1), 50);
+            }, 4000);
+
         }
 
-        const updateImage = index => {
-            img.src = currentFrame(index);
-            context.drawImage(img, 0, 0);
-        }
-
-        window.addEventListener('scroll', () => {
-            const scrollTop = html.scrollTop;
-            const maxScrollTop = html.scrollHeight - window.innerHeight;
-            const scrollFraction = scrollTop / maxScrollTop;
-            const frameIndex = Math.min(
-                frameCount - 1,
-                Math.ceil(scrollFraction * frameCount)
-            );
-
-            requestAnimationFrame(() => updateImage(frameIndex + 1))
-        });
-
-        preloadImages()
-    </script>
-
-    <script>
-        // const loader = document.querySelector('.preloader');
-        // const main = document.querySelector('.main');
-
-        // function init() {
-        //     setTimeout(() => {
-        //         loader.style.opacity = 0;
-        //         loader.style.display = 'none';
-
-        //         main.style.display = 'block';
-
-        //         setTimeout(() => (main.style.opacity = 1), 50);
-        //     }, 4000);
-
-        // }
-
-        // init();
+        init();
         $(document).ready(function() {
+
             $(".header").load('template/header.php');
             $(".footer-top").load('template/footer.html');
             $(".mobile-header").load('template/mobile-header.html');
+            const html = document.documentElement;
+            const canvas = document.getElementById("hero-lightpass");
+            const context = canvas.getContext("2d");
+
+            const frameCount = 290;
+            const currentFrame = index => (
+                `assets/images/scroll/${index.toString().padStart(4, '0')}.jpg`
+            )
+
+            const preloadImages = () => {
+                for (let i = 1; i < frameCount; i++) {
+                    const img = new Image();
+                    img.src = currentFrame(i);
+                }
+            };
+
+            const img = new Image()
+            img.src = currentFrame(1);
+            canvas.width = 1950;
+            canvas.height = 1080;
+            img.onload = function() {
+                context.drawImage(img, 0, 0);
+            }
+
+            const updateImage = index => {
+                img.src = currentFrame(index);
+                context.drawImage(img, 0, 0);
+            }
+
+            window.addEventListener('scroll', () => {
+                const scrollTop = html.scrollTop;
+                const maxScrollTop = html.scrollHeight - window.innerHeight;
+                const scrollFraction = scrollTop / maxScrollTop;
+                const frameIndex = Math.min(
+                    frameCount - 1,
+                    Math.ceil(scrollFraction * frameCount)
+                );
+
+                requestAnimationFrame(() => updateImage(frameIndex + 1))
+            });
+
+            preloadImages()
 
             $(window).on('scroll', function() {
                 var scroll = $(window).scrollTop();

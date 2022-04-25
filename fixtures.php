@@ -54,7 +54,7 @@ if (!isset($_SESSION['user_email'])) {
         <meta property="og:type" content="website" />
 
         <!-- Favicon location for example :  images/cropped-Fin-270x270.jpg -->
-        <link rel="icon" href="ENTER_FAVICON_LOCATION">
+        <link rel="icon" href="assets/images/f_logo_temp_mob.png">
 
 
         <!-- Enter Page Specific CSS here. Please make sure all the CSS  -->
@@ -403,8 +403,9 @@ if (!isset($_SESSION['user_email'])) {
 
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="assets/js/popper.min.js"></script>
+
         <script src="assets/js/jquery-3.4.1.min.js"></script>
+        <script src="assets/js/popper.min.js"></script>
         <script src="assets/js/bootstrap.min.js"></script>
 
 

@@ -4,7 +4,7 @@
 <head>
 
     <!-- Enter a proper page title here -->
-    <title>Template | Example with all standards</title>
+    <title>Kriyata</title>
 
     <!-- CSS to include bootstrap -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -40,7 +40,7 @@
 
 
     <!-- Favicon location for example :  images/cropped-Fin-270x270.jpg -->
-    <link rel="icon" href="ENTER_FAVICON_LOCATION">
+    <link rel="icon" href="assets/images/f_logo_temp_mob.png">
 
     <!-- Enter Page Specific CSS here. Please make sure all the CSS  -->
     <style>
@@ -52,7 +52,7 @@
         }
 
         body {
-            background-color: rgb(25, 29, 38);
+
             color: white;
         }
 
@@ -79,16 +79,19 @@
         .overlay h1 {
             font-size: 56px;
             font-family: grind;
+            /* margin-top: 30%;
+            margin-bottom: 30%; */
         }
 
         .overlay h1 span {
             font-size: 54px;
             font-family: grind;
             color: rgb(241, 78, 26);
+
         }
 
         .bigimage {
-            min-height: 90vh;
+            height: 50vh;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -102,64 +105,26 @@
 
         .overlay {
             display: flex;
-            align-items: center;
+            /* align-items: center; */
             justify-content: center;
-            height: 10vh;
+            /* height: vh; */
             width: 45%;
             color: white;
             text-transform: uppercase;
-            margin-top: 50px;
-        }
-
-        .wpb_single_image {
-            text-align: center;
-            margin-bottom: 35px;
-        }
-
-        .wpb_wrapper {
-            display: inline-block;
-            vertical-align: top;
-            margin: 0;
-            max-width: 100%;
 
         }
 
-        .vc_row {
-            transition: opacity .5s;
-            overflow: hidden;
-            margin-bottom: 48px;
-            margin-left: -15px;
-            margin-right: -15px;
 
-        }
-
-        .wpb_column {
-            padding-left: 0;
-            padding-right: 0;
-            font-size: 20px;
-        }
-
-        .vc_column-inner {
-            box-sizing: border-box;
-            padding-right: 15px;
-            padding-left: 15px;
-            width: 100%;
-        }
-
-        .wpb_content_element {
-            margin-bottom: 35px;
-        }
-
-        .wpb_wrappers {
-            margin-bottom: 0;
-        }
 
 
 
         /*squad*/
 
         .squad {
-            margin: 100px 0;
+            height: 100vh;
+            background-color: rgb(25, 29, 38);
+            color: #ffffff;
+            padding-top: 120px;
 
         }
 
@@ -170,7 +135,7 @@
             justify-content: center;
             align-items: center;
             /*flex-direction: column;*/
-            margin-top: 20px;
+
         }
 
         .profile-card {
@@ -254,7 +219,7 @@
         .third-contact-form .btn {
             background-color: rgb(247, 106, 51);
             color: white;
-            float: left;
+            /* float: left; */
         }
 
 
@@ -595,7 +560,9 @@
     </style>
 </head>
 
-<body style="background-color: rgb(25,29,38); color: #ffffff;">
+<body>
+
+
 
     <div class="d-none d-lg-block">
         <div class="header fixed-top"></div>
@@ -607,30 +574,7 @@
                         <h1>About <span>us</span></h1>
                     </div>
 
-                    <div style="text-align: center; position: center; left: -280.8px; box-sizing: border-box; width: 100%; padding-left: 280.8px; padding-right: 281.2px; margin-top: 40px;"
-                        class="vc_row wpb_row vc_row-fluid vc-service-content vc_custom_1458379419553">
-                        <div class="wpb_column vc_column_container vc_col-sm-12">
-                            <div class="vc_column-inner">
-                                <div class="">
-                                    <div class="wpb_wrappers">
-                                        <div class="wpb_text_column wpb_content_element ">
-                                            <div class="wpb_wrappers">
-                                                <p>
-                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-                                                    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                                    aliquip ex ea commodo consequat. Duis aute irure dolor in
-                                                    reprehenderit in voluptate velit esse cillum dolore exercitation
-                                                    ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                                                    irure dolor in reprehenderit in voluptate velit esse cillum dolore.
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
             </div>
 
@@ -646,10 +590,10 @@
                 <div id="Team" class="main">
                     <div class="profile-card">
                         <div class="img">
-                            <img src="assets/images/team1.jpg">
+                            <img src="assets/images/aumkar.jpg">
                         </div>
                         <div class="caption">
-                            <h3>Tom Cruise</h3>
+                            <h3 class="pt-">Aumkar Ringe</h3>
                             <p>Full Stack Developer</p>
                             <div class="fw-social">
                                 <a href="#"><i class="fa fa-facebook"></i></a>
@@ -660,10 +604,10 @@
                     </div>
                     <div class="profile-card">
                         <div class="img">
-                            <img src="assets/images/team1.jpg">
+                            <img src="assets/images/hrushi.jpg">
                         </div>
                         <div class="caption">
-                            <h4>Tom Cruise</h4>
+                            <h3 class="pt-4">Hrushikesh Tawde</h3>
                             <p>Full Stack Developer</p>
                             <div class="fw-social">
                                 <a href="#"><i class="fa fa-facebook"></i></a>
@@ -674,10 +618,10 @@
                     </div>
                     <div class="profile-card">
                         <div class="img">
-                            <img src="assets/images/team1.jpg">
+                            <img src="assets/images/siddhi.jpg">
                         </div>
                         <div class="caption">
-                            <h3>Tom Cruise</h3>
+                            <h3 class="pt-3">Siddhikesh Sakharkar</h3>
                             <p>Full Stack Developer</p>
                             <div class="fw-social">
                                 <a href="#"><i class="fa fa-facebook"></i></a>
@@ -698,11 +642,10 @@
                         <div class="cols">
                             <div class="col" ontouchstart="this.classList.toggle('hover');">
                                 <div class="container">
-                                    <div class="front"
-                                        style="background: url(assets/images/cric.jpeg); background-size: cover;">
+                                    <div class="front" style="background: url(assets/images/cric.jpeg); background-size: cover;">
                                         <div class="inner">
 
-                                            <p>Live Score</p>
+                                            <p>LIGHTNING FAST PROCESS</p>
                                             <span>
 
 
@@ -711,8 +654,7 @@
                                     </div>
                                     <div class="back">
                                         <div class="inner">
-                                            <p>Update scores of simultaneous events through admin dashboard for your
-                                                tournament in real time
+                                            <p>Create account instantly, get authenticated and you are good to go!
 
                                             </p>
                                         </div>
@@ -721,10 +663,9 @@
                             </div>
                             <div class="col" ontouchstart="this.classList.toggle('hover');">
                                 <div class="container">
-                                    <div class="front"
-                                        style="background: url(assets/images/foot.jpg);background-size: cover;">
+                                    <div class="front" style="background: url(assets/images/foot.jpg);background-size: cover;">
                                         <div class=" inner">
-                                            <p>PAYMENT GATEWAY</p>
+                                            <p>MULTIPLE SPORT REG</p>
                                             <span>
 
                                             </span>
@@ -732,7 +673,7 @@
                                     </div>
                                     <div class="back">
                                         <div class="inner">
-                                            <p>Integrate payment option to your registrations with minimal steps</p>
+                                            <p>Register with multiple sports on a single click</p>
                                         </div>
                                     </div>
                                 </div>
@@ -780,19 +721,27 @@
 
 
             <!-- Contact -->
-            <div id="Contact" class="container-fluid section-5">
+            <div class="container-fluid section-5">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="third-contact-wrap">
                                 <div class="third-title-style">
-                                    <h2>CONTACT<span &nbsp>US</span></h2>
-                                </div>
-                                <div class="inner">
-                                    <h2>MEET OUR<span style="color:#ff4800">TEAM</span></h2>
-                                    <p class="pt-4 mb-3"><span>Our LOCATION:</span>Central
-                                        Park Roselle W78 New Jersey.</p>
-                                    <p><span>Phone:</span>+97 325 6254 322</p>
+                                    <h2>CONTACT<span &nbsp> US</span></h2>
+                                    <div class="inner">
+                                        <h2>MEET OUR <span style="color: #ff4800;;">TEAM</span></h2>
+
+                                        <p class="pt-4 mb-3"><span>Our Location :</span> Trishul Apartments Ganesh Galli
+                                            Lower parel Mumbai - 4000013
+                                        </p>
+                                        <p><span>Phone :</span> +91 8104460774</p>
+
+                                        <!-- <ul style="padding-left: 10px;font-size:18px;" class="pt-4">
+                                            <span>Our Location :</span> Central Park Roselle W78 New Jersey</li>
+                                            <li><span>Phone :</span> + 97 325 6254 324</li>
+                                        </ul> -->
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
@@ -806,12 +755,14 @@
                                         <input type="text" placeholder="Your Phone">
                                     </div>
                                 </div>
-                                <textarea name="message" id="message" placeholder="Write Message"></textarea>
+                                <textarea name="message" id="message" placeholder="Your Message"></textarea>
                                 <button class="btn rotated-btn">Submit</button>
                             </form>
                         </div>
                     </div>
                 </div>
+
+
             </div>
 
             <!-- Scroll -->
@@ -819,20 +770,16 @@
                 <nav class="scrol-init">
                     <ul>
                         <li>
-                            <a class="scroll-link actscr-link" href="#About_us"
-                                style="opacity: 1; transform:translate3d(0px, 0px, 0px);"><span>About</span></a>
+                            <a class="scroll-link actscr-link" href="#About_us" style="opacity: 1; transform:translate3d(0px, 0px, 0px);"><span>About</span></a>
                         </li>
                         <li>
-                            <a class="scroll-link actscr-link" href="#Squad"
-                                style="opacity: 1; transform:translate3d(0px, 0px, 0px);"><span>Squad</span></a>
+                            <a class="scroll-link actscr-link" href="#Squad" style="opacity: 1; transform:translate3d(0px, 0px, 0px);"><span>Squad</span></a>
                         </li>
                         <li>
-                            <a class="scroll-link actscr-link" href="#features"
-                                style="opacity: 1; transform:translate3d(0px, 0px, 0px);"><span>Features</span></a>
+                            <a class="scroll-link actscr-link" href="#features" style="opacity: 1; transform:translate3d(0px, 0px, 0px);"><span>Features</span></a>
                         </li>
                         <li>
-                            <a class="scroll-link actscr-link" href="#Contact"
-                                style="opacity: 1; transform:translate3d(0px, 0px, 0px);"><span>Contact</span></a>
+                            <a class="scroll-link actscr-link" href="#Contact" style="opacity: 1; transform:translate3d(0px, 0px, 0px);"><span>Contact</span></a>
                         </li>
                     </ul>
                 </nav>
@@ -843,94 +790,22 @@
 
 
 
-
-
-
-
     <!-- mobile view -->
     <div class="d-lg-none position-relative">
 
-        <!-- header -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand p-3 pt-4" href="#"> <img src="assets/images/f_logo.png"></a>
-            <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse"
-                data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav p-4">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Events</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Gallery</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Community</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Dropdown link
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+        <div class="mobile-header"></div>
 
 
 
         <div id class="container-fluid">
             <!-- About -->
-            <div id="post-156" class="post-156 page type-page status-publish hentry bigimage">
-                <div style="margin-top: 2rem;" class="vc_row wpb_row vc_row-fluid">
-                    <div class="wpb_column vc_column_container vc_col-sm-12">
-                        <div class="vc_column-inner">
-                            <div class="wpb_wrappers">
-                                <h2
-                                    style="font-size:55px; line-height: normal; text-align: center; font-family: grind; font-weight: 100; font-style: normal;">
-                                    ABOUT <span style="color:rgb(255,88,23)">Us</span>
-                                </h2>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div style="text-align: center; position:relative; padding-left: -47.2px; box-sizing:border-box; width: 100%; padding-left:47.2px ; padding-right: 46.8px;"
-                    data-vc-full-width="true" data-vc-full-width-init="true"
-                    class="vc_row wpb_row vc_row-fluid vc-service-content vc_custom_1458379419553">
-                    <div class="wpb_column vc_column_container vc_col-sm-12">
-                        <div class="vc_column-inner">
-                            <div class="wpb_wrappers">
-                                <div class="wpb_text_column wpb_content_element">
-                                    <div class="wpb_wrappers">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                                            cillum dolore exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                                            cillum dolore</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="bigimage">
+
+                <h2 style="font-size:55px; line-height: normal; text-align: center; font-family: grind; font-weight: 100; font-style: normal;">
+                    <span class="text-white"> ABOUT </span><span style="color:rgb(255,88,23)">Us</span>
+                </h2>
+
+
             </div>
 
             <!-- Squad -->
@@ -944,8 +819,8 @@
                     <div class="row">
                         <div class="col-12 justify-content-center">
                             <div class="card">
-                                <img src="assets/images/team1.jpg">
-                                <h3 class="text-center pt-3">TOM CRUISE</h3>
+                                <img src="assets/images/aumkar.jpg">
+                                <h3 class="text-center pt-3">Aumkar Ringe</h3>
                                 <p class="text-center pt-2">FULL STACK DEVLOPER</p>
                                 <div class="fw-social">
                                     <a href="#"><i class="fa fa-facebook"></i></a>
@@ -955,9 +830,9 @@
                             </div>
                         </div>
                         <div class="col-12 justify-content-center">
-                            <div class="card">
-                                <img src="assets/images/team1.jpg">
-                                <h3 class="text-center pt-3">TOM CRUISE</h3>
+                            <div class="card pt-5">
+                                <img src="assets/images/hrushi.jpg">
+                                <h3 class="text-center pt-3">Hrushikesh Tawde</h3>
                                 <p class="text-center pt-2">FULL STACK DEVLOPER</p>
                                 <div class="fw-social">
                                     <a href="#"><i class="fa fa-facebook"></i></a>
@@ -966,10 +841,10 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12 justify-content-center">
-                            <div class="card">
-                                <img src="assets/images/team1.jpg">
-                                <h3 class="text-center pt-3">TOM CRUISE</h3>
+                        <div class="col-12 justify-content-center pt-5 pb-5">
+                            <div class="card pt-5">
+                                <img src="assets/images/siddhi.jpg">
+                                <h3 class="text-center pt-3">Siddhikesh Skharkar</h3>
                                 <p class="text-center pt-2">FULL STACK DEVLOPER</p>
                                 <div class="fw-social">
                                     <a href="#"><i class="fa fa-facebook"></i></a>
@@ -991,10 +866,10 @@
                         <div class="cols">
                             <div class="col-12" ontouchstart="this.classList.toggle('hover');">
                                 <div class="container">
-                                    <div class="front" style="background: url(assets/images/3.jpg);">
+                                    <div class="front" style="background: url(assets/images/cric.jpeg);">
                                         <div class="inner">
 
-                                            <p>Live Score</p>
+                                            <p>LIGHTNING FAST PROCESS</p>
                                             <span>
 
 
@@ -1003,8 +878,7 @@
                                     </div>
                                     <div class="back">
                                         <div class="inner">
-                                            <p>Update scores of simultaneous events through admin dashboard for your
-                                                tournament in real time
+                                            <p>Create account instantly, get authenticated and you are good to go!
 
                                             </p>
                                         </div>
@@ -1013,9 +887,9 @@
                             </div>
                             <div class="col-12" ontouchstart="this.classList.toggle('hover');">
                                 <div class="container">
-                                    <div class="front" style="background: url(assets/images/cric.jpeg);">
+                                    <div class="front" style="background: url(assets/images/foot.jpg);">
                                         <div class="inner">
-                                            <p>PAYMENT GATEWAY</p>
+                                            <p>MULTIPLE SPORT REG</p>
                                             <span>
 
                                             </span>
@@ -1023,14 +897,14 @@
                                     </div>
                                     <div class="back">
                                         <div class="inner">
-                                            <p>Integrate payment option to your registrations with minimal steps</p>
+                                            <p>Register with multiple sports on a single click</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-12" ontouchstart="this.classList.toggle('hover');">
                                 <div class="container">
-                                    <div class="front" style="background: url(assets/images/2.jpg);">
+                                    <div class="front" style="background: url(assets/images/bad.jpg);">
                                         <div class="inner">
 
                                             <p>EASY STATISTICS</p>
@@ -1048,7 +922,7 @@
                             </div>
                             <div class="col-12" ontouchstart="this.classList.toggle('hover');">
                                 <div class="container">
-                                    <div class="front" style="background: url(assets/images/3.jpg);">
+                                    <div class="front" style="background: url(assets/images/carrom.jpg);">
                                         <div class="inner">
 
                                             <p>AUTOMATIC FIXTURES</p>
@@ -1074,7 +948,7 @@
             <div id="Contact" class="container-fluid section-5">
                 <div class="container">
                     <div class="row">
-                        <div style="margin-bottom: 20px; padding-top: 4rem;" class="col-lg-6">
+                        <div style="margin-bottom: 20px; padding-top: 5rem;" class="col-lg-6">
                             <div class="third-contact-wrap">
                                 <div class="third-title-style">
                                     <h2>CONTACT <span &nbsp>US</span></h2>
@@ -1098,7 +972,7 @@
                                     </div>
                                 </div>
                                 <textarea name="message" id="message" placeholder="Write Message"></textarea>
-                                <button class="btn rotated-btn">Submit</button>
+                                <button class="btn d-flex justify-content-center">Submit</button>
                             </form>
                         </div>
                     </div>
@@ -1109,17 +983,21 @@
     </div>
 
 
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="assets/js/jquery-3.4.1.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
 
     <script>
-        $(document).ready(function () {
+        $(document).ready(function() {
             $(".header").load('template/header.php');
             $(".footer-top").load('template/footer.html');
+            $(".mobile-header").load('template/mobile-header.html');
 
-            $(window).on('scroll', function () {
+
+            $(window).on('scroll', function() {
                 var scroll = $(window).scrollTop();
                 if (scroll < 245) {
 
