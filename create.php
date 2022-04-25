@@ -1,7 +1,7 @@
 <?php
 require_once('PHP/link.php');
 session_start();
-if (!isset($_SESSION['user-email'])) {
+if (!isset($_SESSION['user_email'])) {
     header("location:sign_in");
 } else {
 ?>

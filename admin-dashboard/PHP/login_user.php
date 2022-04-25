@@ -19,6 +19,7 @@ if (isset($_POST['email'])) {
 
     if (mysqli_num_rows($result) != 0) {
         while ($row = $result->fetch_assoc()) {
+            $email = $row['email'];
             $name = $row['name'];
             $id = $row['id'];
         }

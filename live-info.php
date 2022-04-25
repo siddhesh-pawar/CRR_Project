@@ -206,6 +206,8 @@ $event_slug =  $_GET['event'];;
             height: 100px !important;
         }
 
+
+
         /* .elementor img {
             height: auto;
             max-width: 100%;
@@ -227,9 +229,9 @@ $event_slug =  $_GET['event'];;
 
         .tlinfow a {
             text-decoration: none !important;
-            font-size: 26px;
-            color: #ff5817;
-            font-family: Oxinum-Bold;
+            font-size: 16px;
+            color: #ffffff;
+
         }
 
 
@@ -261,6 +263,7 @@ $event_slug =  $_GET['event'];;
             -webkit-backface-visibility: hidden;
 
         }
+
 
         @-webkit-keyframes aitf {
             0% {
@@ -365,8 +368,8 @@ $event_slug =  $_GET['event'];;
 
                                             </div>
                                             <div class="tlist-join">
-                                                <p>Start date:</small><strong><?php echo (date("d/m/Y", strtotime($row['start_tour_date']))); ?></strong>
-                                                <p>End date:</small><strong><?php echo (date("d/m/Y", strtotime($row['end_tour_date']))); ?></strong>
+                                                <p>Start date:<strong><?php echo (date("d/m/Y", strtotime($row['start_tour_date']))); ?></strong></p>
+                                                <p>End date:<strong><?php echo (date("d/m/Y", strtotime($row['end_tour_date']))); ?></strong></p>
                                             </div>
                                             <div class="tlinfoextra row">
                                                 <div class="tlist-join col">
@@ -403,7 +406,8 @@ $event_slug =  $_GET['event'];;
                                                         <small>Game format:</small><strong> Best of 1</strong>
                                                     </div>
                                                     <div>
-                                                        <button class="btn rotated-btn">Join Now</button>
+                                                        <button class="btn rotated-btn"><a href="join_tour.php?id=<?php echo ($row['id']); ?> ">Join Now</a></button>
+                                                        <button class="btn rotated-btn"><a href="fixtures.php?id=<?php echo ($row['id']); ?> ">Fixtures</a></button>
                                                     </div>
                                                 </div>
                                             </div>

@@ -11,6 +11,7 @@ RewriteEngine on
 RewriteCond %{REQUEST_URI} !-d
 RewriteCond %{REQUEST_URI} live-info
 RewriteRule ^live-info\/([^.?]+)$ live-info.php?event=$1 [NE,NC,L]
+
  
 RewriteEngine on 
 RewriteCond %{REQUEST_FILENAME} !-d

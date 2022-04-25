@@ -49,22 +49,269 @@ require_once('admin-dashboard/php/link.php');
 
     <!-- Enter Page Specific CSS here. Please make sure all the CSS  -->
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
 
+        body {
+            background-color: rgb(25, 29, 38);
+            color: white;
+            font-family: Oxanium-Regular !important;
+        }
+
+        @font-face {
+            font-family: grind;
+            src: url(../fonts/grind_demolished-webfont.woff2);
+            font-display: swap;
+        }
+
+        #content {
+            height: fit-content;
+            padding-top: 8%;
+            background-color: #ffffff;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7),
+                    rgba(0, 0, 0, 0.7)), url("assets/images/R (4).jfif");
+        }
+
+        #content .container {
+            padding-top: 60px;
+            padding-bottom: 50px;
+
+        }
+
+        .row .container {
+            /* width: 25vw; */
+            box-shadow: 0 15px 35px rgba(50, 50, 93, .1), 0 5px 15px rgba(0, 0, 0, .07);
+            padding: 2em;
+            background-color: transparent;
+            border-radius: 5px;
+        }
+
+        #content .col-6 {
+            max-width: 45% !important;
+        }
+
+        .form-group {
+            margin-bottom: 1em;
+            transition: all .3s;
+        }
+
+        .form-label {
+            font-size: 1em;
+            color: #94ada9;
+            opacity: 1;
+            transform: translateY(-1.75em);
+            transform-origin: 0 0;
+            transition: all .3s;
+        }
+
+        .form-control {
+            padding: 5px !important;
+            height: auto !important;
+            box-shadow: none;
+            color: #ffffff !important;
+            background-color: transparent !important;
+            border-radius: 0px !important;
+            border-style: none none solid none !important;
+            border-color: #94ada9 !important;
+            transition: all .5s;
+        }
+
+        .form-control::placeholder {
+            color: transparent !important;
+        }
+
+        .form-control:focus {
+            box-shadow: none !important;
+            outline: none !important;
+            border-bottom: 2px solid #ff5817 !important;
+        }
+
+        .form-control:focus+.form-label,
+        .form-control:not(:placeholder-shown)+.form-label {
+            transform: translateY(-3em) scale(.8);
+            color: #ff5817;
+        }
+
+        .form-group:focus-within {
+            transform: scale(1.05, 1.05);
+        }
+
+        .form {
+            color: #94ada9;
+        }
+
+        #content p {
+            text-align: center;
+        }
+
+        .links a {
+            text-decoration: none !important;
+            text-align: center;
+            color: #ffffff !important;
+        }
+
+        a:hover {
+            color: #ff5817 !important;
+        }
+
+        #content h3 {
+            font-family: grind;
+            text-align: center;
+            font-size: 40px !important;
+        }
+
+        span {
+            color: #ff5817;
+        }
+
+        #content .container .row {
+            margin-top: 80px;
+        }
+
+        ::-ms-reveal {
+            filter: invert(100%);
+        }
+
+        /* Button css */
+
+        .button {
+            margin: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .button a {
+            text-decoration: none !important;
+            position: relative;
+            display: inline-block;
+            padding: 5px 20px;
+            font-size: 17.5px;
+            /* text-transform: uppercase; */
+            color: rgba(255, 255, 255, 0.4);
+            letter-spacing: 1px;
+            transition: .5s;
+            background: #ff5817;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+
+
+
+        .button a:hover {
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+
+        }
+
+        .button a::after {
+            position: absolute;
+            content: '';
+            color: #ffffff;
+            left: 0;
+            top: 0;
+            height: 390%;
+            width: 140%;
+            transition: all .5s ease-in-out;
+            background: #000;
+            transform: translate(-121%, -25%) rotate(45deg);
+
+        }
+
+        .button a:hover::after {
+            transform: translate(-9%, -25%) rotate(45deg);
+        }
+
+        .button a p {
+            margin: 0;
+            position: relative;
+            z-index: 1;
+            color: #ffffff;
+        }
+
+        /* rotating animation */
+        .col {
+            align-items: center;
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotateY(0deg);
+                moz-transform: rotateY(0deg);
+                ms-transform: rotateY(0deg);
+            }
+
+            to {
+                transform: rotateY(360deg);
+                moz-transform: rotateY(360deg);
+                ms-transform: rotateY(360deg);
+            }
+        }
+
+        @-webkit-keyframes spin {
+            from {
+                -webkit-transform: rotateY(0deg);
+            }
+
+            to {
+                -webkit-transform: rotateY(360deg);
+            }
+        }
+
+        .imageSpin {
+            height: 40%;
+            animation-name: spin;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            animation-duration: 10s;
+            -webkit-animation-name: spin;
+            -webkit-animation-timing-function: linear;
+            -webkit-animation-iteration-count: infinite;
+            -webkit-animation-duration: 10s;
+        }
+
+        @media only screen and (max-width: 992px) {
+            .content h3 {
+                text-align: center;
+                font-family: grind;
+                font-size: 40px;
+                margin-bottom: 1em;
+                padding-top: 1em;
+            }
+
+            .content .col {
+                margin-bottom: 4em;
+            }
+
+            .content p {
+                text-align: center;
+            }
+
+            .content {
+                background-image: linear-gradient(rgba(0, 0, 0, 0.7),
+                        rgba(0, 0, 0, 0.7)), url("assets/images/R (4).jfif");
+            }
+
+            .d-flex {
+                margin-bottom: 2.5em;
+            }
+        }
     </style>
 </head>
 
 <body>
-    <!-- <div class="container-fluid  vh-100 preloader" style=" background-color: #172027;">
+    <div class="container-fluid  vh-100 preloader" style=" background-color: #172027;">
 
 
         &nbsp;
 
-        <img src=" images/no-halftime-loaders-petrick.gif" style="  position: absolute;background-color: #172027;
+        <img src="assets/images/no-halftime-loaders-petrick.gif" style="  position: absolute;background-color: #172027;
             top: 50%; right: 50%;
             transform: translate(50%,-50%);  margin: 0;">
 
 
-    </div> -->
+    </div>
     <div class="main">
         <div class="d-none d-lg-block">
             <div class="container-fluid pl-0 pr-0 header fixed-top">
@@ -119,7 +366,58 @@ require_once('admin-dashboard/php/link.php');
 
 
         </div>
-        <div class="container-fluid sign-up_bg">
+        <div id="content" class="container-fluid">
+
+            <div class="container">
+                <h3><span class="text-white">Sign </span><span>In</span></h3>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="ml-xl-50-none">
+                            <a href="#"><img class="imageSpin " src="assets/images/02.png" alt="banner-thumb"></a>
+                        </div>
+                    </div>
+                    <div class="container col-lg-6">
+                        <form>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Email" id="email" name="email" tabindex="1" required>
+                                <label for="email" class="form-label">Email</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control" placeholder="Password" id="password" name="password" tabindex="2" required>
+                                <label for="password" class="form-label">Password</label>
+                            </div>
+                            <div class="links d-flex justify-content-around">
+                                <!-- <a href="">Forgot Password?</a> -->
+
+                                <div class="row" style="margin-top: 0; text-align: center;">
+                                    <div class="col text-white">Not a member?</div>
+                                    <div class="w-100"></div>
+                                    <div class="col"><a href="sign_up">Register</a></div>
+
+                                </div>
+                            </div>
+                            <div class="button" id="login">
+                                <a class="bt">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <p>Sign in</p>
+
+                                </a>
+
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+        </div>
+        <!-- <div class="container-fluid sign-up_bg">
             <h2 class="text-center">SIGN<span style="color: #ffffff;"> IN</span></h2>
             <div class="container ">
                 <div class="card" style="background: transparent;border: none;">
@@ -168,42 +466,44 @@ require_once('admin-dashboard/php/link.php');
 
             </div>
 
-        </div>
+        </div> -->
 
         <!-- mobile view -->
 
 
+        <div class="footer-top footer-bg third-footer-bg">
 
+        </div>
     </div>
 
-    <div class="footer-top footer-bg third-footer-bg">
 
-    </div>
-    </div>
+
 
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="assets/js/popper.min.js"></script>
+
     <script src="assets/js/jquery-3.4.1.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
 
     <script>
-        // const loader = document.querySelector('.preloader');
-        // const main = document.querySelector('.main');
+        const loader = document.querySelector('.preloader');
+        const main = document.querySelector('.main');
 
-        // function init() {
-        //     setTimeout(() => {
-        //         loader.style.opacity = 0;
-        //         loader.style.display = 'none';
+        function init() {
+            setTimeout(() => {
+                loader.style.opacity = 0;
+                loader.style.display = 'none';
 
-        //         main.style.display = 'block';
+                main.style.display = 'block';
 
-        //         setTimeout(() => (main.style.opacity = 1), 50);
-        //     }, 4000);
+                setTimeout(() => (main.style.opacity = 1), 50);
+            }, 4000);
 
-        // }
+        }
 
-        // init();
+        init();
         $(document).ready(function() {
             $(".header").load('template/header.php');
             $(".footer-top").load('template/footer.html');
@@ -268,7 +568,7 @@ require_once('admin-dashboard/php/link.php');
                     },
                     success: function(data) {
                         if (data.status == 201) {
-                            window.location = "index_1";
+                            window.location = "index";
                         } else if (data.status == 501) {
                             alert("please contact with admin to active your account");
                         } else {

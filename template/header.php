@@ -69,8 +69,8 @@ session_start();
     <div class="row header-two">
         <div class="col-6 justify-content-left">
             <ul style="padding-left: 68px">
-                <li><a href="index_1">Home</a></li>
-                <li><a href="#">HOW IT WORKS</a></li>
+                <li><a href="index">Home</a></li>
+                <li><a href="how_it_works">HOW IT WORKS</a></li>
                 <li><a href="about_us">ABOUT US</a></li>
 
             </ul>

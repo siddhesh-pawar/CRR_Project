@@ -5,4 +5,4 @@ unset($_SESSION['user_email']);
 unset($_SESSION['user_name']);
 unset($_SESSION['user_name']);
 
-header("Location:../../index_1");
+header("Location:../../index");

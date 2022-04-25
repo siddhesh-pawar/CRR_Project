@@ -56,17 +56,17 @@ require_once('php/link.php');
 </head>
 
 <body>
-    <!-- <div class="container-fluid  vh-100 preloader" style=" background-color: #172027;">
+    <div class="container-fluid  vh-100 preloader" style=" background-color: #172027;">
 
 
         &nbsp;
 
-        <img src=" images/no-halftime-loaders-petrick.gif" style="  position: absolute;background-color: #172027;
+        <img src="assets/images/no-halftime-loaders-petrick.gif" style="  position: absolute;background-color: #172027;
             top: 50%; right: 50%;
             transform: translate(50%,-50%);  margin: 0;">
 
 
-    </div> -->
+    </div>
     <div class="main">
         <div class="d-none d-lg-block">
             <div class="container-fluid pl-0 pr-0 header fixed-top">
@@ -181,14 +181,14 @@ require_once('php/link.php');
 
         <!-- mobile view -->
 
+        <div class="footer-top footer-bg third-footer-bg">
 
-
-    </div>
-
-    <div class="footer-top footer-bg third-footer-bg">
+        </div>
 
     </div>
-    </div>
+
+
+
 
 
     <!-- Optional JavaScript -->
@@ -199,22 +199,22 @@ require_once('php/link.php');
     <script src="assets/sweetalert/jquery.sweet-alert.custom.js"></script>
 
     <script>
-        // const loader = document.querySelector('.preloader');
-        // const main = document.querySelector('.main');
+        const loader = document.querySelector('.preloader');
+        const main = document.querySelector('.main');
 
-        // function init() {
-        //     setTimeout(() => {
-        //         loader.style.opacity = 0;
-        //         loader.style.display = 'none';
+        function init() {
+            setTimeout(() => {
+                loader.style.opacity = 0;
+                loader.style.display = 'none';
 
-        //         main.style.display = 'block';
+                main.style.display = 'block';
 
-        //         setTimeout(() => (main.style.opacity = 1), 50);
-        //     }, 4000);
+                setTimeout(() => (main.style.opacity = 1), 50);
+            }, 4000);
 
-        // }
+        }
 
-        // init();
+        init();
         $(document).ready(function() {
             $(".header").load('template/header.php');
             $(".footer-top").load('template/footer.html');
@@ -309,7 +309,7 @@ require_once('php/link.php');
                     success: function(data) {
                         if (data.status == 201) {
                             alert("registration sucessful, Please contact with admin to active your account");
-                            window.location = "index_1";
+                            window.location = "index";
 
                         } else if (data.status == 301) {
                             //Email already registered

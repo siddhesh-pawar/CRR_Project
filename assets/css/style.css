@@ -1,9 +1,9 @@
 @charset "utf-8";
 
-/* .main {
+.main {
     display: none;
-    transition: opacity 1s ease-in;
-} */
+    transition: opacity 3s ease-in;
+}
 
 /* CSS Document */
 @font-face {
@@ -23,6 +23,8 @@
     src: url(../fonts/grind_demolished-webfont.woff2);
     font-display: swap;
 }
+
+
 
 /******** navbar ********/
 
@@ -737,6 +739,7 @@
 /* ********    live-info ************ */
 
 
+.join,
 .create,
 .sign-up_bg {
     background-image: url('../images/live_bg.jpg');
@@ -747,6 +750,7 @@
 
 }
 
+.join h2,
 .create h2,
 .sign-up_bg h2 {
     color: #ff4800;
@@ -754,6 +758,7 @@
     font-family: grind;
 }
 
+.join input,
 .create input,
 .sign-up_bg input {
     background: transparent;
@@ -769,6 +774,7 @@
 }
 
 
+.join input:focus,
 .create input:focus,
 .sign-up_bg input:focus {
     background: transparent;
@@ -780,6 +786,7 @@
 
 }
 
+.join label,
 .create label,
 .sign-up_bg label {
     font-family: Oxanium-Regular;
@@ -811,6 +818,7 @@
 }
 
 
+.join button,
 .sign-up_bg button,
 .create button {
     background: #ff4800;
@@ -850,6 +858,16 @@
 
 }
 
+.join p {
+    color: #ffffff;
+    font-size: 18px;
+    font-family: Oxanium-Regular;
+    display: inline-block;
+}
+
+.join-info {
+    color: #ffffff;
+}
 
 
 
