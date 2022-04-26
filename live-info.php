@@ -276,7 +276,79 @@ $event_slug =  $_GET['event'];;
         }
 
         /* Mobile view */
-        @media only screen and (max-width: 992px) {}
+        @media only screen and (max-width: 992px) {
+            .text span {
+                font: 600 2em/1 "grind", sans-serif;
+
+
+            }
+
+            .swiper {
+                width: 100%;
+                height: 250px;
+                padding: 50px;
+
+            }
+
+            .swiper-slide {
+                background-position: center;
+                background-size: cover;
+                width: 50px;
+                height: 50px;
+            }
+
+            .swiper-slide img {
+                display: block;
+                width: 100%;
+            }
+
+            .swiper-button-prev,
+            .swiper-button-next {
+                color: #ff5817 !important;
+            }
+
+            /* Hover box */
+            .tlinfow {
+
+                border: 1px solid rgba(255, 255, 255, 0.1) !important;
+                /* border-bottom: 0px !important; */
+                background: transparent;
+                /* border-top-color: transparent !important; */
+                background: rgba(255, 255, 255, 0.1);
+                display: flex;
+                position: relative;
+                padding: 20px;
+                transition: all 0.35s ease;
+                -webkit-transition: all 0.35s ease;
+                -moz-transition: all 0.35s ease;
+                border: 1px solid rgba(255, 255, 255, 0);
+                border-bottom: 0px;
+            }
+
+            .tlinfow .tlist-info {
+                padding: 0px;
+
+            }
+
+            .swiper-slide:hover .tlinfoextra {
+
+                opacity: 1;
+                visibility: visible;
+                border-top: 0px !important;
+                top: 90%;
+                background: rgba(255, 255, 255, 0.1);
+
+            }
+
+            .tlinfoextra {
+                padding: 16px;
+
+            }
+
+            .swiper-slide:hover .tlinfoextra {
+                height: 280px !important;
+            }
+        }
     </style>
 </head>
 
@@ -441,50 +513,120 @@ $event_slug =  $_GET['event'];;
     <div class="d-lg-none position-relative">
 
         <!-- header -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand p-3 pt-4" href="#"> <img src="assets/images/f_logo.png"></a>
-            <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav p-4">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Events</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Gallery</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Community</a>
-                    </li>
-                    <!-- <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Dropdown link
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
+        <div class="mobile-header"></div>
+        <div id="content" class="container-fluid">
+            <div class="container text-center">
+                <?php
+                $result = mysqli_query($link, "SELECT * FROM `events` WHERE `event_slug` = '$event_slug' ");
+                ?>
+                <?php
+                if (mysqli_num_rows($result) != 0) {
+                    while ($row = mysqli_fetch_array($result)) {
+
+
+
+
+                ?>
+                        <div class="text d-flex justify-content-center">
+                            <p>
+                                <span>
+                                    <?php echo ($row['event_name']); ?>
+                                </span>
+                            </p>
                         </div>
-                    </li> -->
-                </ul>
+
+                        <!-- <img src="assets/images/section_line.png"> -->
+                        <div class="row mt-5 mb-5">
+                            <div class="col-12">
+                                <img src="assets/images/uploads/<?php echo ($row['logo']); ?>">
+                            </div>
+                            <div class="col-12 pt-5" style="text-align: center;">
+
+                                <p>Start date: <span><?php echo (date("d/m/Y", strtotime($row['start_date']))); ?></span></p>
+                                <p>End date: <span><?php echo (date("d/m/Y", strtotime($row['end_date']))); ?></span></p>
+                                <p>Organized By: <span> K.C.College</span></p>
+                            </div>
+                        </div>
+                <?php
+                    }
+                }
+                ?>
             </div>
-        </nav>
+            <div style="margin-top: 5em;margin-bottom:18em;" class="container-fluid">
+                <section>
+                    <div class="text-center">
+                        <h2>Tourna<span>ments</span></h2>
+                        <img src="assets/images/section_line.png">
+                    </div>
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                            <?php
 
-        <div class="container-fluid content">
+                            $result = mysqli_query($link, "SELECT * FROM `events` WHERE `event_slug` = '$event_slug' ");
+                            $row = mysqli_fetch_array($result);
+                            $event_id = $row['event_id'];
+                            $result = mysqli_query($link, "SELECT * FROM `tournaments` WHERE `event_id` = '$event_id' ");
 
+                            ?>
+                            <?php
+                            if (mysqli_num_rows($result) != 0) {
+                                while ($row = mysqli_fetch_array($result)) {
+
+
+
+
+
+                            ?>
+                                    <div class="swiper-slide">
+
+                                        <div class="tlinfow">
+                                            <div class="tlist-info">
+                                                <p class="text-center" style="font-size: 20px;color:#ff5817;"><?php echo ($row['tour_name']); ?></p>
+                                                <p>Start date: <?php echo (date("d/m/Y", strtotime($row['start_tour_date']))); ?></p>
+                                                <p>End date: <?php echo (date("d/m/Y", strtotime($row['end_tour_date']))); ?></p>
+                                            </div>
+
+
+                                            <div class="tlinfoextra row">
+                                                <div class="tlist-info">
+                                                    <p>Tournament type : Knockout</p>
+                                                    <p>Venue : Ground</p>
+                                                    <p>Game format : Best of 1</p>
+                                                    <div class="row pt-4">
+                                                        <div class="col-12 d-flex justify-content-center">
+                                                            <button class="btn rotated-btn"><a href="join_tour.php?id=<?php echo ($row['id']); ?> ">Join Now</a></button>
+                                                        </div>
+                                                        <div class="col-12 d-flex justify-content-center pt-3">
+
+                                                            <button class="btn rotated-btn"><a href="fixtures.php?id=<?php echo ($row['id']); ?> ">Fixtures</a></button>
+                                                        </div>
+
+
+                                                    </div>
+
+
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                            <?php
+                                }
+                            }
+                            ?>
+
+                        </div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                        <!-- <div class="swiper-pagination"></div> -->
+                    </div>
+
+                </section>
+            </div>
         </div>
-        <div class="footer-top"></div>
+        <div class="footer-top">
+        </div>
     </div>
 
 
@@ -498,6 +640,7 @@ $event_slug =  $_GET['event'];;
         $(document).ready(function() {
             $(".header").load('template/header.php');
             $(".footer-top").load('template/footer.html');
+            $(".mobile-header").load('template/mobile-header.html');
 
             $(window).on('scroll', function() {
                 var scroll = $(window).scrollTop();
