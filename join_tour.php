@@ -301,6 +301,7 @@ if (!isset($_SESSION['user_email'])) {
                         success: function(data) {
 
                             if (data.status == 201) {
+                                alert("Joined tournament successfully");
 
                                 window.location.reload();
 

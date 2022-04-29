@@ -18,7 +18,7 @@ if (!isset($_SESSION['admin_email'])) {
         <!-- The above 6 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
         <!-- Title -->
-        <title>Connect - Responsive Admin Dashboard Template</title>
+        <title>Kriyata</title>
 
         <!-- Styles -->
         <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900&display=swap" rel="stylesheet">
@@ -67,7 +67,7 @@ if (!isset($_SESSION['admin_email'])) {
         </div>
         <div class="connect-container align-content-stretch d-flex flex-wrap">
             <div class="page-sidebar">
-                <div class="logo-box"><a href="#" class="logo-text">Connect</a><a href="#" id="sidebar-close"><i class="material-icons">close</i></a> <a href="#" id="sidebar-state"><i class="material-icons">adjust</i><i class="material-icons compact-sidebar-icon">panorama_fish_eye</i></a></div>
+                <div class="logo-box"><a href="#" class="logo-text">Kriyata</a><a href="#" id="sidebar-close"><i class="material-icons">close</i></a> <a href="#" id="sidebar-state"><i class="material-icons">adjust</i><i class="material-icons compact-sidebar-icon">panorama_fish_eye</i></a></div>
                 <div class="page-sidebar-inner slimscroll">
                     <ul class="accordion-menu">
                         <li class="sidebar-title">
@@ -86,27 +86,7 @@ if (!isset($_SESSION['admin_email'])) {
                             <a href="entries"><i class="material-icons-outlined">create</i>Entries</a>
                         </li>
                         <li>
-                            <a href="#"><i class="material-icons">text_format</i>Settings<i class="material-icons has-sub-menu">add</i></a>
-                            <ul class="sub-menu" style="display: none;">
-                                <li>
-                                    <a href="logo">Logo</a>
-                                </li>
-                                <li>
-                                    <a href="settings">Nav menu</a>
-                                </li>
-                                <li>
-                                    <a href="contact">Contact</a>
-                                </li>
-                                <li>
-                                    <a href="title">Title and Description </a>
-                                </li>
-                                <li>
-                                    <a href="social_media">Social Media </a>
-                                </li>
-                                <li>
-                                    <a href="sidebar">Side Bar </a>
-                                </li>
-                            </ul>
+                            <a href="fixture"><i class="material-icons-outlined">sports_esports</i>Fixtures</a>
                         </li>
 
 
@@ -179,25 +159,14 @@ if (!isset($_SESSION['admin_email'])) {
                                 <li class="breadcrumb-item active" aria-current="page">Events</li>
                             </ol>
                         </nav>
-                        <div class="page-options d-flex justify-content-center" style="margin-right: 50px;">
-                            <a href="add_tournament" class="btn btn-primary mr-0" type="button" id="dropdownMenuButton22" style="font-size: 1rem;background-color: #2b8fe9;color: #ffffff;">
-                                Add new events
-                            </a>
-                        </div>
+
                     </div>
                     <div class="main-wrapper">
-
-
-
-
-
-
-
                         <div class="row">
                             <div class="col">
                                 <div class="card" class="alert alert-secondary" role="alert">
                                     <div class="card-body table-responsive">
-                                        <h2 class="card-title">Posts</h2>
+                                        <h2 class="card-title">Event</h2>
 
                                         <table id="zero-conf" class="display" style="width:100%">
                                             <thead>
@@ -255,7 +224,7 @@ if (!isset($_SESSION['admin_email'])) {
                     <div class="page-footer ">
                         <div class="row ">
                             <div class="col-md-12 ">
-                                <span class="footer-text ">2019 © stacks</span>
+                                <span class="footer-text ">2022 © kriyata</span>
                             </div>
                         </div>
                     </div>

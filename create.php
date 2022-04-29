@@ -237,6 +237,7 @@ if (!isset($_SESSION['user_email'])) {
 
             $('#start-date').bootstrapMaterialDatePicker({
                 time: false,
+                minDate: new Date(),
                 weekStart: 0
             });
             $('#end-date').bootstrapMaterialDatePicker({
@@ -341,9 +342,9 @@ if (!isset($_SESSION['user_email'])) {
                             if (data.status == 201) {
 
                                 alert(
-                                    "registration sucessful, Please contact with admin to active your account"
+                                    "Event created successfully"
                                 );
-                                // window.location = "index_1";
+                                window.location = "live";
 
                             } else if (data.status == 301) {
                                 //Email already registered

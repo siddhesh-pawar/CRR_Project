@@ -283,7 +283,7 @@ require_once('php/link.php');
                     },
                     success: function(data) {
                         if (data.status == 201) {
-                            alert("registration sucessful, Please contact with admin to active your account");
+                            alert("Registration successful");
                             window.location = "index";
 
                         } else if (data.status == 301) {

@@ -195,7 +195,7 @@ if (!isset($_SESSION['user_email'])) {
                     ?>
 
 
-                    <div class="container main-match pb-5">
+                    <!-- <div class="container main-match pb-5">
                         <div class="d-flex justify-content-center image-bg">
                             <a href="#"><img src="assets/images/match_box.png"></a>
                         </div>
@@ -217,7 +217,7 @@ if (!isset($_SESSION['user_email'])) {
                         </div>
 
 
-                    </div>
+                    </div> -->
 
 
 

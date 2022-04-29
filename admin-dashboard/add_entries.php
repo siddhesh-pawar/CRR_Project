@@ -18,8 +18,7 @@ if (!isset($_SESSION['session_user'])) {
         <!-- The above 6 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
         <!-- Title -->
-        <title>Connect - Responsive Admin Dashboard Template</title>
-
+        <title>Kriyata Admin Dashboard</title>
         <!-- Styles -->
         <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700&display=swap" rel="stylesheet">
@@ -107,51 +106,25 @@ if (!isset($_SESSION['session_user'])) {
         </div>
         <div class="connect-container align-content-stretch d-flex flex-wrap">
             <div class="page-sidebar">
-                <div class="logo-box"><a href="#" class="logo-text">Connect</a><a href="#" id="sidebar-close"><i class="material-icons">close</i></a> <a href="#" id="sidebar-state"><i class="material-icons">adjust</i><i class="material-icons compact-sidebar-icon">panorama_fish_eye</i></a></div>
+                <div class="logo-box"><a href="#" class="logo-text">Kriyata</a><a href="#" id="sidebar-close"><i class="material-icons">close</i></a> <a href="#" id="sidebar-state"><i class="material-icons">adjust</i><i class="material-icons compact-sidebar-icon">panorama_fish_eye</i></a></div>
                 <div class="page-sidebar-inner slimscroll">
                     <ul class="accordion-menu">
                         <li class="sidebar-title">
                             Apps
                         </li>
-                        <!-- <li>
-                            <a href="index" class="active"><i class="material-icons-outlined">dashboard</i>Dashboard</a>
-                        </li> -->
-                        <li class="active-page">
+
+                        <li>
                             <a href="index"><i class="material-icons-outlined">text_format</i>Events</a>
                         </li>
                         <li>
                             <a href="tournaments"><i class="material-icons-outlined">account_circle</i>Tournaments</a>
                         </li>
-                        <li>
-                            <a href="add_comments_home"><i class="material-icons-outlined">create</i>Users</a>
+                        <li class="active-page">
+                            <a href="entries"><i class="material-icons-outlined">create</i>Entries</a>
                         </li>
                         <li>
-                            <a href="#"><i class="material-icons">text_format</i>Settings<i class="material-icons has-sub-menu">add</i></a>
-                            <ul class="sub-menu" style="display: none;">
-                                <li>
-                                    <a href="logo">Logo</a>
-                                </li>
-                                <li>
-                                    <a href="settings">Nav menu</a>
-                                </li>
-                                <li>
-                                    <a href="contact">Contact</a>
-                                </li>
-                                <li>
-                                    <a href="title">Title and Description </a>
-                                </li>
-                                <li>
-                                    <a href="social_media">Social Media </a>
-                                </li>
-                                <li>
-                                    <a href="sidebar">Side Bar </a>
-                                </li>
-                            </ul>
+                            <a href="fixture"><i class="material-icons-outlined">sports_esports</i>Fixtures</a>
                         </li>
-
-
-
-
 
                     </ul>
                 </div>
@@ -219,23 +192,7 @@ if (!isset($_SESSION['session_user'])) {
                                 <li class="breadcrumb-item active" aria-current="page">Posts</li>
                             </ol>
                         </nav>
-                        <div class="page-options d-flex justify-content-center" style="margin-right: 50px;">
-                            <a href="add_tournament" class="btn btn-primary mr-0" type="button" id="dropdownMenuButton22" style="font-size: 1rem;background-color: #2b8fe9;color: #ffffff;">
-                                Add new tournaments
-                            </a>
-                            <!-- <div class="dropdown">
 
-                                <button class="btn dropdown-toggle btn btn-primary" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size: 1rem;background-color: #2b8fe9;color: #ffffff;border-top-left-radius: 0px;border-bottom-left-radius: 0px;">
-
-                                </button>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item" href="add_tournament">Add new posts</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="add_category_home">Add Category</a>
-                                    <a class="dropdown-item" href="add_subcategory_home">Add Sub category</a>
-                                </div>
-                            </div> -->
-                        </div>
                     </div>
                     <div class="main-wrapper d-flex justify-content-center">
 

@@ -414,6 +414,7 @@ $event_slug =  $_GET['event'];;
                             <?php
                             if (mysqli_num_rows($result) != 0) {
                                 while ($row = mysqli_fetch_array($result)) {
+                                    $id = $row['id'];
 
 
 
@@ -434,7 +435,9 @@ $event_slug =  $_GET['event'];;
                                                             <circle cx="9" cy="7" r="4"></circle>
                                                             <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
                                                             <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                                                        </svg> 3 Teams Registered
+                                                        </svg> <?php
+                                                                $result2 = mysqli_query($link, "SELECT DISTINCT `uuid` from `entries` WHERE `tournament_id` = '$id' ");
+                                                                echo (mysqli_num_rows($result2)); ?> Teams Registered
                                                     </p>
                                                 </div>
 
@@ -462,7 +465,7 @@ $event_slug =  $_GET['event'];;
                                                             <line x1="8" y1="21" x2="16" y2="21"></line>
                                                             <line x1="12" y1="17" x2="12" y2="21"></line>
                                                         </svg>
-                                                        <small>Veneu:</small><strong> Ground</strong>
+                                                        <small>Venue:</small><strong> Ground</strong>
                                                     </div>
 
                                                 </div>
