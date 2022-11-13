@@ -25,7 +25,7 @@ Signup -
 
 ![image](https://user-images.githubusercontent.com/61748949/201526171-5059b9e9-f357-4f39-9c5d-ea7b4e8f515e.png)
 
-Admin DashBoard
+Admin Dashboard
 
 ![image](https://user-images.githubusercontent.com/61748949/201526360-a1921198-f0bf-4d7c-8b03-c894a468c996.png)
 
