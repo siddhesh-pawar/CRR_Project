@@ -13,7 +13,7 @@ Preview link -  https://kriyata.infinityfreeapp.com/
 
 ## About The App
 Manual management of registrations for any event through a pen and paper system is still preferred in schools and colleges in India. Loss of data is a major issue when the data is handled at the institute level.  
-Our proposed system 'Kriyata' integrates the registrations and fixtures, and provides a universal solution for tournament management. The algorithm that we have developed for fixture generation can be applied to any number of teams and can generate fixtures for any given tournament in a single event. The dynamic graphic interface that we have provided to the user, as well as user-admin, helps in managing the users that have registered for various tournaments.
+Our proposed system 'Kriyata' integrates the registrations and fixtures, and provides a universal solution for tournament management. The algorithm that we have developed for fixture generation can be applied to any number of teams and can generate fixtures for any given tournament in a single event. The dynamic graphic interface that we have provided to the user, as well as user-admin, helps in managing the users that have registered for various tournaments
 
 ## Screenshots
 
